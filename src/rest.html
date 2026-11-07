@@ -1,0 +1,374 @@
+<!-- CARDS -->
+<section class="view" id="v-cards">
+  <div class="filters" id="filters"></div>
+  <div class="prog"><span id="pinfo"></span><span id="pstat"></span></div>
+  <div id="deck"></div>
+</section>
+
+<!-- QUIZ -->
+<section class="view qz" id="v-quiz">
+  <div class="filters" id="qmodes"></div>
+  <div class="filters" id="qfilters"></div>
+  <div class="prog"><span id="qhint"></span><span class="score" id="qscore">0 / 0</span></div>
+  <div class="sec" id="qbox"></div>
+</section>
+
+<!-- NUMBERS -->
+<section class="view" id="v-nums">
+  <p class="hint">Grouped by blueprint domain. The number in each heading is the blueprint sub-objective. Grids show values that follow a pattern, with the rule that produces them.</p>
+
+  <h2 class="dh" style="color:var(--c1)">1 · Layer 3</h2>
+
+  <div class="sec"><h3>1.1 Administrative distance <span class="src">OCG</span></h3>
+    <table>
+      <tr><td>Connected</td><td class="n">0</td></tr><tr><td>Static</td><td class="n">1</td></tr>
+      <tr><td>EIGRP summary (Null0)</td><td class="n">5</td></tr><tr><td>eBGP</td><td class="n">20</td></tr>
+      <tr><td>EIGRP internal</td><td class="n">90</td></tr><tr><td>OSPF</td><td class="n">110</td></tr>
+      <tr><td>IS-IS</td><td class="n">115</td></tr><tr><td>RIP</td><td class="n">120</td></tr>
+      <tr><td>EIGRP external</td><td class="n">170</td></tr><tr><td>iBGP / local BGP</td><td class="n">200</td></tr>
+      <tr><td>NHRP shortcut route (H, DMVPN)</td><td class="n">250</td></tr>
+      <tr><td>Default route learned via DHCP</td><td class="n">254</td></tr>
+      <tr><td>Unknown (never installed)</td><td class="n">255</td></tr>
+    </table>
+    <p class="why" style="margin:8px 0 0">Rule: a floating static needs an AD <b>above</b> the source it backs up (e.g. 115 behind OSPF, 171 behind EIGRP external).</p></div>
+
+  <div class="sec"><h3>1.2 Route maps and prefix lists <span class="src">OCG</span></h3>
+    <table class="mx"><tr><th>Entry (inside 10.0.0.0/8)</th><th>/8</th><th>/16</th><th>/24</th><th>/30</th></tr>
+      <tr><td>10.0.0.0/8</td><td class="y">✓</td><td class="x">✗</td><td class="x">✗</td><td class="x">✗</td></tr>
+      <tr><td>10.0.0.0/8 le 24</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="x">✗</td></tr>
+      <tr><td>10.0.0.0/8 ge 16</td><td class="x">✗</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+      <tr><td>10.0.0.0/8 ge 16 le 24</td><td class="x">✗</td><td class="y">✓</td><td class="y">✓</td><td class="x">✗</td></tr>
+      <tr><td>0.0.0.0/0 le 32</td><td colspan="4">every prefix</td></tr>
+      <tr><td>0.0.0.0/0</td><td colspan="4">default route only</td></tr>
+    </table>
+    <p class="why" style="margin:8px 0 0">Rule: prefix length &lt; ge ≤ le ≤ 32. Without ge/le the length must match exactly.</p>
+    <table style="margin-top:6px">
+      <tr><td>prefix-list default seq step</td><td class="n">5</td></tr><tr><td>route-map default sequence</td><td class="n">10</td></tr>
+      <tr><td>Tag range</td><td class="n">0–4294967295</td></tr>
+    </table></div>
+
+  <div class="sec"><h3>1.4 Default seed metrics for redistribution <span class="src">OCG · NETACAD</span></h3>
+    <table class="mx"><tr><th>Into</th><th>From another protocol</th><th>From connected/static</th></tr>
+      <tr><td>EIGRP</td><td class="x">infinity</td><td>interface metric</td></tr>
+      <tr><td>RIP</td><td class="x">infinity</td><td>1</td></tr>
+      <tr><td>OSPF</td><td>20 (E2) · BGP: 1</td><td>20 (E2)</td></tr>
+      <tr><td>BGP</td><td>IGP metric → MED</td><td>metric → MED</td></tr>
+    </table>
+    <div class="mn" style="margin-top:8px">EIGRP seed = <em>bandwidth kbps · delay (tens of µs) · reliability 1–255 · load 1–255 · MTU</em><br>e.g. metric <em>10000 100 255 1 1500</em></div></div>
+
+  <div class="sec"><h3>1.5 Summary math <span class="src">OCG</span></h3>
+    <table class="mx"><tr><th>Contiguous blocks</th><th>Bits</th><th>/24s → summary</th></tr>
+      <tr><td>2</td><td>1</td><td>/23</td></tr><tr><td>4</td><td>2</td><td>/22</td></tr>
+      <tr><td>8</td><td>3</td><td>/21</td></tr><tr><td>16</td><td>4</td><td>/20</td></tr>
+    </table>
+    <p class="why" style="margin:8px 0 0">Rule: 2ⁿ contiguous blocks shorten the prefix by n bits, and the first block must be a multiple of 2ⁿ. 10.1.4.0–10.1.7.0/24 → 10.1.4.0/22 ✓ · 10.1.2.0–10.1.5.0/24 is not one /22.</p></div>
+
+  <div class="sec"><h3>1.8 BFD <span class="src">OCG</span></h3>
+    <table>
+      <tr><td>Detection time</td><td class="n">interval × multiplier</td></tr>
+      <tr><td>Example 50 ms × 3</td><td class="n">150 ms</td></tr>
+      <tr><td>Control / echo packets</td><td class="n">UDP 3784 / 3785</td></tr>
+    </table></div>
+
+  <div class="sec"><h3>1.9 EIGRP <span class="src">OCG · CSLG</span></h3>
+    <div class="mn">Default K: <em>K1=1 K2=0 K3=1 K4=0 K5=0</em> → bandwidth + delay<br>Classic: 256 × (10⁷ / min BW kbps + Σ delay µs / 10)<br>Wide (named): 64-bit, scaled by <em>65,536</em> · FC: <em>RD &lt; FD</em> · variance N: FD &lt; N × best FD</div>
+    <table class="mx" style="margin-top:8px"><tr><th>Interface</th><th>BW (kbps)</th><th>Delay (µs)</th><th>1-hop classic metric</th></tr>
+      <tr><td>GigabitEthernet</td><td>1,000,000</td><td>10</td><td>2,816</td></tr>
+      <tr><td>FastEthernet</td><td>100,000</td><td>100</td><td>28,160</td></tr>
+      <tr><td>Ethernet</td><td>10,000</td><td>1,000</td><td>281,600</td></tr>
+      <tr><td>Serial T1</td><td>1,544</td><td>20,000</td><td>2,169,856</td></tr>
+    </table>
+    <table style="margin-top:8px">
+      <tr><td>Hello / hold (LAN, fast links)</td><td class="n">5 / 15 s</td></tr>
+      <tr><td>Hello / hold (NBMA ≤ T1)</td><td class="n">60 / 180 s</td></tr>
+      <tr><td>Active timer (SIA)</td><td class="n">3 min</td></tr>
+      <tr><td>maximum-paths default</td><td class="n">4</td></tr>
+      <tr><td>IP protocol · multicast</td><td class="n">88 · 224.0.0.10 / FF02::A</td></tr>
+      <tr><td>AS number range</td><td class="n">1–65535</td></tr>
+    </table></div>
+
+  <div class="sec"><h3>1.10 OSPF <span class="src">OCG · NETACAD</span></h3>
+    <table class="mx"><tr><th>Type</th><th>DR</th><th>Hello/Dead</th><th>Neighbors</th></tr>
+      <tr><td>Broadcast</td><td class="y">yes</td><td>10/40</td><td>auto</td></tr>
+      <tr><td>Point-to-point</td><td class="x">no</td><td>10/40</td><td>auto</td></tr>
+      <tr><td>Non-broadcast</td><td class="y">yes</td><td>30/120</td><td class="d">static</td></tr>
+      <tr><td>Point-to-multipoint</td><td class="x">no</td><td>30/120</td><td>auto</td></tr>
+    </table>
+    <p class="why" style="margin:8px 0 4px"><b>Interface cost = reference bandwidth ÷ interface bandwidth</b> (minimum 1)</p>
+    <table class="mx"><tr><th>Link</th><th>Ref 100 Mbps (default)</th><th>Ref 100 Gbps</th></tr>
+      <tr><td>10 Mbps</td><td>10</td><td>10,000</td></tr><tr><td>100 Mbps</td><td>1</td><td>1,000</td></tr>
+      <tr><td>1 Gbps</td><td class="d">1</td><td>100</td></tr><tr><td>10 Gbps</td><td class="d">1</td><td>10</td></tr>
+      <tr><td>100 Gbps</td><td class="d">1</td><td>1</td></tr>
+    </table>
+    <p class="why" style="margin:8px 0 4px"><b>What enters each area type</b></p>
+    <table class="mx"><tr><th></th><th>1/2</th><th>3</th><th>4/5</th><th>7</th></tr>
+      <tr><td>Normal / backbone</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="x">✗</td></tr>
+      <tr><td>Stub</td><td class="y">✓</td><td class="y">✓</td><td class="x">✗</td><td class="x">✗</td></tr>
+      <tr><td>Totally stubby</td><td class="y">✓</td><td class="d">def</td><td class="x">✗</td><td class="x">✗</td></tr>
+      <tr><td>NSSA</td><td class="y">✓</td><td class="y">✓</td><td class="x">✗</td><td class="y">✓</td></tr>
+      <tr><td>Totally NSSA</td><td class="y">✓</td><td class="d">def</td><td class="x">✗</td><td class="y">✓</td></tr>
+    </table>
+    <table style="margin-top:8px">
+      <tr><td>LSA 1 Router · 2 Network (DR)</td><td class="n">inside the area</td></tr>
+      <tr><td>LSA 3 Summary · 4 ASBR summary</td><td class="n">from the ABR</td></tr>
+      <tr><td>LSA 5 External</td><td class="n">ASBR, whole domain</td></tr>
+      <tr><td>LSA 7 NSSA external</td><td class="n">NSSA only, ABR → 5</td></tr>
+      <tr><td>LSA 8 Link · 9 Intra-area prefix</td><td class="n">OSPFv3</td></tr>
+      <tr><td>Packets: 1 Hello · 2 DBD · 3 LSR · 4 LSU · 5 LSAck</td><td class="n">IP protocol 89</td></tr>
+      <tr><td>Neighbor states</td><td class="n">Down → Init → 2-Way → ExStart → Exchange → Loading → Full</td></tr>
+      <tr><td>DR priority default / never DR</td><td class="n">1 / 0</td></tr>
+      <tr><td>External seed metric (E2)</td><td class="n">20</td></tr>
+      <tr><td>Interface cost range</td><td class="n">1–65535</td></tr>
+      <tr><td>Multicast all / DR</td><td class="n">224.0.0.5 / .6 · FF02::5 / ::6</td></tr>
+    </table></div>
+
+  <div class="sec"><h3>1.11 BGP <span class="src">OCG · PCG · INE</span></h3>
+    <div class="mn"><em>W</em>e <em>L</em>ove <em>O</em>ranges <em>AS</em> <em>O</em>ranges <em>M</em>ean <em>P</em>ure <em>R</em>efreshment<br>
+    Weight ↑ · Local Pref ↑ · locally Originated · shorter AS-Path · Origin (i&lt;e&lt;?) · MED ↓ · Paths: eBGP over iBGP · lowest IGP to next hop · oldest eBGP · Router-ID ↓</div>
+    <table class="mx" style="margin-top:8px"><tr><th>Category</th><th>Attributes</th></tr>
+      <tr><td>Well-known mandatory</td><td>AS_PATH, NEXT_HOP, ORIGIN</td></tr>
+      <tr><td>Well-known discretionary</td><td>LOCAL_PREF, ATOMIC_AGGREGATE</td></tr>
+      <tr><td>Optional transitive</td><td>COMMUNITY, AGGREGATOR</td></tr>
+      <tr><td>Optional non-transitive</td><td>MED, ORIGINATOR_ID, CLUSTER_LIST</td></tr>
+      <tr><td>Cisco, not sent</td><td>Weight</td></tr>
+    </table>
+    <table style="margin-top:8px">
+      <tr><td>Port</td><td class="n">TCP 179</td></tr>
+      <tr><td>Keepalive / hold</td><td class="n">60 / 180 s</td></tr>
+      <tr><td>eBGP TTL / ebgp-multihop without value</td><td class="n">1 / 255</td></tr>
+      <tr><td>Weight default / local</td><td class="n">0 / 32768</td></tr>
+      <tr><td>Local Pref default</td><td class="n">100</td></tr>
+      <tr><td>Origin codes</td><td class="n">i IGP · e EGP · ? incomplete</td></tr>
+      <tr><td>Messages</td><td class="n">1 Open · 2 Update · 3 Notification · 4 Keepalive · 5 Route-refresh</td></tr>
+      <tr><td>Private AS (2-byte)</td><td class="n">64512–65534</td></tr>
+      <tr><td>Private AS (4-byte)</td><td class="n">4200000000–4294967294</td></tr>
+      <tr><td>4-byte AS, AS_TRANS for old peers</td><td class="n">up to 4294967295 · 23456</td></tr>
+      <tr><td>asdot example</td><td class="n">65546 = 1.10</td></tr>
+      <tr><td>Well-known communities</td><td class="n">no-export · no-advertise · local-AS · internet</td></tr>
+    </table>
+    <p class="why" style="margin:8px 0 0">asdot rule: high 16 bits . low 16 bits → 65546 = 1×65536 + 10 = <b>1.10</b>.</p></div>
+
+  <h2 class="dh" style="color:var(--c2)">2 · VPN</h2>
+
+  <div class="sec"><h3>2.1–2.2 MPLS and L3VPN <span class="src">OCG</span></h3>
+    <table>
+      <tr><td>Label header (label / TC / S / TTL)</td><td class="n">20 / 3 / 1 / 8 bits</td></tr>
+      <tr><td>Reserved labels</td><td class="n">0–15</td></tr>
+      <tr><td>IPv4 explicit null / router alert / IPv6 explicit null / implicit null</td><td class="n">0 / 1 / 2 / 3</td></tr>
+      <tr><td>LDP hello / session</td><td class="n">UDP / TCP 646 · 224.0.0.2</td></tr>
+      <tr><td>LDP hello / hold</td><td class="n">5 / 15 s</td></tr>
+      <tr><td>LDP session keepalive / hold</td><td class="n">60 / 180 s</td></tr>
+      <tr><td>RD format</td><td class="n">ASN:nn or IP:nn (64 bits)</td></tr>
+      <tr><td>VPNv4 prefix (RD + IPv4)</td><td class="n">96 bits</td></tr>
+      <tr><td>Labels in L3VPN</td><td class="n">2: outer LDP, inner VPN</td></tr>
+    </table></div>
+
+  <div class="sec"><h3>2.3 DMVPN, GRE, IPsec <span class="src">OCG</span></h3>
+    <table class="mx"><tr><th></th><th>P1</th><th>P2</th><th>P3</th></tr>
+      <tr><td>Spoke tunnel</td><td>p2p GRE</td><td>mGRE</td><td>mGRE</td></tr>
+      <tr><td>Spoke ↔ spoke</td><td class="x">✗</td><td class="y">✓</td><td class="y">✓</td></tr>
+      <tr><td>Hub summary</td><td class="y">✓</td><td class="x">✗</td><td class="y">✓</td></tr>
+    </table>
+    <table style="margin-top:8px">
+      <tr><td>GRE overhead (GRE 4 + new IP 20)</td><td class="n">24 bytes</td></tr>
+      <tr><td>Tunnel key adds</td><td class="n">4 bytes</td></tr>
+      <tr><td>ip mtu / ip tcp adjust-mss</td><td class="n">1400 / 1360</td></tr>
+      <tr><td>NHRP hold time default</td><td class="n">7200 s</td></tr>
+      <tr><td>NHRP network-id / tunnel key range</td><td class="n">1–4294967295 / 0–4294967295</td></tr>
+      <tr><td>NHRP messages</td><td class="n">Registration · Resolution · Redirect · Purge · Error</td></tr>
+      <tr><td>IP protocol GRE / ESP / AH</td><td class="n">47 / 50 / 51</td></tr>
+      <tr><td>ISAKMP / NAT-T</td><td class="n">UDP 500 / 4500</td></tr>
+      <tr><td>Good / failing phase 1 state</td><td class="n">QM_IDLE / MM_NO_STATE</td></tr>
+    </table></div>
+
+  <h2 class="dh" style="color:var(--c3)">3 · Security</h2>
+
+  <div class="sec"><h3>3.1 AAA <span class="src">OCG</span></h3>
+    <table>
+      <tr><td>TACACS+</td><td class="n">TCP 49</td></tr>
+      <tr><td>RADIUS auth / acct (RFC)</td><td class="n">UDP 1812 / 1813</td></tr>
+      <tr><td>RADIUS auth / acct (Cisco IOS default)</td><td class="n">UDP 1645 / 1646</td></tr>
+      <tr><td>Privilege levels user / privileged</td><td class="n">1 / 15 (0–15)</td></tr>
+    </table>
+    <p class="why" style="margin:8px 0 0"><b>Conflict:</b> OCG notes IOS uses 1645/1646 unless you set 1812/1813 — expect that mismatch as a troubleshooting question.</p></div>
+
+  <div class="sec"><h3>3.2 ACLs and uRPF <span class="src">OCG · CSLG</span></h3>
+    <table class="mx"><tr><th>ACL type</th><th>Numbers</th><th>Matches</th></tr>
+      <tr><td>Standard</td><td>1–99, 1300–1999</td><td>source only</td></tr>
+      <tr><td>Extended</td><td>100–199, 2000–2699</td><td>src, dst, protocol, ports</td></tr>
+    </table>
+    <table class="mx" style="margin-top:8px"><tr><th>Wildcard</th><th>Matches</th></tr>
+      <tr><td>0.0.0.0</td><td>one host (= host)</td></tr><tr><td>0.0.0.255</td><td>a /24</td></tr>
+      <tr><td>0.0.3.255</td><td>a /22</td></tr><tr><td>255.255.255.255</td><td>any</td></tr>
+    </table>
+    <p class="why" style="margin:6px 0 8px">Rule: wildcard = 255.255.255.255 − subnet mask.</p>
+    <table>
+      <tr><td>IPv6 implicit entries</td><td class="n">permit nd-na · permit nd-ns · deny ipv6 any any</td></tr>
+      <tr><td>Protocol numbers ICMP / TCP / UDP</td><td class="n">1 / 6 / 17</td></tr>
+      <tr><td>uRPF strict / loose</td><td class="n">reachable-via rx / any</td></tr>
+    </table></div>
+
+  <div class="sec"><h3>3.3 CoPP: what to classify <span class="src">OCG</span></h3>
+    <table class="mx"><tr><th>Class</th><th>Match</th></tr>
+      <tr><td>Routing</td><td>OSPF 89 · EIGRP 88 · BGP TCP 179 · BFD UDP 3784</td></tr>
+      <tr><td>Management</td><td>SSH 22 · Telnet 23 · HTTP 80 · HTTPS 443 · SNMP UDP 161</td></tr>
+      <tr><td>Monitoring</td><td>ICMP (1) · NTP UDP 123</td></tr>
+      <tr><td>class-default</td><td>everything else (police low, don't drop all)</td></tr>
+    </table></div>
+
+  <div class="sec"><h3>3.4 IPv6 first hop: ICMPv6 and DHCPv6 <span class="src">CSLG · PS</span></h3>
+    <table>
+      <tr><td>Router Solicitation / Advertisement</td><td class="n">ICMPv6 133 / 134</td></tr>
+      <tr><td>Neighbor Solicitation / Advertisement</td><td class="n">135 / 136</td></tr>
+      <tr><td>Redirect</td><td class="n">137</td></tr>
+      <tr><td>DHCPv6 client / server</td><td class="n">UDP 546 / 547</td></tr>
+      <tr><td>All DHCPv6 relays+servers / all servers</td><td class="n">FF02::1:2 / FF05::1:3</td></tr>
+      <tr><td>All nodes / all routers</td><td class="n">FF02::1 / FF02::2</td></tr>
+    </table>
+    <table class="mx" style="margin-top:8px"><tr><th>Feature</th><th>Watches</th></tr>
+      <tr><td>RA Guard</td><td>134 (RA)</td></tr><tr><td>DHCPv6 Guard</td><td>Advertise / Reply</td></tr>
+      <tr><td>ND inspection</td><td>135 / 136 (NS/NA)</td></tr><tr><td>Source Guard</td><td>data packets</td></tr>
+    </table></div>
+
+  <h2 class="dh" style="color:var(--c4)">4 · Services</h2>
+
+  <div class="sec"><h3>4.1 Device management <span class="src">OCG</span></h3>
+    <table>
+      <tr><td>SSH, SCP / Telnet</td><td class="n">TCP 22 / 23</td></tr>
+      <tr><td>HTTP / HTTPS</td><td class="n">TCP 80 / 443</td></tr>
+      <tr><td>TFTP / FTP</td><td class="n">UDP 69 / TCP 20-21</td></tr>
+      <tr><td>RSA key for SSHv2 (minimum / recommended)</td><td class="n">768 / 2048 bits</td></tr>
+      <tr><td>VTY lines (typical)</td><td class="n">0–4 or 0–15</td></tr>
+      <tr><td>exec-timeout default</td><td class="n">10 min</td></tr>
+    </table></div>
+
+  <div class="sec"><h3>4.2 SNMP <span class="src">OCG</span></h3>
+    <table class="mx"><tr><th>Version / level</th><th>Auth</th><th>Encrypt</th></tr>
+      <tr><td>v2c</td><td>community</td><td class="x">✗</td></tr>
+      <tr><td>v3 noAuthNoPriv</td><td>username</td><td class="x">✗</td></tr>
+      <tr><td>v3 authNoPriv</td><td class="y">MD5/SHA</td><td class="x">✗</td></tr>
+      <tr><td>v3 authPriv</td><td class="y">MD5/SHA</td><td class="y">DES/3DES/AES</td></tr>
+    </table>
+    <table style="margin-top:8px"><tr><td>Agent (get/set) / traps &amp; informs</td><td class="n">UDP 161 / 162</td></tr></table></div>
+
+  <div class="sec"><h3>4.3 Logging and telemetry <span class="src">OCG</span></h3>
+    <table class="mx"><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr>
+      <tr><td>emerg</td><td>alert</td><td>crit</td><td>err</td><td>warn</td><td>notif</td><td>info</td><td>debug</td></tr></table>
+    <p class="why" style="margin:8px 0 6px">Mnemonic: <b>E</b>very <b>A</b>wesome <b>C</b>isco <b>E</b>ngineer <b>W</b>ill <b>N</b>eed <b>I</b>ce cream <b>D</b>aily. Level N sends 0…N.</p>
+    <table>
+      <tr><td>Syslog</td><td class="n">UDP 514, facility local7</td></tr>
+      <tr><td>NTP</td><td class="n">UDP 123</td></tr>
+      <tr><td>Telemetry update-policy periodic unit</td><td class="n">1/100 s (6000 = 60 s)</td></tr>
+    </table></div>
+
+  <div class="sec"><h3>4.4 DHCP <span class="src">OCG</span></h3>
+    <table>
+      <tr><td>DHCPv4 server / client</td><td class="n">UDP 67 / 68</td></tr>
+      <tr><td>DHCPv6 client / server</td><td class="n">UDP 546 / 547</td></tr>
+      <tr><td>v4 messages</td><td class="n">DISCOVER → OFFER → REQUEST → ACK</td></tr>
+      <tr><td>v6 messages</td><td class="n">SOLICIT → ADVERTISE → REQUEST → REPLY</td></tr>
+      <tr><td>IOS pool lease default</td><td class="n">1 day</td></tr>
+      <tr><td>Option 3 router · 6 DNS · 15 domain</td><td class="n">3 / 6 / 15</td></tr>
+      <tr><td>Option 43 vendor (WLC) · 66 / 150 TFTP · 82 relay info</td><td class="n">43 / 66 / 150 / 82</td></tr>
+    </table>
+    <table class="mx" style="margin-top:8px"><tr><th>RA flags</th><th>M</th><th>O</th><th>Address</th><th>Other info</th></tr>
+      <tr><td>SLAAC</td><td>0</td><td>0</td><td>SLAAC</td><td>RA</td></tr>
+      <tr><td>Stateless DHCPv6</td><td>0</td><td>1</td><td>SLAAC</td><td>DHCPv6</td></tr>
+      <tr><td>Stateful DHCPv6</td><td>1</td><td>–</td><td>DHCPv6</td><td>DHCPv6</td></tr>
+    </table></div>
+
+  <div class="sec"><h3>4.5 IP SLA defaults <span class="src">OCG</span></h3>
+    <table>
+      <tr><td>Frequency</td><td class="n">60 s</td></tr>
+      <tr><td>Timeout / threshold</td><td class="n">5000 ms / 5000 ms</td></tr>
+      <tr><td>udp-jitter packets / interval</td><td class="n">10 / 20 ms</td></tr>
+      <tr><td>Responder control port</td><td class="n">UDP 1967</td></tr>
+      <tr><td>Track states</td><td class="n">Up / Down (reachability) · OK / over threshold (state)</td></tr>
+    </table></div>
+
+  <div class="sec"><h3>4.6 NetFlow <span class="src">CSLG · PCG</span></h3>
+    <table>
+      <tr><td>Export port if unset (IOS)</td><td class="n">UDP 9995</td></tr>
+      <tr><td>Common collector / IPFIX standard</td><td class="n">UDP 2055 / 4739</td></tr>
+      <tr><td>Cache active / inactive timeout</td><td class="n">1800 s / 15 s</td></tr>
+      <tr><td>Formats on the blueprint</td><td class="n">v9 · Flexible NetFlow · IPFIX (v10)</td></tr>
+      <tr><td>Template data timeout example</td><td class="n">300 s</td></tr>
+    </table>
+    <p class="why" style="margin:8px 0 0"><b>Conflict:</b> CSLG says 9995 is used when no port is set; examples often use 2055. Read the exporter config in the exhibit.</p></div>
+
+  <div class="sec"><h3>4.7 Catalyst Center health score <span class="src">CSLG</span></h3>
+    <table class="mx"><tr><th>0</th><th>1–3</th><th>4–7</th><th>8–10</th></tr>
+      <tr><td style="color:var(--mute)">no data</td><td class="x">poor</td><td class="d">fair</td><td class="y">good</td></tr></table></div>
+</section>
+
+<!-- SEARCH -->
+<section class="view" id="v-find">
+  <input id="sq" type="search" placeholder="Search cards, quiz, panels, numbers…" autocomplete="off" style="width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:500 16px Inter;margin-bottom:10px">
+  <div class="filters" id="sf"></div>
+  <div id="sres"><p class="hint">Type at least 2 letters, e.g. <b>ExStart</b>, <b>NHRP</b>, <b>646</b>, <b>RA guard</b>.</p></div>
+</section>
+
+<!-- EXAM DAY -->
+<section class="view" id="v-day">
+  <div class="sec tip"><h3>⏱ Exam-day plan</h3>
+    <div class="lsa">
+      <b>Pace</b><span>~60 questions in 90 min → about <b>1.5 min</b> each (question count is a third-party estimate). Check the clock at question 20 (≤30 min) and 40 (≤60 min).</span>
+      <b>No going back</b><span>Cisco exams normally don't let you return to earlier questions. Decide, then move on.</span>
+      <b>Read output first</b><span>Look for the state, counter or missing line in the exhibit, then match it to an option.</span>
+      <b>Eliminate</b><span>Drop answers that can't produce the symptom shown (e.g. timers for an MTU problem), then compare what's left.</span>
+      <b>Drag & drop</b><span>Do the pairs you're sure of first. What's left usually solves itself.</span>
+    </div>
+  </div>
+
+  <p class="hint">One line per official sub-objective (blueprint v1.1). Lettered sub-items (a, b, c…) are listed inside the line.</p>
+
+  <div class="sec"><h3 style="color:var(--c1)">1 · Layer 3 Technologies <span class="src">35 %</span></h3><div class="lsa ek">
+    <b><code>1.1</code>Administrative distance (all protocols)</b><span>Connected 0 · static 1 · eBGP 20 · EIGRP 90 · OSPF 110 · RIP 120 · EIGRP ext 170 · iBGP 200 · 255 = never installed · floating static: AD above the primary · <em>distance ospf external 171</em> · distance eigrp 90 170 · distance bgp 20 200 200</span>
+    <b><code>1.2</code>Route maps (attributes, tagging, filtering)</b><span><em>Filtering:</em> separate match lines = AND, values on one line = OR · ACL deny = no match → next sequence · implicit deny at the end · prefix-list ge/le · <em>Tagging:</em> set tag / match tag · <em>Attributes:</em> set metric, metric-type, local-preference, weight, as-path prepend</span>
+    <b><code>1.3</code>Loop prevention (filtering, tagging, split horizon, route poisoning)</b><span>Split horizon (DMVPN hub: <em>no ip split-horizon eigrp</em>) · poisoning (RIP 16, EIGRP infinite delay) · tag + deny at redistribution points · eBGP AS_PATH check · iBGP split horizon → full mesh or RR · OSPF: inter-area via Area 0 only</span>
+    <b><code>1.4</code>Redistribution (any protocol or source)</b><span>Seed metric: EIGRP and RIP = <em>infinity</em>, OSPF = 20 (BGP routes 1) · route must be in the RIB from that source · connected/static need redistribute connected/static · <em>bgp redistribute-internal</em> for iBGP · subnets keyword (old IOS) · E1 &gt; E2 · multipoint → AD fix or tags</span>
+    <b><code>1.5</code>Manual and auto-summarization</b><span>EIGRP: per interface → Null0 route AD 5 · <em>no auto-summary</em> for discontiguous networks · OSPF: <em>area range</em> on the ABR, <em>summary-address</em> on the ASBR · BGP: aggregate-address summary-only (as-set keeps AS info)</span>
+    <b><code>1.6</code>Policy-based routing</b><span>route-map + <em>ip policy</em> on the <em>ingress</em> interface · ip local policy for the router's own traffic · set ip next-hop (before RIB) vs set ip default next-hop (only if no route) · verify-availability + track · show route-map, debug ip policy</span>
+    <b><code>1.7</code>VRF-Lite</b><span>vrf definition + vrf forwarding (removes the interface IP) · one subinterface per VRF per hop · ping/show ip route <em>vrf X</em> · router ospf N vrf X · EIGRP/BGP address-family ipv4 vrf X (BGP VRF needs an RD)</span>
+    <b><code>1.8</code>Bidirectional Forwarding Detection</b><span>bfd interval × multiplier = detection time · register each client: ip ospf bfd, EIGRP bfd all-interfaces, BGP <em>neighbor x fall-over bfd</em> · async vs echo mode</span>
+    <b><code>1.9</code>EIGRP (classic and named; VRF and global)</b><span><em>a Address families:</em> named mode AF ipv4/ipv6 [vrf X]; IPv6 uses link-local + needs a router ID · <em>b Neighbors/auth:</em> AS, K values, subnet, auth must match (not timers); MD5, named also HMAC-SHA-256 · <em>c Loop-free paths:</em> successor, FS if <em>RD &lt; FD</em>, Active → queries, SIA after 3 min · <em>d Stubs:</em> connected + summary by default, receive-only, never queried · <em>e Load balancing:</em> 4 equal paths; variance N uses FS only · <em>f Metrics:</em> bandwidth + delay (K1, K3), wide metrics in named mode, seed metric on redistribution</span>
+    <b><code>1.10</code>OSPF (v2/v3)</b><span><em>a AFs:</em> OSPFv3 carries IPv4 + IPv6, link-local neighbors, LSA 8/9 · <em>b Neighbors/auth:</em> area, stub flag, subnet, timers, auth, unique RID must match; <em>ExStart = MTU</em>; 2-Way between DROthers is normal · <em>c(i) Network types:</em> broadcast + P2P 10/40 (DR only on broadcast), non-broadcast + P2MP 30/120, non-broadcast needs neighbor commands · <em>c(ii) Areas:</em> backbone, normal, transit, stub (no 4/5), totally stubby (no 3/4/5), NSSA (type 7) · <em>c(iii) Routers:</em> internal, backbone, ABR, ASBR · <em>c(iv) Virtual link:</em> via a non-stub transit area, uses RIDs · <em>d Path preference:</em> O &gt; O IA &gt; E1 &gt; E2, reference bandwidth</span>
+    <b><code>1.11</code>BGP (iBGP and eBGP; unicast and VRF-Lite)</b><span><em>a AFs:</em> address-family ipv6 + <em>neighbor activate</em> · <em>b Neighbors:</em> Idle = no route/TTL/source, Active = TCP 179 fails · update-source + <em>ebgp-multihop</em> · <em>next-hop-self</em> · 4-byte AS (asplain/asdot) · private AS 64512–65534, remove-private-as · route refresh = soft clear · synchronization (off by default) · peer groups · timers 60/180 · <em>c Path:</em> Weight → LP → local → AS-path → origin → MED → eBGP → IGP · <em>d RR:</em> client → all, non-client → clients only · <em>e Policies:</em> prefix-list / route-map / filter-list in or out · LP out, prepend/MED in · <em>VRF-Lite:</em> address-family ipv4 vrf X</span>
+  </div></div>
+
+  <div class="sec"><h3 style="color:var(--c2)">2 · VPN Technologies <span class="src">20 %</span></h3><div class="lsa ek">
+    <b><code>2.1</code>MPLS operations (LSR, LDP, label switching, LSP)</b><span>LER push/pop, LSR swap · <em>LDP</em> UDP 646 hellos, TCP 646 session, transport address must be reachable · LSP is one-way · PHP with implicit null (3) · LIB vs LFIB</span>
+    <b><code>2.2</code>MPLS Layer 3 VPN</b><span>VRF per customer on the PE · <em>RD = makes prefixes unique</em>, <em>RT = controls import/export</em> · PE to PE over MP-iBGP VPNv4 · inner VPN label + outer LDP label · P routers don't know customer routes · CE–PE: static, OSPF, EIGRP, eBGP</span>
+    <b><code>2.3</code>DMVPN, single hub</b><span><em>a GRE/mGRE:</em> hub mGRE, Phase 1 spokes p2p GRE, tunnel key must match, MTU 1400 / MSS 1360, RECURDOWN = recursive routing · <em>b NHRP:</em> network-id, NHS + NBMA, <em>ip nhrp map multicast dynamic</em> · <em>c IPsec:</em> IPsec profile + <em>tunnel protection</em>, transport mode, isakmp QM_IDLE · <em>d Dynamic neighbor:</em> spokes register with the hub, no static spoke maps on the hub · <em>e Spoke-to-spoke:</em> Phase 2 (no next-hop-self, no summary) or Phase 3 hub <em>redirect</em> + spoke <em>shortcut</em></span>
+  </div></div>
+
+  <div class="sec"><h3 style="color:var(--c3)">3 · Infrastructure Security <span class="src">20 %</span></h3><div class="lsa ek">
+    <b><code>3.1</code>IOS AAA (TACACS+, RADIUS, local database)</b><span>aaa new-model locks VTY to the local database · keep a local user as fallback · next method only on <em>error</em>, never on reject · apply the list with login authentication on the line · TACACS+ TCP 49 · RADIUS 1812/1813 vs IOS default 1645/1646 · test aaa</span>
+    <b><code>3.2</code>Router security features</b><span><em>a IPv4 ACLs:</em> standard near destination, extended near source, <em>time-based</em> needs time-range + correct clock, inbound ACLs must permit routing protocols, outbound ACLs ignore the router's own packets · <em>b IPv6 traffic filter:</em> <em>ipv6 traffic-filter</em>, implicit ND permits before the implicit deny · <em>c uRPF:</em> strict rx, loose any, allow-default, needs CEF</span>
+    <b><code>3.3</code>Control plane policing (Telnet, SSH, HTTP(S), SNMP, EIGRP, OSPF, BGP)</b><span>ACL → class-map → policy-map (police) → <em>control-plane service-policy input</em> · match Telnet 23, SSH 22, HTTP/HTTPS 80/443, SNMP UDP 161, EIGRP 88, OSPF 89, BGP TCP 179 · unmatched → class-default · case-sensitive names · show policy-map control-plane</span>
+    <b><code>3.4</code>IPv6 first hop security (describe)</b><span><em>RA Guard</em> = RAs only from router ports · <em>DHCPv6 Guard</em> = server messages only from server ports · <em>binding table</em> from snooping ND/DHCPv6 · <em>ND inspection/snooping</em> = spoofed NS/NA · <em>Source Guard</em> = spoofed sources in data</span>
+  </div></div>
+
+  <div class="sec"><h3 style="color:var(--c4)">4 · Infrastructure Services <span class="src">25 %</span></h3><div class="lsa ek">
+    <b><code>4.1</code>Device management</b><span><em>a Console and VTY:</em> logging synchronous, exec-timeout, <em>access-class</em> on VTY, transport input · <em>b Telnet, HTTP, HTTPS, SSH, SCP:</em> SSH needs hostname, domain-name, RSA key, user; ip http secure-server; SCP needs AAA · <em>c (T)FTP:</em> TFTP UDP 69 no auth, FTP TCP 20/21 with ip ftp username/password</span>
+    <b><code>4.2</code>SNMP (v2c, v3)</b><span>v2c: community + ACL · v3: view → group → user · noAuthNoPriv / authNoPriv / <em>authPriv</em> · level must match · users hidden from running-config (show snmp user) · agent UDP 161, traps/informs UDP 162</span>
+    <b><code>4.3</code>Logging (local, syslog, debugs, conditional debugs, timestamps, telemetry)</b><span>Levels 0 emerg … 7 debug · local: logging buffered / console · syslog: logging host, logging trap N, UDP 514 · <em>debug condition</em> then debug · terminal monitor on VTY · <em>service timestamps</em> + NTP · telemetry: push, periodic or on-change</span>
+    <b><code>4.4</code>DHCP for IPv4 and IPv6 (client, server, relay, options)</b><span>Client: ip address dhcp / ipv6 address dhcp · server: pool, default-router, dns-server, <em>excluded-address</em> · relay: <em>ip helper-address</em> on the client side, giaddr picks the pool, <em>ipv6 dhcp relay destination</em> · DORA / SARR · RA M and O flags · options 3, 6, 43, 66/150, 82</span>
+    <b><code>4.5</code>IP SLA (jitter, tracking objects, delay, connectivity)</b><span>Connectivity + delay: icmp-echo (RTT) · jitter: udp-jitter + <em>ip sla responder</em> · nothing runs without <em>ip sla schedule</em> · track N ip sla N reachability → static route track · delay up/down against flapping</span>
+    <b><code>4.6</code>NetFlow (v9, Flexible NetFlow, IPFIX)</b><span>record (match = key, collect = non-key) → exporter (destination, UDP port, v9 or IPFIX) → monitor → <em>ip flow monitor</em> on the interface · show flow monitor cache · no data → check exporter port and ACLs</span>
+    <b><code>4.7</code>Catalyst Center Assurance (connectivity, monitoring, device health, network health)</b><span>Network health overview · <em>device health</em> 1–3 poor, 4–7 fair, 8–10 good (Device 360) · client health and onboarding times (Client 360) · <em>connectivity</em>: Path Trace · monitoring over time: time travel</span>
+  </div></div>
+
+  <div class="sec"><h3>⚠️ Classic traps</h3>
+    <div class="lsa">
+      <b>Timers in EIGRP</b><span>Mismatched hello/hold don't stop EIGRP adjacency (they do in OSPF).</span>
+      <b>Variance</b><span>Never uses a path that fails the feasibility condition.</span>
+      <b>AAA reject</b><span>A server reject doesn't fall back to local. Only an unreachable server does.</span>
+      <b>Outbound ACL</b><span>Doesn't block OSPF hellos the router sends.</span>
+      <b>ACL deny in a route map</b><span>Means "no match", not "drop".</span>
+      <b>RD vs RT</b><span>RD makes it unique; RT decides import. RDs needn't match.</span>
+      <b>Phase 3 DMVPN</b><span>Needs redirect on the hub <i>and</i> shortcut on the spokes.</span>
+      <b>NetFlow v5</b><span>Dropped from v1.1. Expect v9, Flexible NetFlow and IPFIX.</span>
+    </div>
+  </div>
+</section>
