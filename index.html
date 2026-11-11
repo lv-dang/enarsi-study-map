@@ -103,7 +103,7 @@ details.sec[open] summary{margin-bottom:12px}
 .mb span{position:relative;font:600 10px 'JetBrains Mono';padding-left:4px;line-height:16px;color:#e8ecf5;text-shadow:0 0 3px #000}
 .cov td,.cov th{padding:4px 3px;font-size:11px}
 .qd{background:#141b2b;border:1px solid var(--line);border-radius:12px;margin:0 0 12px}
-.card.big{height:500px}.card.big .back{justify-content:flex-start;overflow:auto}
+.card.big{height:500px}.card.big .back{justify-content:flex-start;overflow:visible}
 .back .qd{margin:0}
 .opt.sel{border-color:var(--c1);background:#16333a}
 .opt:disabled{opacity:.6}
@@ -111,6 +111,8 @@ mark{background:#5a4a12;color:#ffe9a8;border-radius:3px;padding:0 2px}
 nav .in{flex-wrap:nowrap}
 .ek{grid-template-columns:38px 1fr;row-gap:7px}.ek b{color:var(--mute)!important;font-size:12px}.ek span{font-size:13px;line-height:1.45}.ek em{color:var(--c3);font-style:normal;font-weight:600}
 .mt{display:flex;flex-direction:column;align-items:stretch;gap:6px;background:var(--panel2);border:1px solid transparent;border-radius:12px;padding:9px 10px;margin-bottom:8px;font-size:14px}.mt span{flex:1}.mt select{width:100%;background:#1f2840;color:var(--ink);border:1px solid #4a5a80;border-radius:8px;padding:7px 6px;font:500 13px Inter}.mt.r{border-color:var(--ok)}.mt.w{border-color:var(--bad)}
+.rv{margin:4px 0 8px}.rvo{padding:7px 10px;border-radius:8px;margin-bottom:4px;border:1px solid var(--line);font-size:13px;line-height:1.45}.rvo.r{border-color:var(--ok);background:rgba(72,187,120,.12)}.rvo.r b{color:var(--ok)}.rvo.w{border-color:var(--bad);background:rgba(245,101,101,.12)}.rvo.w b,.rvo.w i{color:var(--bad)}.rvo i{font-style:normal;font-weight:600}
+.ver{font:500 11px "JetBrains Mono";color:var(--mute);margin-top:6px}.ver summary{cursor:pointer;list-style:none}.ver summary::-webkit-details-marker{display:none}.ver ul{margin:6px 0 0;padding-left:18px;font:400 12px/1.5 Inter;color:#c3cbe0}.ver li b{font-family:"JetBrains Mono";color:var(--c1)}.ver li span{color:var(--mute)}
 </style>
 <style>.ek{grid-template-columns:1fr!important;row-gap:3px}.ek b{font:600 13px Inter!important;color:var(--ink)!important;margin-top:9px}.ek b:first-child{margin-top:0}.ek b code{font:600 12px 'JetBrains Mono';color:var(--mute);margin-right:6px}.ek span{color:#c3cbe0}details.cfg{margin-top:12px;border:1px solid var(--line);border-radius:10px;background:#121826;min-width:0}details.cfg summary{cursor:pointer;padding:9px 12px;font:600 13px Inter;color:var(--c1);list-style:none;display:flex;gap:8px;align-items:center}details.cfg summary::-webkit-details-marker{display:none}details.cfg summary::after{content:'+';margin-left:6px;color:var(--mute)}details.cfg[open] summary::after{content:'–'}details.cfg[open] summary{border-bottom:1px solid var(--line)}.cfgb{padding:4px 10px 10px}.cl{font:600 10px 'JetBrains Mono';letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:10px 0 4px}pre.cf{margin:0;background:#0b0f18;border-radius:8px;padding:8px 10px;font:500 11px/1.5 'JetBrains Mono',monospace;color:#cfe3ff;overflow-x:auto;white-space:pre;max-width:100%}pre.out{color:#c3cbe0}pre.cf .cm{color:#6b7896}pre.cf .hl{background:#4a3c10;color:#ffe9a8}table.tc td{font-size:12px;vertical-align:top;padding:5px 4px}table.tc td:first-child{width:46%}#v-nums td.n{white-space:normal;word-break:break-word;max-width:55%}#v-nums .mx td{word-break:break-word}table.tc code{font:500 11px 'JetBrains Mono',monospace;color:var(--c1);word-break:break-word}</style>
 </head>
@@ -118,6 +120,7 @@ nav .in{flex-wrap:nowrap}
 <header>
   <h1>ENARSI <span>300-410</span> · Last Minute</h1>
   <div class="sub">Troubleshoot like the exam: symptom → cause → fix · blueprint v1.1</div>
+  <details class="ver"><summary>v1.16 · updated 2026-11-11 · what's new ▾</summary><ul><li><b>v1.16</b> <span>2026-11-11</span> · Fixes from a full line-by-line audit: clearer stems (default timers, only path, tunnel keys), consistent IPSEC and RADIUS port wording, real debug and show strings, link-local BGP syntax; three repeated or trivia questions replaced (poison reverse, command authorization fallback, CoPP and pings to the router).</li><li><b>v1.15</b> <span>2026-11-11</span> · Fixes from two external audits: BFD, MPLS, virtual-link, DMVPN, CoPP, BGP and IPv6 items corrected or clarified; two near-duplicate questions replaced. Mock exams survive a page reload.</li><li><b>v1.14</b> <span>2026-11-11</span> · Mock exam review marks your wrong picks next to the right answer. Version number and change log added.</li><li><b>v1.13</b> <span>2026-11-07</span> · Flash cards grow to fit their content, so there&#x27;s no inner scrollbar.</li><li><b>v1.12</b> <span>2026-11-07</span> · 25 IPv6 questions and 15 IPv6 cards. Near-duplicate cards reworded. Each diagram has its own screen-reader label.</li><li><b>v1.11</b> · Missing configurations, sample outputs and troubleshooting commands filled in (38 config blocks).</li><li><b>v1.10</b> · More diagrams: DMVPN topology, eBGP loopbacks, MPLS core, asymmetric uRPF, DMVPN behind NAT, NetFlow direction.</li><li><b>v1.9</b> · Full fact-check with fixes. Gaps on the Overview, Numbers and Exam day pages filled.</li><li><b>v1.8</b> · VPN and security questions, domain-weighted practice, symptom cards, order and match items, longer explanations, stricter readiness rule.</li><li><b>v1.7</b> · Diagrams for topics that had none.</li><li><b>v1.6</b> · Option lengths rebalanced; exhibit and choose-two questions; sample outputs checked.</li><li><b>v1.5</b> · Numbers page covers every sub-objective.</li><li><b>v1.4</b> · Configuration, sample output and troubleshooting blocks on the Overview.</li><li><b>v1.3</b> · Exam day page names the topic behind each number; coverage gaps filled.</li><li><b>v1.0</b> · First version: overview, trigger cards, scenario quiz, numbers, exam day, search.</li></ul></details>
 </header>
 <nav><div class="in">
   <button data-v="map" class="on">🗺️ Overview</button>
@@ -138,7 +141,7 @@ nav .in{flex-wrap:nowrap}
       <b>Quiz ≥148</b><span>More than two full exams of unique questions, weighted by domain, with at least 5 per sub-objective so you're scored on questions you haven't memorized.</span>
       <b>Cards ≥155</b><span>At least 5 facts per sub-objective, more for EIGRP, OSPF, BGP and DMVPN.</span>
       <b>Visuals ≥31</b><span>At least one diagram or table for every one of the 25 sub-objectives.</span>
-      <b>Ready when</b><span>In <i>every</i> domain: ≥80 % of the quiz seen, ≥85 % right on the first try, and ≥20 % practiced in the last 14 days. Plus one mock exam ≥85 % in the last 14 days. Your status is right below.</span>
+      <b>Ready when</b><span>In <i>every</i> domain: ≥80 % of the quiz seen, ≥85 % right on the first try, and ≥20 % practiced in the last 14 days. Plus one mock exam ≥85 % in the last 14 days. These are practice targets, not an official pass predictor. Your status is right below.</span>
     </div>
     <div id="ready" style="margin-top:12px"></div>
     <h3 style="font:700 14px 'Space Grotesk';margin:16px 0 6px">Blueprint v1.1 coverage by sub-objective</h3><p class="why" style="margin:0 0 6px">25 official sub-objectives. v1.1 added VRF/global context to EIGRP, unicast/VRF-Lite to BGP, telemetry to logging, IPFIX to NetFlow, and renamed DNA Center to Catalyst Center. NetFlow v5 was dropped and isn't covered here.</p>
@@ -235,6 +238,29 @@ R1# show ip prefix-list detail LAN
 ip prefix-list LAN:
 <span class="hl">   seq 5 permit 10.1.0.0/16 le 24 (hit count: 12, refcount: 1)</span></pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show route-map NAME</code></td><td>sequences, match/set clauses, policy match counters</td></tr><tr><td><code>show ip prefix-list detail</code></td><td>hit count 0 = the list never matches</td></tr><tr><td><code>show access-lists</code></td><td>ACL matches used by the route map</td></tr><tr><td><code>show ip ospf database external PREFIX</code></td><td>metric type, tag set by the route map</td></tr><tr><td><code>show ip route PREFIX</code></td><td>Tag value on the installed route</td></tr></table></div>
     </details>
+    <details class="cfg"><summary>⌨️ route filtering with distribute-list <span class="src">PCG · NETACAD</span></summary><div class="cfgb"><div class="cl">Configuration</div><pre class="cf cfg">ip prefix-list NO-LAB seq 5 deny 10.99.0.0/16 le 32
+ip prefix-list NO-LAB seq 10 permit 0.0.0.0/0 le 32
+<span class="cm">!</span>
+<span class="cm">! OSPF: &quot;in&quot; only keeps routes out of the RIB, the LSAs stay</span>
+router ospf 1
+ distribute-list prefix NO-LAB in
+<span class="cm">!</span>
+<span class="cm">! EIGRP: filters what is advertised/received on the wire</span>
+router eigrp 100
+ distribute-list route-map EIGRP-OUT out GigabitEthernet0/1
+<span class="cm"> ! redistribution filter: distribute-list 30 out ospf 1</span></pre><div class="cl">Sample output (trimmed)</div><pre class="cf out">R1# show ip protocols | include Routing Protocol|filter
+Routing Protocol is &quot;ospf 1&quot;
+  Outgoing update filter list for all interfaces is not set
+<span class="hl">  Incoming update filter list for all interfaces is (prefix-list) NO-LAB</span>
+Routing Protocol is &quot;eigrp 100&quot;
+  Outgoing update filter list for all interfaces is not set
+<span class="hl">    GigabitEthernet0/1 filtered by EIGRP-OUT</span>
+
+R1# show ip ospf database summary 10.99.1.0 | include State ID
+<span class="hl">  Link State ID: 10.99.1.0 (summary Network Number)</span>
+R1# show ip route 10.99.1.0
+<span class="hl">% Subnet not in table</span></pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show ip protocols</code></td><td>which distribute-lists are applied, direction, interface</td></tr><tr><td><code>show ip prefix-list detail / show access-lists / show route-map</code></td><td>what the filter matches (hit counts)</td></tr><tr><td><code>show ip ospf database</code></td><td>OSPF: the LSA is still there, only the RIB entry is filtered</td></tr><tr><td><code>show ip route PREFIX</code></td><td>route missing only on the filtering router?</td></tr></table></div>
+    </details>
   </details>
 
   <details class="sec" data-d="l" data-o="1.3"><summary>Loop prevention: split horizon on a hub <span class="src">OCG</span></summary>
@@ -313,7 +339,12 @@ EIGRP-IPv4 Topology Entry for AS(100)/ID(1.1.1.1) for 10.9.0.0/16
         Originating router is 1.1.1.1 (this system)
         AS number of route is 1
 <span class="hl">        External protocol is OSPF, external metric is 2</span>
-        Administrator tag is 0 (0x00000000)</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show ip protocols</code></td><td>&#x27;Redistributing … from&#x27; on the boundary router</td></tr><tr><td><code>show ip route PREFIX (boundary)</code></td><td>is the source route really in the RIB from that protocol?</td></tr><tr><td><code>show ip eigrp topology PREFIX</code></td><td>External data: protocol, metric, tag</td></tr><tr><td><code>show ip ospf database external | nssa-external</code></td><td>type 5/7 LSA present, metric type, tag</td></tr><tr><td><code>show ip route on far routers</code></td><td>D EX / O E2 / O E1 present, best path sane?</td></tr></table></div>
+        Administrator tag is 0 (0x00000000)
+
+R1# show bgp ipv4 unicast | include Network|10.9.0.0
+     Network          Next Hop        Metric LocPrf Weight Path
+<span class="hl">*&gt;   10.9.0.0/16      10.0.13.3            2         32768 ?</span>
+! redistributed into BGP: origin ? (incomplete), MED = IGP metric, weight 32768</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show ip protocols</code></td><td>&#x27;Redistributing … from&#x27; on the boundary router</td></tr><tr><td><code>show ip route PREFIX (boundary)</code></td><td>is the source route really in the RIB from that protocol?</td></tr><tr><td><code>show ip eigrp topology PREFIX</code></td><td>External data: protocol, metric, tag</td></tr><tr><td><code>show ip ospf database external | nssa-external</code></td><td>type 5/7 LSA present, metric type, tag</td></tr><tr><td><code>show ip route on far routers</code></td><td>D EX / O E2 / O E1 present, best path sane?</td></tr></table></div>
     </details>
   </details>
 
@@ -435,13 +466,13 @@ R1# ping vrf RED 10.20.0.1
 router ospf 1
  bfd all-interfaces
 router bgp 65100
- neighbor 203.0.113.1 fall-over bfd</pre><div class="cl">Sample output (trimmed)</div><pre class="cf out">R1# show bfd neighbors details
+ neighbor 10.0.12.2 fall-over bfd</pre><div class="cl">Sample output (trimmed)</div><pre class="cf out">R1# show bfd neighbors details
 IPv4 Sessions
 NeighAddr        LD/RD   RH/RS   State   Int
 <span class="hl">10.0.12.2         1/1    Up      Up      Gi0/1</span>
   Session state is UP and using echo function with 50 ms interval.
   Rx Count: 1205, Tx Count: 1210
-<span class="hl">  Registered protocols: OSPF CEF</span></pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show bfd neighbors [details]</code></td><td>session Up, intervals, registered protocols</td></tr><tr><td><code>show ip ospf interface INT</code></td><td>&#x27;BFD enabled&#x27;</td></tr><tr><td><code>debug bfd event</code></td><td>session down events</td></tr></table></div>
+<span class="hl">  Registered protocols: OSPF BGP CEF</span></pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show bfd neighbors [details]</code></td><td>session Up, intervals, registered protocols</td></tr><tr><td><code>show ip ospf interface INT</code></td><td>&#x27;BFD enabled&#x27;</td></tr><tr><td><code>debug bfd event</code></td><td>session down events</td></tr></table></div>
     </details>
   </details>
 
@@ -491,6 +522,34 @@ EIGRP-IPv4 VR(CORP) Topology Entry for AS(100)/ID(1.1.1.1) for 10.4.4.0/24
   10.0.13.3 (GigabitEthernet0/2), from 10.0.13.3, Send flag is 0x0
 <span class="hl">      Composite metric is (3932160/2621440), route is Internal</span>
 ! (FD/RD): RD 2621440 &lt; FD 3276800 → feasible successor</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show ip eigrp neighbors</code></td><td>neighbor up? Q Cnt stuck &gt; 0, uptime resetting</td></tr><tr><td><code>show ip protocols</code></td><td>AS, K values, variance, stub, networks, passive interfaces</td></tr><tr><td><code>show ip eigrp interfaces [detail]</code></td><td>interface in EIGRP? auth, split horizon, timers</td></tr><tr><td><code>show ip eigrp topology [all-links]</code></td><td>FD/RD, successors, feasible successors</td></tr><tr><td><code>show eigrp address-family ipv6 neighbors</code></td><td>IPv6 AF neighbors (link-local)</td></tr><tr><td><code>show ip eigrp vrf RED neighbors</code></td><td>VRF instance</td></tr></table></div>
+    </details>
+    <details class="cfg"><summary>⌨️ verify IPv6 AF, authentication and unequal-cost paths <span class="src">OCG</span></summary><div class="cfgb"><div class="cl">Configuration</div><pre class="cf cfg"><span class="cm">! commands only: the config is in the block above</span>
+R1# show eigrp address-family ipv6 neighbors
+R1# show key chain
+R1# show ip eigrp interfaces detail Gi0/2
+R1# show ip route 10.4.4.0</pre><div class="cl">Sample output (trimmed)</div><pre class="cf out">R1# show eigrp address-family ipv6 neighbors
+EIGRP-IPv6 VR(CORP) Address-Family Neighbors for AS(100)
+H   Address                 Interface   Hold Uptime    SRTT  RTO  Q  Seq
+0   Link-local address:     Gi0/1         12 00:41:03     2  100  0  21
+<span class="hl">    FE80::C802:AFF:FE88:1C</span>
+
+R1# show key chain
+Key-chain EIGRP-KEYS:
+    key 1 -- text &quot;C1sco&quot;
+<span class="hl">        accept lifetime (always valid) - (always valid) [valid now]</span>
+        send lifetime (always valid) - (always valid) [valid now]
+
+R1# show ip eigrp interfaces detail Gi0/2 | include Authentication
+<span class="hl">  Authentication mode is md5,  key-chain is &quot;EIGRP-KEYS&quot;</span>
+
+R1# show ip route 10.4.4.0
+Routing entry for 10.4.4.0/24
+  Known via &quot;eigrp 100&quot;, distance 90, metric 3328, type internal
+  Routing Descriptor Blocks:
+  * 10.14.1.4, from 10.14.1.4, 00:00:35 ago, via GigabitEthernet0/2
+<span class="hl">      Route metric is 5376, traffic share count is 149</span>
+    10.13.1.3, from 10.13.1.3, 00:00:35 ago, via GigabitEthernet0/1
+<span class="hl">      Route metric is 3328, traffic share count is 240</span></pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show eigrp address-family ipv6 neighbors</code></td><td>IPv6 neighbors by link-local address</td></tr><tr><td><code>show key chain</code></td><td>key ID, string and lifetimes [valid now]</td></tr><tr><td><code>show ip eigrp interfaces detail INT</code></td><td>authentication mode and key chain on the interface</td></tr><tr><td><code>show ip route PREFIX</code></td><td>variance: several paths with traffic share counts</td></tr></table></div>
     </details>
   </details>
 
@@ -567,7 +626,20 @@ GigabitEthernet0/1 is up, line protocol is up
 <span class="hl">  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5</span>
   Neighbor Count is 1, Adjacent neighbor count is 1
   Message digest authentication enabled
-    Youngest key id is 1</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show ip ospf neighbor</code></td><td>state: missing, INIT, EXSTART (MTU), 2WAY (DROther)</td></tr><tr><td><code>show ip ospf interface [brief]</code></td><td>area, network type, timers, cost, auth, passive</td></tr><tr><td><code>show ip protocols</code></td><td>router ID, networks, passive interfaces</td></tr><tr><td><code>debug ip ospf adj</code></td><td>&#x27;Mismatched Authentication type&#x27;, &#x27;Nbr has larger interface MTU&#x27;</td></tr><tr><td><code>debug ip ospf hello</code></td><td>&#x27;Mismatched hello parameters … Dead R 40 C 120&#x27;</td></tr><tr><td><code>show ospfv3 neighbor / show ospfv3 interface</code></td><td>OSPFv3 per AF</td></tr></table></div>
+    Youngest key id is 1
+
+R1# show ospfv3 neighbor
+          OSPFv3 1 address-family ipv4 (router-id 1.1.1.1)
+Neighbor ID     Pri   State      Dead Time   Interface ID   Interface
+2.2.2.2           0   FULL/  -   00:00:34    4              GigabitEthernet0/1
+          OSPFv3 1 address-family ipv6 (router-id 1.1.1.1)
+Neighbor ID     Pri   State      Dead Time   Interface ID   Interface
+<span class="hl">2.2.2.2           0   FULL/  -   00:00:31    4              GigabitEthernet0/1</span>
+
+R1# show ip ospf interface brief
+Interface    PID   Area     IP Address/Mask    Cost  State Nbrs F/C
+Gi0/1        1     0        10.0.12.1/30       100   P2P   1/1
+<span class="hl">Gi0/2        1     0        10.0.13.1/24       100   DR    0/1</span></pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show ip ospf neighbor</code></td><td>state: missing, INIT, EXSTART (MTU), 2WAY (DROther)</td></tr><tr><td><code>show ip ospf interface [brief]</code></td><td>area, network type, timers, cost, auth, passive</td></tr><tr><td><code>show ip protocols</code></td><td>router ID, networks, passive interfaces</td></tr><tr><td><code>debug ip ospf adj</code></td><td>&#x27;Mismatched Authentication type&#x27;, &#x27;Nbr has larger interface MTU&#x27;</td></tr><tr><td><code>debug ip ospf hello</code></td><td>&#x27;Mismatched hello parameters … Dead R 40 C 120&#x27;</td></tr><tr><td><code>show ospfv3 neighbor / show ospfv3 interface</code></td><td>OSPFv3 per AF</td></tr><tr><td><code>show ip ospf interface brief</code></td><td>Nbrs F/C: Full adjacencies / neighbors seen</td></tr></table></div>
     </details>
   </details>
 
@@ -621,14 +693,14 @@ Link ID       ADV Router    Age   Seq#         Checksum Tag
     <p class="why" style="margin:10px 0 4px"><b>DR/BDR on a broadcast segment</b></p><div data-dg="ospfdr"></div>
     <p class="why" style="margin:10px 0 4px"><b>Virtual link</b></p><div data-dg="vlink"></div>
     <p class="why" style="margin:10px 0 4px"><b>Path preference (checked before cost)</b></p><div class="flow"><div>O intra-area</div><i>→</i><div>O IA inter-area</div><i>→</i><div>E1 / N1</div><i>→</i><div>E2 / N2</div></div>
-    <div class="mn">Preference: <em>O &gt; O IA &gt; E1 &gt; E2</em> (N1 &gt; N2), then cost<br>Ref BW 100 Mbps → <em>auto-cost reference-bandwidth</em> on all routers<br>OSPFv3: link-local neighbors, LSA 8/9, IPv4 + IPv6 via address families</div>
-    <details class="cfg"><summary>⌨️ virtual link and path preference <span class="src">OCG</span></summary><div class="cfgb"><div class="cl">Configuration</div><pre class="cf cfg"><span class="cm">! on both ABRs; transit area 4 must not be stub/NSSA</span>
+    <div class="mn">Preference: <em>O &gt; O IA &gt; E1 &gt; E2</em> (N1 &gt; N2 inside an NSSA), then cost<br>Ref BW 100 Mbps → <em>auto-cost reference-bandwidth</em> on all routers<br>OSPFv3: link-local neighbors, LSA 8/9, IPv4 + IPv6 via address families</div>
+    <details class="cfg"><summary>⌨️ virtual link and path preference <span class="src">OCG</span></summary><div class="cfgb"><div class="cl">Configuration</div><pre class="cf cfg"><span class="cm">! on both ABRs; transit area 2 must not be stub/NSSA</span>
 router ospf 1
- area 4 virtual-link 3.3.3.3</pre><div class="cl">Sample output (trimmed)</div><pre class="cf out">R1# show ip ospf virtual-links
+ area 2 virtual-link 3.3.3.3</pre><div class="cl">Sample output (trimmed)</div><pre class="cf out">R1# show ip ospf virtual-links
 <span class="hl">Virtual Link OSPF_VL0 to router 3.3.3.3 is up</span>
   Run as demand circuit
   DoNotAge LSA allowed.
-<span class="hl">  Transit area 4, via interface GigabitEthernet0/3</span>
+<span class="hl">  Transit area 2, via interface GigabitEthernet0/3</span>
   Topology-MTID    Cost    Disabled     Shutdown      Topology Name
         0           2         no          no            Base
 
@@ -638,10 +710,31 @@ O IA     10.3.0.0/16 [110/3] via 10.0.12.2, 00:10:11, Gi0/1
 O E1     172.21.0.0/16 [110/23] via 10.0.12.2, 00:04:02, Gi0/1
 O N2     172.22.0.0/16 [110/20] via 10.0.14.4, 00:04:02, Gi0/4</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show ip ospf virtual-links</code></td><td>up/down, transit area, cost</td></tr><tr><td><code>show ip ospf neighbor</code></td><td>virtual neighbor shows on OSPF_VL0</td></tr><tr><td><code>show ip route ospf</code></td><td>O / O IA / E1 / E2 / N1 / N2 codes</td></tr><tr><td><code>show ip ospf interface brief</code></td><td>cost per interface (reference bandwidth)</td></tr></table></div>
     </details>
+    <details class="cfg"><summary>⌨️ non-broadcast and point-to-multipoint network types <span class="src">OCG</span></summary><div class="cfgb"><div class="cl">Configuration</div><pre class="cf cfg"><span class="cm">! non-broadcast: DR election, but hellos are unicast to configured neighbors</span>
+interface GigabitEthernet0/3
+ ip ospf network non-broadcast
+router ospf 1
+ neighbor 10.1.1.2 priority 1
+ neighbor 10.1.1.3
+<span class="cm">!</span>
+<span class="cm">! point-to-multipoint: no DR, no neighbor statements, /32 host routes</span>
+interface Tunnel100
+ ip ospf network point-to-multipoint</pre><div class="cl">Sample output (trimmed)</div><pre class="cf out">R1# show ip ospf interface Gi0/3 | include Network Type|Timer|Designated
+<span class="hl">  Process ID 1, Router ID 1.1.1.1, Network Type NON_BROADCAST, Cost: 1</span>
+<span class="hl">  Timer intervals configured, Hello 30, Dead 120, Wait 120, Retransmit 5</span>
+  Designated Router (ID) 1.1.1.1, Interface address 10.1.1.1
+
+R1# show ip ospf neighbor
+Neighbor ID   Pri  State          Dead Time   Address      Interface
+2.2.2.2         1  FULL/BDR       00:01:52    10.1.1.2     Gi0/3
+<span class="hl">N/A             1  DOWN/DROTHER     -         10.1.1.3     Gi0/3</span>
+! configured neighbor that never answered: DOWN (ATTEMPT while polling)</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show ip ospf interface INT</code></td><td>network type and 30/120 timers</td></tr><tr><td><code>show ip ospf neighbor</code></td><td>DOWN/ATTEMPT = configured neighbor not answering</td></tr><tr><td><code>show run | section router ospf</code></td><td>neighbor statements present (non-broadcast only)</td></tr><tr><td><code>show ip route ospf</code></td><td>P2MP: /32 routes to each neighbor</td></tr></table></div>
+    </details>
   </details>
 
   <details class="sec" data-d="l" data-o="1.11"><summary>BGP neighbor states: where it gets stuck <span class="src">OCG · INE</span></summary>
     <div data-dg="bgpfsm"></div>
+    <p class="why" style="margin:10px 0 4px"><b>Topology: eBGP between loopbacks</b></p><div data-dg="ebgplo"></div>
     <p class="why" style="margin:10px 0 4px"><b>Address families on one session</b></p><div data-dg="bgpaf"></div>
     <div class="mn">Loopback peering: <em>update-source</em> both sides + eBGP <em>ebgp-multihop 2</em> or disable-connected-check<br>MD5 mismatch → Idle + %TCP-6-BADAUTH · timers 60/180 · route refresh = soft clear<br><em>peer-group</em> = shared policy · private AS 64512–65534 (<em>remove-private-as</em>) · 4-byte AS asplain/asdot, AS_TRANS 23456 · synchronization off by default</div>
     <details class="cfg"><summary>⌨️ BGP neighbors (iBGP, eBGP, multihop, IPv6, VRF) <span class="src">OCG · INE · PCG</span></summary><div class="cfgb"><div class="cl">Configuration</div><pre class="cf cfg">router bgp 65100
@@ -682,7 +775,24 @@ Neighbor      V    AS  MsgRcvd MsgSent  TblVer InQ OutQ Up/Down  State/PfxRcd
 R1# show bgp ipv4 unicast neighbors 192.0.2.9 | include state|TTL|hops
 BGP neighbor is 192.0.2.9,  remote AS 65200, external link
 <span class="hl">  BGP state = Idle</span>
-<span class="hl">  External BGP neighbor may be up to 2 hops away.</span></pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show bgp ipv4 unicast summary</code></td><td>state (Idle/Active) or prefix count</td></tr><tr><td><code>show bgp ipv4 unicast neighbors IP</code></td><td>state, hold/keepalive, TTL/hops, update-source, capabilities (route refresh, 4-byte AS)</td></tr><tr><td><code>ping IP source Loopback0</code></td><td>loopback-to-loopback reachability</td></tr><tr><td><code>show bgp ipv6 unicast summary</code></td><td>IPv6 AF neighbors activated?</td></tr><tr><td><code>show bgp vpnv4 unicast vrf RED summary</code></td><td>VRF neighbors (VRF needs an RD)</td></tr><tr><td><code>syslog</code></td><td>%BGP-5-ADJCHANGE, %TCP-6-BADAUTH (MD5 mismatch)</td></tr></table></div>
+<span class="hl">  External BGP neighbor may be up to 2 hops away.</span>
+
+R1# show bgp ipv6 unicast summary | begin Neighbor
+Neighbor        V    AS  MsgRcvd MsgSent  TblVer InQ OutQ Up/Down  State/PfxRcd
+<span class="hl">2001:DB8::1     4 65000      112     109       9   0    0 01:32:10            4</span>
+
+R1# show bgp vpnv4 unicast vrf RED summary | begin Neighbor
+Neighbor        V    AS  MsgRcvd MsgSent  TblVer InQ OutQ Up/Down  State/PfxRcd
+<span class="hl">10.0.12.2       4 65010       58      61      12   0    0 00:48:22            3</span></pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show bgp ipv4 unicast summary</code></td><td>state (Idle/Active) or prefix count</td></tr><tr><td><code>show bgp ipv4 unicast neighbors IP</code></td><td>state, hold/keepalive, TTL/hops, update-source, capabilities (route refresh, 4-byte AS)</td></tr><tr><td><code>ping IP source Loopback0</code></td><td>loopback-to-loopback reachability</td></tr><tr><td><code>show bgp ipv6 unicast summary</code></td><td>IPv6 AF neighbors activated?</td></tr><tr><td><code>show bgp vpnv4 unicast vrf RED summary</code></td><td>VRF neighbors (VRF needs an RD)</td></tr><tr><td><code>syslog</code></td><td>%BGP-5-ADJCHANGE, %TCP-6-BADAUTH (MD5 mismatch)</td></tr><tr><td><code>debug ip bgp</code></td><td>session events and NOTIFICATION reasons</td></tr><tr><td><code>show bgp ipv4 unicast neighbors IP received-routes</code></td><td>what the peer sent before inbound policy (needs soft-reconfiguration inbound)</td></tr></table></div>
+    </details>
+    <details class="cfg"><summary>⌨️ 4-byte AS numbers <span class="src">OCG</span></summary><div class="cfgb"><div class="cl">Configuration</div><pre class="cf cfg">router bgp 1.10
+ bgp asnotation dot
+ neighbor 203.0.113.1 remote-as 65000
+<span class="cm">! 1.10 in asdot = 65546 in asplain (1 × 65536 + 10)</span></pre><div class="cl">Sample output (trimmed)</div><pre class="cf out">R1# show bgp ipv4 unicast summary | include local AS
+<span class="hl">BGP router identifier 1.1.1.1, local AS number 1.10</span>
+R1# show bgp ipv4 unicast neighbors 203.0.113.1 | include 4-byte|Four-octet
+<span class="hl">    Four-octets ASN Capability: advertised and received</span>
+! a 2-byte-only peer sees AS 23456 (AS_TRANS) instead of 1.10</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show bgp ipv4 unicast summary</code></td><td>local AS in the configured notation</td></tr><tr><td><code>show bgp ipv4 unicast neighbors IP</code></td><td>Four-octets ASN capability negotiated?</td></tr><tr><td><code>show bgp ipv4 unicast</code></td><td>AS 23456 in paths = a 2-byte-only router in between</td></tr></table></div>
     </details>
   </details>
 
@@ -753,6 +863,7 @@ RR# show bgp ipv4 unicast neighbors 2.2.2.2 | include Reflector
 
   <details class="sec" data-d="v" data-o="2.1"><summary>MPLS label switching <span class="src">OCG</span></summary>
     <div data-dg="mplsl"></div>
+    <p class="why" style="margin:10px 0 4px"><b>Topology: what traceroute shows in the core</b></p><div data-dg="mplstopo"></div>
     <div class="mn">Label: <em>20</em> bits + TC 3 + S 1 + TTL 8 = 32 bits · implicit null = <em>3</em>, explicit null = 0<br>LIB = all bindings · LFIB = forwarding · show mpls ldp neighbor / bindings</div>
     <details class="cfg"><summary>⌨️ MPLS/LDP (verify) <span class="src">OCG</span></summary><div class="cfgb"><div class="cl">Configuration</div><pre class="cf cfg">mpls ldp router-id Loopback0 force
 interface GigabitEthernet0/1
@@ -807,6 +918,7 @@ router bgp 65000
       <tr><td>Key commands</td><td>tunnel destination</td><td>no next-hop-self</td><td>redirect + shortcut</td></tr>
     </table>
     <div data-dg="dmvpn3" style="margin-top:8px"></div>
+    <p class="why" style="margin:10px 0 4px"><b>Topology used in the DMVPN exhibits</b></p><div data-dg="dmvpntopo"></div>
     <details class="cfg"><summary>⌨️ DMVPN Phase 3 hub + spoke <span class="src">OCG</span></summary><div class="cfgb"><div class="cl">Configuration</div><pre class="cf cfg"><span class="cm">! HUB</span>
 interface Tunnel100
  ip address 192.168.100.11 255.255.255.0
@@ -848,7 +960,15 @@ Spoke31# show ip nhrp 192.168.100.41
 192.168.100.41/32 via 192.168.100.41
    Tunnel100 created 00:00:15, expire 01:59:44
 <span class="hl">   Type: dynamic, Flags: router used nhop rib</span>
-   NBMA address: 172.16.41.1</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show dmvpn [detail]</code></td><td>peers UP, D = dynamic (registered), NHRP state</td></tr><tr><td><code>show ip nhrp [brief]</code></td><td>tunnel ↔ NBMA mappings, static vs dynamic</td></tr><tr><td><code>show ip nhrp nhs detail</code></td><td>spoke: NHS reachable, registration requests/replies</td></tr><tr><td><code>show ip route nhrp</code></td><td>H routes = Phase 3 shortcuts installed</td></tr><tr><td><code>show interface Tunnel100</code></td><td>line protocol, tunnel source/mode/key</td></tr><tr><td><code>debug nhrp packet</code></td><td>registration, resolution, redirect messages</td></tr></table></div>
+   NBMA address: 172.16.41.1
+
+Spoke31# show dmvpn detail | begin Ent
+# Ent  Peer NBMA Addr  Peer Tunnel Add State  UpDn Tm  Attrb  Target Network
+    1 172.16.31.1     192.168.100.31     UP 00:01:17    DLX       10.3.3.0/24
+<span class="hl">    2 172.16.41.1     192.168.100.41     UP 00:01:17    DT1       10.4.4.0/24</span>
+      172.16.41.1     192.168.100.41     UP 00:01:17    DT1 192.168.100.41/32
+    1 172.16.11.1     192.168.100.11     UP 11:21:33      S 192.168.100.11/32
+! D = dynamic, S = static, T1 = route installed, T2 = next-hop override, L = local</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show dmvpn [detail]</code></td><td>peers UP, D = dynamic (registered), NHRP state</td></tr><tr><td><code>show ip nhrp [brief]</code></td><td>tunnel ↔ NBMA mappings, static vs dynamic</td></tr><tr><td><code>show ip nhrp nhs detail</code></td><td>spoke: NHS reachable, registration requests/replies</td></tr><tr><td><code>show ip route nhrp</code></td><td>H routes = Phase 3 shortcuts installed</td></tr><tr><td><code>show interface Tunnel100</code></td><td>line protocol, tunnel source/mode/key</td></tr><tr><td><code>debug nhrp packet</code></td><td>registration, resolution, redirect messages</td></tr><tr><td><code>show dmvpn detail</code></td><td>per entry: D/S, T1 route installed, T2 next-hop override, NHS state</td></tr></table></div>
     </details>
   </details>
 
@@ -860,6 +980,7 @@ Spoke31# show ip nhrp 192.168.100.41
     <div class="why" style="font-size:12px;margin:8px 0 4px">mGRE + IPsec transport mode (tunnel protection)</div>
     <div class="qbar"><span style="flex:2;background:#7aa2ff">New IP</span><span style="flex:1.2;background:#b794f4">ESP</span><span style="flex:1.2;background:#f6ad55">GRE</span><span style="flex:2;background:#4fd1c5">Orig IP</span><span style="flex:3;background:#2a3550;color:#e8ecf5">Data</span><span style="flex:1.4;background:#b794f4">ESP tr</span></div>
     <p class="why" style="margin:4px 0 0">ESP encrypts from GRE to the trailer. Transport mode reuses the GRE outer IP; tunnel mode would add another 20-byte IP header.</p>
+    <p class="why" style="margin:10px 0 4px"><b>Spoke behind NAT: NAT-T</b></p><div data-dg="dmvpnnat"></div>
     <div class="mn">Hub: <em>tunnel mode gre multipoint</em> · ip nhrp network-id · <em>ip nhrp map multicast dynamic</em> · ip nhrp redirect<br>Spoke: ip nhrp nhs X nbma Y <em>multicast</em> · ip nhrp shortcut · same <em>tunnel key</em><br>MTU 1400 · MSS 1360 · IPsec profile → <em>tunnel protection ipsec profile</em> (transport mode)<br>show dmvpn · show ip nhrp · show crypto isakmp sa (QM_IDLE) · show crypto ipsec sa</div>
     <details class="cfg"><summary>⌨️ IPsec for DMVPN <span class="src">OCG</span></summary><div class="cfgb"><div class="cl">Configuration</div><pre class="cf cfg">crypto isakmp policy 10
  encryption aes 256
@@ -884,6 +1005,32 @@ Spoke31# show crypto ipsec sa | include peer|pkts
 <span class="hl">    #pkts encaps: 1520, #pkts encrypt: 1520, #pkts digest: 1520</span>
 <span class="hl">    #pkts decaps: 1498, #pkts decrypt: 1498, #pkts verify: 1498</span></pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show crypto isakmp sa</code></td><td>QM_IDLE = good · MM_NO_STATE = phase 1 fails</td></tr><tr><td><code>show crypto ipsec sa</code></td><td>encaps/decaps both growing; one side 0 = one-way problem</td></tr><tr><td><code>show crypto ipsec profile</code></td><td>profile + transform set bound</td></tr><tr><td><code>debug crypto isakmp</code></td><td>PSK mismatch, no matching policy</td></tr><tr><td><code>syslog %TUN-5-RECURDOWN</code></td><td>recursive routing on the tunnel</td></tr></table></div>
     </details>
+    <details class="cfg"><summary>⌨️ DMVPN Phase 1 and Phase 2 <span class="src">OCG</span></summary><div class="cfgb"><div class="cl">Configuration</div><pre class="cf cfg"><span class="cm">! Phase 1 spoke: point-to-point GRE to the hub</span>
+interface Tunnel100
+ ip address 192.168.100.31 255.255.255.0
+ ip nhrp network-id 100
+ ip nhrp nhs 192.168.100.11 nbma 172.16.11.1
+ tunnel source GigabitEthernet0/1
+ tunnel destination 172.16.11.1
+ tunnel key 100
+<span class="cm">!</span>
+<span class="cm">! Phase 2: spokes use mGRE (no tunnel destination); hub keeps the spoke next hop</span>
+interface Tunnel100
+ tunnel mode gre multipoint
+ no ip split-horizon eigrp 100
+ no ip next-hop-self eigrp 100</pre><div class="cl">Sample output (trimmed)</div><pre class="cf out">Spoke31# show interface Tunnel100 | include Tunnel source|protocol/transport
+<span class="hl">  Tunnel source 172.16.31.1 (GigabitEthernet0/1), destination 172.16.11.1</span>
+  Tunnel protocol/transport GRE/IP
+
+Spoke31# traceroute 10.4.4.1 source 10.3.3.1
+<span class="hl">  1 192.168.100.11 0 msec 0 msec 1 msec</span>
+  2 192.168.100.41 1 msec * 1 msec
+! Phase 1: always via the hub
+
+Spoke31# show ip route eigrp | include 10.4.4.0
+<span class="hl">D     10.4.4.0/24 [90/...] via 192.168.100.41, 00:02:10, Tunnel100</span>
+! Phase 2: next hop is spoke 41 itself (hub didn&#x27;t rewrite it)</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show interface Tunnel100</code></td><td>p2p GRE (destination set) vs multi-GRE</td></tr><tr><td><code>traceroute between spoke LANs</code></td><td>first hop = hub tunnel IP → no spoke-to-spoke</td></tr><tr><td><code>show ip route eigrp (spoke)</code></td><td>Phase 2: next hop must be the other spoke</td></tr><tr><td><code>show run interface Tunnel100 (hub)</code></td><td>no ip next-hop-self eigrp and no split horizon present</td></tr></table></div>
+    </details>
   </details>
 
   <h2 class="dh" style="color:var(--c3)">3 · Infrastructure Security</h2>
@@ -891,7 +1038,7 @@ Spoke31# show crypto ipsec sa | include peer|pkts
   <details class="sec" data-d="s" data-o="3.1"><summary>AAA method lists: when is the next method tried? <span class="src">OCG · ITPRO</span></summary>
     <div data-dg="aaaflow"></div>
     <table class="mx" style="margin-top:8px"><tr><th></th><th>TACACS+</th><th>RADIUS</th></tr>
-      <tr><td>Transport</td><td>TCP 49</td><td>UDP 1812/1813 (Cisco 1645/1646)</td></tr>
+      <tr><td>Transport</td><td>TCP 49</td><td>UDP 1812/1813 per RFC · IOS default 1645/1646</td></tr>
       <tr><td>Encryption</td><td>whole body</td><td>password only</td></tr>
       <tr><td>AAA split</td><td>separate</td><td>AuthN + AuthZ combined</td></tr>
       <tr><td>Typical use</td><td>device admin</td><td>network access</td></tr>
@@ -933,7 +1080,12 @@ Tacacs+ Server - public  :
 
 R1# debug aaa authentication
 AAA/AUTHEN/LOGIN (00000012): Pick method list &#x27;VTY_ACCESS&#x27;
-<span class="hl">TPLUS: Received authen response status FAIL (3)</span></pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show run | section aaa|tacacs|radius|line</code></td><td>list exists, applied to the right line, local user present</td></tr><tr><td><code>test aaa group NAME USER PASS legacy</code></td><td>server reachable + credentials valid</td></tr><tr><td><code>show tacacs / show aaa servers</code></td><td>timeouts, failed connects, server UP/DEAD</td></tr><tr><td><code>debug aaa authentication</code></td><td>which method list is picked, PASS/FAIL/ERROR</td></tr><tr><td><code>debug tacacs / debug radius</code></td><td>key mismatch, no response</td></tr><tr><td><code>show users</code></td><td>who is logged in where</td></tr></table></div>
+<span class="hl">TPLUS: Received authen response status FAIL (3)</span>
+
+R1# show aaa servers
+RADIUS: id 1, priority 1, host 10.0.10.52, auth-port 1812, acct-port 1813
+<span class="hl">     State: current UP, duration 5432s, previous duration 0s</span>
+     Dead: total time 0s, count 0</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show run | section aaa|tacacs|radius|line</code></td><td>list exists, applied to the right line, local user present</td></tr><tr><td><code>test aaa group NAME USER PASS legacy</code></td><td>server reachable + credentials valid</td></tr><tr><td><code>show tacacs / show aaa servers</code></td><td>timeouts, failed connects, server UP/DEAD</td></tr><tr><td><code>debug aaa authentication</code></td><td>which method list is picked, PASS/FAIL/ERROR</td></tr><tr><td><code>debug tacacs / debug radius</code></td><td>key mismatch, no response</td></tr><tr><td><code>show users</code></td><td>who is logged in where</td></tr></table></div>
     </details>
   </details>
 
@@ -976,12 +1128,46 @@ Extended IP access list EDGE-IN
 
 R1# show ip interface GigabitEthernet0/0 | include access list
   Outgoing access list is not set
-<span class="hl">  Inbound  access list is EDGE-IN</span></pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show access-lists / show ipv6 access-list</code></td><td>entry order and match counters</td></tr><tr><td><code>show ip interface INT</code></td><td>which ACL, which direction</td></tr><tr><td><code>show ipv6 interface INT</code></td><td>IPv6 traffic filter attached</td></tr><tr><td><code>show time-range + show clock</code></td><td>time-range active/inactive, clock correct</td></tr><tr><td><code>syslog %SEC-6-IPACCESSLOGP</code></td><td>what the log keyword caught</td></tr></table></div>
+<span class="hl">  Inbound  access list is EDGE-IN</span>
+
+R1# show time-range
+<span class="hl">time-range entry: WORKHOURS (inactive)</span>
+   periodic weekdays 8:00 to 17:00
+   used in: IP ACL entry
+
+R1# show ipv6 access-list V6-IN
+IPv6 access list V6-IN
+    permit icmp any any nd-na (220 matches) sequence 10
+    permit icmp any any nd-ns (198 matches) sequence 20
+    permit tcp 2001:DB8:99::/64 any eq 22 (14 matches) sequence 30
+<span class="hl">    deny ipv6 any any log (6 matches) sequence 40</span></pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show access-lists / show ipv6 access-list</code></td><td>entry order and match counters</td></tr><tr><td><code>show ip interface INT</code></td><td>which ACL, which direction</td></tr><tr><td><code>show ipv6 interface INT</code></td><td>IPv6 traffic filter attached</td></tr><tr><td><code>show time-range + show clock</code></td><td>time-range active/inactive, clock correct</td></tr><tr><td><code>syslog %SEC-6-IPACCESSLOGP</code></td><td>what the log keyword caught</td></tr></table></div>
+    </details>
+    <details class="cfg"><summary>⌨️ standard ACL on VTY lines and time-based entries <span class="src">OCG</span></summary><div class="cfgb"><div class="cl">Configuration</div><pre class="cf cfg">ip access-list standard MGMT-HOSTS
+ permit host 10.99.0.20
+ permit 10.99.0.0 0.0.0.255
+ deny   any log
+line vty 0 4
+ access-class MGMT-HOSTS in
+<span class="cm">!</span>
+access-list 10 deny   10.50.0.0 0.0.255.255
+access-list 10 permit any
+interface GigabitEthernet0/3
+ description toward the servers (destination side)
+ ip access-group 10 out</pre><div class="cl">Sample output (trimmed)</div><pre class="cf out">R1# show access-lists MGMT-HOSTS
+Standard IP access list MGMT-HOSTS
+    10 permit 10.99.0.20 (12 matches)
+    20 permit 10.99.0.0, wildcard bits 0.0.0.255 (3 matches)
+<span class="hl">    30 deny   any log (41 matches)</span>
+
+R1# show ip interface Gi0/3 | include access list
+<span class="hl">  Outgoing access list is 10</span>
+  Inbound  access list is not set</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show access-lists NAME</code></td><td>entry order and matches (first match wins)</td></tr><tr><td><code>show run | section line vty</code></td><td>access-class applied to the VTY lines</td></tr><tr><td><code>show ip interface INT</code></td><td>standard ACL placed outbound near the destination</td></tr><tr><td><code>show time-range</code></td><td>time-range active or inactive</td></tr></table></div>
     </details>
   </details>
 
   <details class="sec" data-d="s" data-o="3.2"><summary>uRPF strict vs loose <span class="src">PCG · CSLG</span></summary>
     <div data-dg="urpf"></div>
+    <p class="why" style="margin:10px 0 4px"><b>Asymmetric routing: strict vs loose</b></p><div data-dg="urpfasym"></div>
     <div class="mn">Strict: <em>ip verify unicast source reachable-via rx</em> · loose: <em>reachable-via any</em><br>Options: <em>allow-default</em> · allow-self-ping · ACL number for exceptions/logging · needs CEF</div>
     <details class="cfg"><summary>⌨️ uRPF <span class="src">CSLG · PCG</span></summary><div class="cfgb"><div class="cl">Configuration</div><pre class="cf cfg">interface GigabitEthernet0/0
  ip verify unicast source reachable-via rx allow-default 199
@@ -1020,6 +1206,7 @@ class-map match-all CM-MGMT
 policy-map PM-COPP
  class CM-ROUTING
   police 256000 conform-action transmit exceed-action transmit
+<span class="cm">  ! routing: monitor only while baselining; change exceed to drop once rates are known</span>
  class CM-MGMT
   police 128000 conform-action transmit exceed-action drop
  class class-default
@@ -1129,7 +1316,19 @@ R1# show users
 
 R1# show access-lists MGMT
 Standard IP access list MGMT
-<span class="hl">    10 permit 10.99.0.0, wildcard bits 0.0.0.255 (6 matches)</span></pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show ip ssh / show ssh</code></td><td>SSH enabled, version, active sessions</td></tr><tr><td><code>show crypto key mypubkey rsa</code></td><td>RSA key exists (needs hostname + domain name)</td></tr><tr><td><code>show line vty 0 / show run | section line</code></td><td>transport input, access-class, login method</td></tr><tr><td><code>show access-lists MGMT</code></td><td>VTY ACL matches</td></tr><tr><td><code>show ip http server status</code></td><td>HTTP/HTTPS enabled, auth method</td></tr><tr><td><code>debug ip ssh</code></td><td>SSH negotiation failures</td></tr></table></div>
+<span class="hl">    10 permit 10.99.0.0, wildcard bits 0.0.0.255 (6 matches)</span>
+
+R1# show ip http server status | include status|port
+<span class="hl">HTTP server status: Disabled</span>
+HTTP server port: 80
+<span class="hl">HTTP secure server status: Enabled</span>
+HTTP secure server port: 443
+
+R1# copy tftp://10.99.0.5/R1.cfg running-config
+Destination filename [running-config]?
+Accessing tftp://10.99.0.5/R1.cfg...
+Loading R1.cfg from 10.99.0.5 (via GigabitEthernet0/0): !
+<span class="hl">[OK - 1684 bytes]</span></pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show ip ssh / show ssh</code></td><td>SSH enabled, version, active sessions</td></tr><tr><td><code>show crypto key mypubkey rsa</code></td><td>RSA key exists (needs hostname + domain name)</td></tr><tr><td><code>show line vty 0 / show run | section line</code></td><td>transport input, access-class, login method</td></tr><tr><td><code>show access-lists MGMT</code></td><td>VTY ACL matches</td></tr><tr><td><code>show ip http server status</code></td><td>HTTP/HTTPS enabled, auth method</td></tr><tr><td><code>debug ip ssh</code></td><td>SSH negotiation failures</td></tr></table></div>
     </details>
   </details>
 
@@ -1159,7 +1358,19 @@ Group-name: NMS-GRP
 R1# show snmp group
 groupname: NMS-GRP                  security model:v3 priv
 readview : ALL                      writeview: &lt;no writeview specified&gt;
-row status: active                  access-list: SNMP-ACL</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show snmp</code></td><td>packets in/out, bad community names, unknown users</td></tr><tr><td><code>show snmp user</code></td><td>v3 users (not in running-config), auth/priv protocols</td></tr><tr><td><code>show snmp group</code></td><td>security model/level, views, ACL</td></tr><tr><td><code>show snmp host</code></td><td>trap receivers and version</td></tr><tr><td><code>debug snmp packets</code></td><td>requests arriving? from which manager?</td></tr></table></div>
+row status: active                  access-list: SNMP-ACL
+
+R1# show snmp | include packets input|community|Unknown
+1520 SNMP packets input
+<span class="hl">    0 Unknown community name</span>
+    0 Illegal operation for community name supplied
+
+R1# show snmp host
+<span class="hl">Notification host: 10.99.0.10    udp-port: 162     type: trap</span>
+user: nmsuser     security model: v3 priv
+
+R1# show snmp view | include ALL
+ALL iso - included nonvolatile active</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show snmp</code></td><td>packets in/out, bad community names, unknown users</td></tr><tr><td><code>show snmp user</code></td><td>v3 users (not in running-config), auth/priv protocols</td></tr><tr><td><code>show snmp group</code></td><td>security model/level, views, ACL</td></tr><tr><td><code>show snmp host</code></td><td>trap receivers and version</td></tr><tr><td><code>debug snmp packets</code></td><td>requests arriving? from which manager?</td></tr><tr><td><code>show snmp view</code></td><td>which OIDs each view includes</td></tr></table></div>
     </details>
   </details>
 
@@ -1207,7 +1418,14 @@ R1# show telemetry ietf subscription 101 detail
   Subscription ID: 101
 <span class="hl">  State: Valid</span>
   Stream: yang-push
-  Update Trigger: periodic, Period: 6000</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show logging</code></td><td>levels per destination, server, buffer contents</td></tr><tr><td><code>show debugging / show debug condition</code></td><td>what&#x27;s on and what it&#x27;s limited to</td></tr><tr><td><code>show clock detail / show ntp status</code></td><td>timestamps trustworthy?</td></tr><tr><td><code>terminal monitor</code></td><td>see logs/debugs in an SSH session</td></tr><tr><td><code>show telemetry ietf subscription all [detail]</code></td><td>subscription valid, receiver connected</td></tr></table></div>
+  Update Trigger: periodic, Period: 6000
+
+R1# show ntp status
+<span class="hl">Clock is synchronized, stratum 3, reference is 10.99.0.1</span>
+R1# show ntp associations
+  address         ref clock       st   when   poll reach  delay  offset   disp
+<span class="hl">*~10.99.0.1      192.0.2.123      2     41     64   377  1.204  -0.311   0.982</span>
+ * sys.peer, # selected, + candidate, - outlyer, x falseticker, ~ configured</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show logging</code></td><td>levels per destination, server, buffer contents</td></tr><tr><td><code>show debugging / show debug condition</code></td><td>what&#x27;s on and what it&#x27;s limited to</td></tr><tr><td><code>show clock detail / show ntp status</code></td><td>timestamps trustworthy?</td></tr><tr><td><code>show ntp associations</code></td><td>* = the server the clock is synced to</td></tr><tr><td><code>terminal monitor</code></td><td>see logs/debugs in an SSH session</td></tr><tr><td><code>show telemetry ietf subscription all [detail]</code></td><td>subscription valid, receiver connected</td></tr></table></div>
     </details>
   </details>
 
@@ -1249,7 +1467,25 @@ Pool VLAN20 :
 
 R1# debug ip dhcp server packet
 <span class="hl">DHCPD: DHCPDISCOVER received from client 0100.5079.6668.03 through relay 10.1.20.1.</span>
-DHCPD: Sending DHCPOFFER to client 0100.5079.6668.03 (10.1.20.11).</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show ip dhcp binding</code></td><td>leases handed out</td></tr><tr><td><code>show ip dhcp pool</code></td><td>pool size, leased, excluded</td></tr><tr><td><code>show ip dhcp conflict</code></td><td>addresses found in use (ping/ARP)</td></tr><tr><td><code>debug ip dhcp server packet</code></td><td>DISCOVER arrives? via which relay (giaddr)?</td></tr><tr><td><code>show ip interface INT | include Helper</code></td><td>helper-address on the client-facing interface</td></tr><tr><td><code>show ipv6 dhcp pool / binding / interface</code></td><td>DHCPv6 server and relay state</td></tr><tr><td><code>show dhcp lease</code></td><td>router as DHCP client</td></tr></table></div>
+DHCPD: Sending DHCPOFFER to client 0100.5079.6668.03 (10.1.20.11).
+
+R1# show dhcp lease
+<span class="hl">Temp IP addr: 198.51.100.23  for peer on Interface: GigabitEthernet0/2</span>
+Temp  sub net mask: 255.255.255.0
+   DHCP Lease server: 198.51.100.1, state: 5 Bound
+   Lease: 86400 secs,  Renewal: 43200 secs,  Rebind: 75600 secs
+Default Gateway addr: 198.51.100.1
+
+R1# show ipv6 dhcp interface
+<span class="hl">GigabitEthernet0/0.30 is in server mode</span>
+ Using pool: V6-STATELESS
+GigabitEthernet0/0.40 is in relay mode
+ Relay destinations:
+<span class="hl">  2001:DB8:99::67</span>
+
+R1# show ipv6 interface Gi0/0.30 | include Hosts
+ Hosts use stateless autoconfig for addresses.
+<span class="hl">Hosts use DHCP to obtain other configuration.</span></pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show ip dhcp binding</code></td><td>leases handed out</td></tr><tr><td><code>show ip dhcp pool</code></td><td>pool size, leased, excluded</td></tr><tr><td><code>show ip dhcp conflict</code></td><td>addresses found in use (ping/ARP)</td></tr><tr><td><code>debug ip dhcp server packet</code></td><td>DISCOVER arrives? via which relay (giaddr)?</td></tr><tr><td><code>show ip interface INT | include Helper</code></td><td>helper-address on the client-facing interface</td></tr><tr><td><code>show ipv6 dhcp pool / binding / interface</code></td><td>DHCPv6 server and relay state</td></tr><tr><td><code>show dhcp lease</code></td><td>router as DHCP client</td></tr></table></div>
     </details>
   </details>
 
@@ -1297,12 +1533,32 @@ Track 1
     3 changes, last change 00:42:10
   Delay up 15 secs, down 10 secs
   Tracked by:
-    Static IP Routing 0</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show ip sla configuration</code></td><td>target, source, frequency, schedule</td></tr><tr><td><code>show ip sla statistics [details]</code></td><td>return code, RTT, successes/failures, jitter values</td></tr><tr><td><code>show track [brief]</code></td><td>state, changes, what uses the track</td></tr><tr><td><code>show ip route 0.0.0.0</code></td><td>which default route is installed now</td></tr><tr><td><code>show ip sla responder</code></td><td>far end ready for udp-jitter</td></tr><tr><td><code>debug ip sla trace / error</code></td><td>probe failures</td></tr></table></div>
+    Static IP Routing 0
+
+R1# show ip sla statistics 2
+IPSLA operation id: 2
+Type of operation: udp-jitter
+        Latest RTT: 53 milliseconds
+Latest operation return code: OK
+RTT Values:
+        Number Of RTT: 17    RTT Min/Avg/Max: 46/53/66 milliseconds
+Jitter Time:
+<span class="hl">        Source to Destination Jitter Min/Avg/Max: 1/7/13 milliseconds</span>
+<span class="hl">        Destination to Source Jitter Min/Avg/Max: 1/6/13 milliseconds</span>
+Packet Loss Values:
+<span class="hl">        Loss Source to Destination: 0</span>
+        Loss Destination to Source: 3
+
+R2# show ip sla responder
+<span class="hl">        General IP SLA Responder on Control port 1967</span>
+General IP SLA Responder is: Enabled
+Number of control message received: 2333 Number of errors: 0</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show ip sla configuration</code></td><td>target, source, frequency, schedule</td></tr><tr><td><code>show ip sla statistics [details]</code></td><td>return code, RTT, successes/failures, jitter values</td></tr><tr><td><code>show track [brief]</code></td><td>state, changes, what uses the track</td></tr><tr><td><code>show ip route 0.0.0.0</code></td><td>which default route is installed now</td></tr><tr><td><code>show ip sla responder</code></td><td>far end ready for udp-jitter</td></tr><tr><td><code>debug ip sla trace / error</code></td><td>probe failures</td></tr></table></div>
     </details>
   </details>
 
   <details class="sec" data-d="i" data-o="4.6"><summary>Flexible NetFlow building blocks <span class="src">PCG · CSLG</span></summary>
     <div data-dg="fnf"></div>
+    <p class="why" style="margin:10px 0 4px"><b>Direction matters: input vs output</b></p><div data-dg="fnfdir"></div>
     <table class="mx" style="margin-top:8px"><tr><th>Format</th><th>Notes</th></tr>
       <tr><td>NetFlow v9</td><td>template-based (Cisco)</td></tr>
       <tr><td>Flexible NetFlow</td><td>user-defined records, exports v9 or IPFIX</td></tr>
@@ -1323,6 +1579,7 @@ flow exporter EXP-COLL
  source Loopback0
  transport udp 2055
  export-protocol ipfix
+<span class="cm"> ! or: export-protocol netflow-v9</span>
 <span class="cm">!</span>
 flow monitor MON-V4
  record REC-V4
@@ -1343,7 +1600,13 @@ Flow Exporter EXP-COLL:
   Client send statistics:
     Client: Flow Monitor MON-V4
       Records added:           2300
-        - sent:                2300</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show flow record / exporter / monitor</code></td><td>definitions and bindings</td></tr><tr><td><code>show flow interface INT</code></td><td>monitor applied, direction</td></tr><tr><td><code>show flow monitor NAME cache</code></td><td>flows being collected</td></tr><tr><td><code>show flow exporter NAME statistics</code></td><td>sent vs errors (no route, ACL)</td></tr><tr><td><code>show flow exporter templates</code></td><td>v9/IPFIX templates sent to the collector</td></tr></table></div>
+        - sent:                2300
+
+R1# show flow exporter EXP-COLL | include protocol|address|Port|Interface
+<span class="hl">  Export protocol:          IPFIX (Version 10)</span>
+    Destination IP address: 10.99.0.70
+    Source Interface:       Loopback0
+    Destination Port:       2055</pre><div class="cl">Troubleshooting commands</div><table class="tc"><tr><td><code>show flow record / exporter / monitor</code></td><td>definitions and bindings</td></tr><tr><td><code>show flow interface INT</code></td><td>monitor applied, direction</td></tr><tr><td><code>show flow monitor NAME cache</code></td><td>flows being collected</td></tr><tr><td><code>show flow exporter NAME statistics</code></td><td>sent vs errors (no route, ACL)</td></tr><tr><td><code>show flow exporter templates</code></td><td>v9/IPFIX templates sent to the collector</td></tr></table></div>
     </details>
   </details>
 
@@ -1446,7 +1709,7 @@ Path Trace 10.1.20.11 → 10.99.0.80 tcp/443
     </table></div>
 
   <div class="sec"><h3>1.9 EIGRP <span class="src">OCG · CSLG</span></h3>
-    <div class="mn">Default K: <em>K1=1 K2=0 K3=1 K4=0 K5=0</em> → bandwidth + delay<br>Classic: 256 × (10⁷ / min BW kbps + Σ delay µs / 10)<br>Wide (named): 64-bit, scaled by <em>65,536</em> · FC: <em>RD &lt; FD</em> · variance N: FD &lt; N × best FD</div>
+    <div class="mn">Default K: <em>K1=1 K2=0 K3=1 K4=0 K5=0</em> → bandwidth + delay<br>Classic: 256 × (10⁷ / min BW kbps + Σ delay µs / 10)<br>Wide (named): 64-bit, scaled by <em>65,536</em>, delay in picoseconds · FC: <em>RD &lt; FD</em> · variance N: FD &lt; N × best FD</div>
     <table class="mx" style="margin-top:8px"><tr><th>Interface</th><th>BW (kbps)</th><th>Delay (µs)</th><th>1-hop classic metric</th></tr>
       <tr><td>GigabitEthernet</td><td>1,000,000</td><td>10</td><td>2,816</td></tr>
       <tr><td>FastEthernet</td><td>100,000</td><td>100</td><td>28,160</td></tr>
@@ -1454,7 +1717,7 @@ Path Trace 10.1.20.11 → 10.99.0.80 tcp/443
       <tr><td>Serial T1</td><td>1,544</td><td>20,000</td><td>2,169,856</td></tr>
     </table>
     <table style="margin-top:8px">
-      <tr><td>Hello / hold (LAN, fast links)</td><td class="n">5 / 15 s</td></tr>
+      <tr><td>Hello / hold (LAN, fast links; hold = 3 × hello)</td><td class="n">5 / 15 s</td></tr>
       <tr><td>Hello / hold (NBMA ≤ T1)</td><td class="n">60 / 180 s</td></tr>
       <tr><td>Active timer (SIA)</td><td class="n">3 min</td></tr>
       <tr><td>maximum-paths default</td><td class="n">4</td></tr>
@@ -1469,7 +1732,7 @@ Path Trace 10.1.20.11 → 10.99.0.80 tcp/443
       <tr><td>Non-broadcast</td><td class="y">yes</td><td>30/120</td><td class="d">static</td></tr>
       <tr><td>Point-to-multipoint</td><td class="x">no</td><td>30/120</td><td>auto</td></tr>
     </table>
-    <p class="why" style="margin:8px 0 4px"><b>Interface cost = reference bandwidth ÷ interface bandwidth</b> (minimum 1)</p>
+    <p class="why" style="margin:8px 0 4px"><b>Interface cost = reference bandwidth ÷ interface bandwidth</b> (decimals dropped, minimum 1: with the default 100 Mbps, 1 and 10 Gbps both cost 1)</p>
     <table class="mx"><tr><th>Link</th><th>Ref 100 Mbps (default)</th><th>Ref 100 Gbps</th></tr>
       <tr><td>10 Mbps</td><td>10</td><td>10,000</td></tr><tr><td>100 Mbps</td><td>1</td><td>1,000</td></tr>
       <tr><td>1 Gbps</td><td class="d">1</td><td>100</td></tr><tr><td>10 Gbps</td><td class="d">1</td><td>10</td></tr>
@@ -1612,7 +1875,7 @@ Path Trace 10.1.20.11 → 10.99.0.80 tcp/443
       <tr><td>SSH, SCP / Telnet</td><td class="n">TCP 22 / 23</td></tr>
       <tr><td>HTTP / HTTPS</td><td class="n">TCP 80 / 443</td></tr>
       <tr><td>TFTP / FTP</td><td class="n">UDP 69 / TCP 20-21</td></tr>
-      <tr><td>RSA key for SSHv2 (minimum / recommended)</td><td class="n">768 / 2048 bits</td></tr>
+      <tr><td>RSA key for SSHv2 (legacy minimum / recommended)</td><td class="n">768 / ≥ 2048 bits</td></tr>
       <tr><td>VTY lines (typical)</td><td class="n">0–4 or 0–15</td></tr>
       <tr><td>exec-timeout default</td><td class="n">10 min</td></tr>
     </table></div>
@@ -1808,21 +2071,21 @@ assure:{h:136,n:[["dv",48,55,"Devices"],["cc",180,55,"Catalyst Center"],["ui",30
 };
 const QD={
 "R1 learns 10.5.0.0/16":["e","floatst"],"A floating static backup":["e","floatst"],"Mutual redistribution between EIGRP and OSPF at R1":["e","redisfb"],"Two boundary routers do mutual":["e","redisfb"],
-"EIGRP hub with all spokes":["e","splith"],"Discontiguous 10.1.1.0/24":["q","autosum"],"Traffic from 10.1.1.0/24 must leave":["e","pbr"],"Between two VRF-Lite routers":["e","vrflite"],
+"Discontiguous 10.1.1.0/24":["q","autosum"],"Traffic from 10.1.1.0/24 must leave":["e","pbr"],"Between two VRF-Lite routers":["e","vrflite"],
 "OSPF must detect a link failure":["e","bfd"],"10.4.4.0/24 is learned":["q","eigrpfs"],"10.4.4.0/24 again":["q","eigrpfs"],"An EIGRP neighbor resets":["e","eigrpsia"],"Hub-and-spoke EIGRP. A spoke":["e","eigrpstub"],
 "show ip ospf neighbor: R1 is in Exchange":["e","ospfmtu"],"Area 4 connects only":["e","vlink"],"Which LSA type do ABRs":["e","lsaflow"],"Order the BGP neighbor states":["e","bgpfsm"],"show bgp summary lists a neighbor":["e","bgpfsm"],
 "R2 sees 203.0.113.0/24":["q","bgpnh"],"All traffic leaving the AS":["e","bgppath"],"A route reflector receives":["e","bgprr"],"Which device pushes the first":["e","mplsl"],
 "Two VPN customers both use 10.0.0.0/8":["e","mplsvpn"],"Spoke-to-spoke traffic always":["e","dmvpn3"],"Which command on a spoke registers":["e","dmvpnreg"],
-"aaa authentication login VTY_ACCESS group tacacs+ local is set. The TACACS+ server rejects":["e","aaaflow"],"A multihomed edge router":["e","urpf"],"Where is a CoPP policy":["e","copp"],
+"aaa authorization commands 15 default group tacacs+ is set":["e","aaaflow"],"A multihomed edge router":["e","urpf"],"Where is a CoPP policy":["e","copp"],
 "Hosts get a wrong default gateway":["e","fhs"],"The NMS must authenticate":["e","snmp"],"Which feature provides push-based":["e","mdt"],"Clients on VLAN 20":["e","dhcprel"],
 "The default route must fail over":["e","sla"],"Order the Flexible NetFlow":["e","fnf"],"Which Catalyst Center health score":["e","assure"]
 };
 const CD={
-"A backup static route must only":"floatst","Two-way redistribution at two points":"redisfb","DMVPN hub runs EIGRP":"splith","Discontiguous network with auto-summary":"autosum",
+"A backup static route must only":"floatst","Redistribution at two boundary routers":"redisfb","Disable EIGRP split horizon in named mode":"splith","Discontiguous network with auto-summary":"autosum",
 "Route by source address":"pbr","Carry several VRFs over one":"vrflite","Sub-second failure detection":"bfd","Successor vs feasible successor":"eigrpfs","Route goes Active":"eigrpsia",
-"eigrp stub default behavior":"eigrpstub","OSPF neighbors stuck in ExStart":"ospfmtu","Area 4 doesn't touch Area 0":"vlink","Area that must not get type 5":"lsaflow",
+"eigrp stub default behavior":"eigrpstub","Which OSPF neighbor state points":"ospfmtu","Area 4 doesn't touch Area 0":"vlink","Area that must not get type 5":"lsaflow",
 "BGP stuck in Active":"bgpfsm","iBGP route is in the BGP table":"bgpnh","Prefer one exit for the whole AS":"bgppath","Route reflector rules":"bgprr","MPLS router roles":"mplsl",
-"Two customers both use 10.0.0.0/8":"mplsvpn","Hub command that triggers":"dmvpn3","Spoke tells the hub":"dmvpnreg","When does 'local' after":"aaaflow","uRPF strict vs loose":"urpf",
+"Two customers both use 10.0.0.0/8":"mplsvpn","Hub command that triggers":"dmvpn3","Spoke tells the hub":"dmvpnreg","AAA method list: what does each":"aaaflow","uRPF strict vs loose":"urpf",
 "Protect the route processor":"copp","Block rogue router advertisements":"fhs","SNMPv3 security levels":"snmp","Push device data instead":"mdt","Clients on another subnet":"dhcprel",
 "Fail over a static default route":"sla","Flexible NetFlow config order":"fnf","Catalyst Center health score colors":"assure"
 };
@@ -1863,11 +2126,81 @@ Object.assign(CD,{"A route-map sequence has no match":"rmap","Named vs classic E
 Object.assign(QD,{"Sequence 10 of a route map":["e","rmap"],"OSPF neighbors on a LAN stay in 2-WAY":["e","ospfdr"],"Which router type has interfaces in Area 0":["e","ospfrt"],"IPv6 hosts should configure":["e","slaac"],
 "logging trap warnings":["e","syslog"],"Only 10.99.0.0/24 may reach":["e","vtyacc"],"An inbound ACL on Gi0/1":["e","aclplace"],"Classic EIGRP's default metric":["e","eigrpmet"]});
 
+Object.assign(DG,{
+dmvpntopo:{h:206,n:[["hub",180,25,"Hub (NHS)"],["s31",70,118,"Spoke 31"],["s41",290,118,"Spoke 41"]],l:[["s31","hub","d","mGRE"],["s41","hub","d","mGRE"],["s31","s41","ga","spoke-to-spoke"]],
+ t:[[180,156,"tunnel 192.168.100.0/24: hub .11 · spokes .31 and .41","t"],[180,170,"NBMA (Internet): 172.16.11.1 · 172.16.31.1 · 172.16.41.1","m"],[180,184,"must match: tunnel key, IPsec · network-id is local","o"],[180,198,"hub: ip nhrp map multicast dynamic → hellos reach spokes","g"]]},
+ebgplo:{h:142,n:[["r1",62,62,"R1 Lo0 11.11.11.11"],["r2",298,62,"R2 Lo0 12.12.12.12"]],l:[["r1","r2","s","Gi0/0",-6],["r1","r2","s","Gi0/1",6]],
+ t:[[180,22,"eBGP between loopbacks (AS 1 ↔ AS 2)","m"],[180,106,"static routes to the peer loopback over both links","t"],[180,120,"update-source Lo0 + ebgp-multihop 2 (or disable-connected-check)","g"],[180,134,"missing → Idle: TTL 1 can't reach a loopback","r"]]},
+mplstopo:{h:136,n:[["r1",40,60,"R1"],["r2",140,60,"R2"],["r3",240,60,"R3"],["r4",320,60,"R4 4.4.4.4"]],l:[["r1","r2","f","label 17"],["r2","r3","f","label 22"],["r3","r4","f","pop"]],
+ t:[[180,100,"traceroute 4.4.4.4: label 17 → 22 → no label at R4","m"],[180,114,"R4 advertised implicit null → R3 pops (PHP)","t"],[180,128,"every core link needs mpls ip · LDP UDP/TCP 646","g"]]},
+urpfasym:{h:184,n:[["isp1",55,25,"ISP 1 · Gi0/1"],["isp2",55,115,"ISP 2 · Gi0/2"],["r",180,70,"R1"],["lan",310,70,"LAN"]],l:[["isp1","r","f","①"],["r","isp2","ga","②"],["r","lan"]],
+ t:[[180,148,"① packet from 192.0.2.10 arrives on Gi0/1","m"],[180,162,"② best route back to 192.0.2.0/24 uses Gi0/2","t"],[180,176,"strict (rx) drops it · loose (any) accepts it","o"]]},
+dmvpnnat:{h:136,n:[["s",50,60,"Spoke"],["nat",170,60,"NAT firewall"],["hub",310,60,"Hub"]],l:[["s","nat","f","①"],["nat","hub","f","②"]],
+ t:[[180,100,"① IKE starts on UDP 500, detects NAT, moves to UDP 4500","m"],[180,114,"② ESP rides inside UDP 4500 (NAT-T) through the firewall","t"],[180,128,"4500 blocked → IKE up, no IPsec SA (state IPsec)","r"]]},
+fnfdir:{h:128,n:[["lan",45,60,"LAN host"],["r",180,60,"R1"],["wan",312,60,"WAN / Internet"]],l:[["lan","r","f","upload",-6],["r","lan","ga","download",6],["r","wan","f","upload",-6],["wan","r","ga","download",6]],
+ t:[[180,104,"ip flow monitor input on the WAN → sees downloads only","o"],[180,118,"add input on the LAN interface (or output on WAN) for uploads","g"]]}
+});
+
+// generated by mapdg.js
+const CDX={"cnmhlqp":"redisfb","c1u0r17y":"rmap","c14sbg3b":"rmap","co23f0s":"rmap","c5mpxbq":"redisfb","c1ltougn":"splith","cafh9wv":"redisfb","cr4t88f":"lsaflow","czjcnz9":"bgprr","ckap6em":"redisfb","c1g70rds":"ospfrt","c19ora4":"ospfrt","c1de9xup":"pbr","c46gfqh":"pbr","c1y254nn":"pbr","car6825":"vrflite","cl5rruo":"vrflite","c1vjacav":"vrflite","c2wdc5v":"bfd","c10z9ez8":"bfd","c13jzndb":"bfd","c6byk9z":"bfd","cw9tr2p":"eigrpsia","c1pxdndp":"eigrpfs","c1rccdea":"eigrpfs","c1t8afi0":"eigrpaf","c184j7ts":"eigrpaf","cqczd5y":"ospfdr","cwtq9mh":"ospfdr","c1o8gp6u":"lsaflow","cf805sp":"ebgplo","c1a68sek":"bgppath","c71ctwq":"bgppath","c1fnr51o":"bgppath","c1htqos4":"bgprr","c1c6r8xg":"bgppol","c8za7wi":"mplstopo","c10yd553":"mplsl","cpju3yu":"mplsl","c1p324sh":"mplsvpn","c1abvojg":"mplsvpn","c1oajbwd":"mplsvpn","c1ceo1pe":"mplsvpn","cit2vkf":"mplsvpn","c18qzakc":"dmvpntopo","c12922j7":"dmvpn3","cg0k92y":"dmvpn3","c1skjd6d":"dmvpntopo","c1wkhvka":"dmvpnreg","c1v1fttt":"aaaflow","cji60ku":"vtyacc","czqj27a":"aclplace","c1u80xzl":"aclplace","c1pdwod7":"urpf","c1dau1jh":"copp","cob458w":"copp","csoecrv":"copp","ceb19ut":"copp","c11penai":"fhs","c1ixvvhx":"fhs","c1ay3q6l":"fhs","cd1a8tf":"fhs","czd465b":"vtyacc","cuvijb7":"vtyacc","c1pl7v4x":"snmp","c9b2w0q":"snmp","c1wzucoy":"snmp","c12qtfcx":"snmp","cg7pwh1":"syslog","c1sd264u":"syslog","chsk1zm":"syslog","clna9uq":"syslog","cyd8ltj":"dhcprel","c1vntqjr":"dhcprel","cddl63g":"sla","cihpt3o":"sla","csxunkf":"sla","czj1ufa":"fnf","czjoqih":"fnf","cfcuucv":"fnf","ci5o3cc":"assure","cyv1wme":"assure","c1udkjgf":"assure","c1a4v2fc":"floatst","csmrv4i":"rmap","cl9wg7a":"splith","cskdb87":"redisfb","chxmgx3":"pbr","cklxkfd":"vrflite","c1j3pxue":"bfd","c1m3kaho":"eigrpsia","c16ht13j":"ospfmtu","c1jb2iyz":"ospfmtu","c1wvufcf":"ebgplo","cup08vm":"bgpnh","c1kiymm9":"mplstopo","c1lkwfkm":"mplstopo","c1vzkgyc":"mplsvpn","c9ccqqb":"dmvpnreg","cqknvsx":"dmvpntopo","c1pz8xgq":"dmvpnnat","c171dxj4":"dmvpn3","c1cbnx0z":"dmvpn3","cpmjnqz":"aaaflow","ch3nb75":"aaaflow","cqpf9fn":"vtyacc","ccsct03":"urpfasym","c1ybopiy":"copp","crub9ml":"fhs","chqrc5o":"vtyacc","c1ga2dtx":"vtyacc","c33oxwn":"snmp","cpqs3q1":"snmp","cggsp5j":"syslog","c1ig62x5":"syslog","c1b8o2xb":"dhcprel","c1svdn4j":"sla","ch6ovcy":"sla","co0fwah":"fnf","cmjdeio":"assure","c1jty0q0":"eigrpaf","c1mbvvi6":"eigrpaf","ckd07jd":"lsaflow","c1f0i2ga":"bgpaf","c7a9k7y":"pbr","czan3d0":"aclplace","c1ymlrbn":"vtyacc","c1pqqjdu":"fhs","cgo1vkq":"slaac","c5sl5ls":"slaac"};
+const QDX={"q1tl53ne":["e","rmap"],"q52dty7":["e","bgprr"],"q5836nq":["e","lsaflow"],"qx4tt0f":["e","ospfrt"],"q1cc01cl":["e","lsaflow"],"q1cmvz7":["e","pbr"],"q16d6ymq":["e","pbr"],"qacahs8":["e","vrflite"],"qntdy3":["e","vrflite"],"q5yag5n":["e","bfd"],"qzw2cg3":["e","bfd"],"q1qffk7w":["e","eigrpstub"],"qr5s3o3":["e","eigrpaf"],"q3x7p7g":["e","eigrpaf"],"q1kic2p9":["e","lsaflow"],"qnfvahh":["e","vlink"],"q1xlb7r4":["q","ebgplo"],"q1yshlzm":["e","bgppath"],"q1rj2rcs":["e","bgppol"],"q1d2uwel":["e","bgpaf"],"q11ps8je":["e","bgppath"],"q3ojup":["e","mplstopo"],"q19nawpu":["e","mplsl"],"q1boz84b":["e","mplstopo"],"qo0kgra":["e","mplsvpn"],"q13nio25":["e","mplsvpn"],"q1jamzuv":["e","mplsvpn"],"qlb44dz":["e","mplsvpn"],"q61lypn":["e","dmvpnreg"],"q1hk233j":["e","dmvpntopo"],"q1o51ky2":["e","dmvpntopo"],"q7x9up6":["e","dmvpn3"],"qg593wb":["e","dmvpn3"],"qnqa27p":["e","aaaflow"],"q18b7bir":["e","aclplace"],"qgzp0dp":["e","urpf"],"qn632js":["e","copp"],"qsf2uu3":["e","copp"],"qrw51o1":["e","copp"],"q14krcak":["e","fhs"],"qzidlbf":["e","fhs"],"q1dszpys":["e","fhs"],"qcouxvt":["e","fhs"],"qspk042":["e","vtyacc"],"qvw3s6v":["e","vtyacc"],"q1no8knd":["e","snmp"],"qsna1bc":["e","snmp"],"qc68yo9":["e","snmp"],"qg0q4u7":["e","syslog"],"q6lrlh9":["e","syslog"],"q1quc1c1":["e","syslog"],"qfw81a0":["e","dhcprel"],"q1f4alqp":["e","dhcprel"],"quwcq08":["e","sla"],"q5tgfvy":["e","sla"],"q1083d7s":["e","sla"],"q16728p":["e","fnf"],"q1vjiw7a":["e","fnf"],"q1kjskd6":["e","assure"],"q166fzet":["e","redisfb"],"q1jyp3hz":["e","rmap"],"q1n0ugmn":["e","rmap"],"q1iqo20p":["q","splith"],"q1ystao6":["e","redisfb"],"q13tixj6":["e","ospfrt"],"qburzhp":["q","pbr"],"q942dme":["e","pbr"],"q1ciw6zx":["e","vrflite"],"q16w59kz":["e","bfd"],"q162jr01":["e","bfd"],"qarbx9q":["e","eigrpfs"],"q1b8ktv9":["e","eigrpstub"],"q17n2m0q":["e","ospfmtu"],"qsswg3b":["e","ospfmtu"],"qrio5y4":["e","lsaflow"],"q1wbf04b":["e","vlink"],"q1xnwtzt":["q","ebgplo"],"q1b70xe5":["q","bgpnh"],"qxqgreh":["e","bgppath"],"q1i8vbss":["e","bgpfsm"],"qvc39pu":["e","bgprr"],"q12p95af":["e","ebgplo"],"q1wvyeny":["q","mplstopo"],"q1lq0q73":["e","mplsvpn"],"q10m9nze":["e","mplsvpn"],"q15m6ydp":["e","dmvpnreg"],"q12l0ueh":["e","dmvpn3"],"qpgpff5":["e","dmvpn3"],"q1oz57dp":["e","aaaflow"],"qe0ufqr":["e","vtyacc"],"q26tqt7":["e","urpf"],"q1ev3i3":["e","copp"],"q1wf3bdl":["e","copp"],"q1lopy5j":["e","copp"],"q1ly5964":["e","fhs"],"q1vzwwkw":["e","vtyacc"],"qq8pn88":["e","vtyacc"],"q1c6zoid":["e","snmp"],"q1vqta3n":["e","snmp"],"q8twadb":["e","syslog"],"q1cd48df":["e","syslog"],"q1bcmjgq":["e","dhcprel"],"qdfj51u":["e","dhcprel"],"qkd2i6k":["e","sla"],"q3fk9ia":["e","sla"],"q1l48hc4":["e","sla"],"q5dyoln":["e","fnf"],"q19g1vv1":["q","fnfdir"],"qwnu9p":["e","assure"],"qykqjwi":["e","assure"],"qcnw8sc":["q","mplstopo"],"qkfkz15":["q","mplstopo"],"q7vgkh5":["e","mplstopo"],"q1p75vnv":["e","mplsl"],"q5c1fkv":["q","mplsvpn"],"q1a57vnz":["e","mplsvpn"],"q1c1v3dj":["e","mplsvpn"],"qdzak5v":["e","mplsvpn"],"q1n50wn3":["e","mplsvpn"],"qjrahy7":["q","dmvpntopo"],"qtvlxjg":["q","dmvpntopo"],"q1ca8nhz":["e","dmvpnreg"],"qi3cisg":["e","dmvpnreg"],"q1f9aaaz":["e","dmvpn3"],"qwz9ayh":["e","dmvpntopo"],"qmrffr9":["q","dmvpnnat"],"qjcruuy":["e","dmvpntopo"],"qvenqxv":["e","dmvpn3"],"q1vd7gfl":["e","mplsvpn"],"qp56ghl":["e","dmvpn3"],"qosa76y":["e","dmvpn3"],"q1tgu8xo":["e","aaaflow"],"q17oi362":["e","aaaflow"],"q1gny5q4":["e","aaaflow"],"qll112d":["e","aaaflow"],"q1pmugzh":["e","aclplace"],"q1ne87hm":["q","urpfasym"],"q3cczc0":["e","aclplace"],"q1wi9t5m":["e","copp"],"qao3n59":["e","copp"],"q569845":["e","copp"],"q1xyk1u0":["e","fhs"],"q1dda0j7":["e","fhs"],"qt73l5b":["e","fhs"],"qyptbvc":["e","fhs"],"q11rp46x":["e","fhs"],"qsn3ybd":["e","urpf"],"q1mov2jh":["e","aaaflow"],"q7qmp4y":["e","lsaflow"],"q11lsq7":["e","bgppath"],"qtd3h7i":["e","syslog"],"q3j9ps8":["e","snmp"],"qkme2k6":["e","slaac"],"q124fm4p":["e","eigrpaf"],"q3krgt0":["e","eigrpaf"],"qadkfaw":["e","lsaflow"],"q18za71i":["e","bgpaf"],"q1ob2fed":["e","bgpaf"],"qw3l2da":["e","redisfb"],"q197t84n":["e","pbr"],"q146pajd":["e","vtyacc"],"q1iklmxt":["e","fhs"],"q3g8lyz":["e","fhs"],"qgwxshp":["e","slaac"],"q1xmf6c3":["e","slaac"]};
+
+const DGA={
+floatst:"Floating static route: primary path via the dynamic route, backup static with higher AD",
+redisfb:"Two-way redistribution at two boundary routers and the route feedback loop",
+splith:"DMVPN hub with EIGRP split horizon blocking spoke-to-spoke routes",
+autosum:"EIGRP auto-summary on a discontiguous network",
+pbr:"Policy-based routing sending matched traffic to a different next hop",
+vrflite:"VRF-Lite: two customer VRFs sharing one router with separate tables",
+bfd:"BFD fast failure detection between two routers notifying the routing protocols",
+eigrpfs:"EIGRP successor and feasible successor selection with the feasibility condition",
+eigrpsia:"EIGRP query propagation and stuck-in-active",
+eigrpstub:"EIGRP stub router at a branch limiting queries",
+ospfmtu:"OSPF neighbors stuck in ExStart because of an MTU mismatch",
+lsaflow:"OSPF LSA types flowing between areas and the ASBR",
+vlink:"OSPF virtual link through a transit area to reach area 0",
+bgpfsm:"BGP finite state machine from Idle to Established",
+bgpnh:"BGP next-hop unchanged across iBGP and the next-hop-self fix",
+bgppath:"BGP best path selection order",
+bgprr:"BGP route reflector with clients and non-clients",
+mplsl:"MPLS label push, swap and pop along an LSP",
+mplsvpn:"MPLS L3VPN with PE routers, VRFs and VPNv4 between PEs",
+dmvpn3:"DMVPN Phase 3 with NHRP redirect and shortcut between spokes",
+dmvpnreg:"DMVPN spoke registration with the NHRP server on the hub",
+aaaflow:"AAA method list flow: pass, fail and error results",
+urpf:"Unicast RPF strict and loose mode checks",
+copp:"Control plane policing protecting the route processor",
+fhs:"IPv6 first-hop security features on an access switch",
+snmp:"SNMPv3 manager and agent with users, groups and views",
+mdt:"Model-driven telemetry from a router to a collector",
+dhcprel:"DHCP relay forwarding client broadcasts to a remote server",
+sla:"IP SLA probe tracking a route and failing over",
+fnf:"Flexible NetFlow record, exporter and monitor",
+assure:"Catalyst Center assurance collecting network health data",
+rmap:"Route map sequence evaluation with match and set",
+eigrpaf:"Named EIGRP with IPv4 and IPv6 address families",
+eigrpmet:"EIGRP composite metric from bandwidth and delay",
+ospfdr:"OSPF DR and BDR election on a multi-access segment",
+ospfrt:"OSPF router types: internal, ABR, ASBR and backbone",
+bgpaf:"MP-BGP carrying IPv4 and IPv6 address families on one session",
+bgppol:"BGP policy with prefix lists, route maps and attributes",
+aclplace:"ACL placement: standard near destination, extended near source",
+vtyacc:"VTY access class restricting management access",
+syslog:"Syslog severity levels and logging to a server",
+slaac:"IPv6 SLAAC, stateless and stateful DHCPv6 with RA flags",
+dmvpntopo:"DMVPN hub-and-spoke topology over the internet",
+ebgplo:"eBGP between loopbacks with ebgp-multihop and update-source",
+mplstopo:"MPLS core topology with P and PE routers",
+urpfasym:"Asymmetric routing breaking uRPF strict mode",
+dmvpnnat:"DMVPN spoke behind NAT with NHRP using the public address",
+fnfdir:"Flexible NetFlow applied in ingress and egress directions"
+};
+
 let dgN=0;
 function drawDG(k){
   const d=DG[k];if(!d)return"";const id="ar"+(dgN++);
   const col={ga:"#48bb78",s:"#4a5a80",d:"#7aa2ff",x:"#f56565",b:"#48bb78",f:"#f6ad55",o:"#f6ad55",r:"#f56565",p:"#f687b3",t:"#4fd1c5",g:"#48bb78",m:"#8d98b3"};
-  const N={};let out=`<svg class="diagram qd" viewBox="0 0 360 ${d.h}" role="img" aria-label="topology"><defs><marker id="${id}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#f6ad55"/></marker><marker id="${id}g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#48bb78"/></marker></defs>`;
+  const N={};let out=`<svg class="diagram qd" viewBox="0 0 360 ${d.h}" role="img" aria-label="${(DGA[k]||k).replace(/"/g,"")}"><defs><marker id="${id}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#f6ad55"/></marker><marker id="${id}g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#48bb78"/></marker></defs>`;
   (d.z||[]).forEach(([x,y,w,h,lb,c])=>{const cc=col[c]||"#7aa2ff";out+=`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="10" fill="none" stroke="${cc}" stroke-dasharray="4 3"/><text x="${x+7}" y="${y+12}" font-size="9" fill="${cc}">${lb}</text>`});
   d.n.forEach(([i,x,y,lb])=>{const w=Math.max(46,lb.length*5.4+14);N[i]={x,y,w,h:22}});
   (d.l||[]).forEach(([a,b,st="s",lb="",off=0])=>{
@@ -1893,8 +2226,8 @@ function drawDG(k){
   (d.t||[]).forEach(([x,y,tx,c])=>out+=`<text x="${x}" y="${y}" font-size="9.5" fill="${col[c]||"#8d98b3"}" text-anchor="middle">${tx}</text>`);
   return out+"</svg>";
 }
-function cardDiag(c){for(const k in CD)if(c[1].startsWith(k))return CD[k];return null}
-function qDiag(q){for(const k in QD)if(q[1].startsWith(k))return QD[k];return null}
+function cardDiag(c){const x=CDX["c"+hk(c[1]+"|"+c[2])];if(x)return x;for(const k in CD)if(c[1].startsWith(k))return CD[k];return null}
+function qDiag(q){const x=QDX["q"+hk(q[1])];if(x)return x;for(const k in QD)if(q[1].startsWith(k))return QD[k];return null}
 
 const hk=s=>{let h=5381;for(let i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))|0;return (h>>>0).toString(36)};
 const od=k=>({"1":"l","2":"v","3":"s","4":"i"})[k.split(".")[0]];
@@ -1914,7 +2247,7 @@ const C=[
 ["l","Default AD values you must know cold","Connected 0 · static 1 · eBGP 20 · EIGRP 90 · OSPF 110 · IS-IS 115 · RIP 120 · EIGRP ext 170 · iBGP 200","EIGRP summary (Null0) routes get 5.","OCG","1.1"],
 ["l","A backup static route must only be used when OSPF loses the prefix","Floating static: ip route … next-hop 115 (AD above 110)","The static stays out of the RIB until the OSPF route disappears.","OCG · PCG","1.1"],
 ["l","Change OSPF AD only for external routes","distance ospf external 171","OSPF uses 110 for intra-area, inter-area and external routes by default. 171 lets EIGRP externals (170) win.","NETACAD","1.1"],
-["l","Change EIGRP AD for internal and external routes","distance eigrp 90 170 (internal, external)","Per-prefix distance with an ACL works for internal EIGRP routes only, not externals.","NETACAD","1.1"],
+["l","Change EIGRP AD for internal and external routes","distance eigrp 90 171 (internal, external; defaults 90 170)","Per-prefix distance with an ACL works for internal EIGRP routes only, not externals.","NETACAD","1.1"],
 ["l","Change BGP AD values","distance bgp 20 200 200 (external, internal, local)","Local = routes injected with network/aggregate on this router.","NETACAD · OCG","1.1"],
 ["l","A route-map sequence has no match statement","It matches everything","A permit sequence with only set commands applies to every route.","OCG","1.2"],
 ["l","What happens to routes that match no route-map sequence?","Implicit deny at the end","In redistribution they aren't redistributed. In PBR they're routed normally.","OCG","1.2"],
@@ -1922,17 +2255,17 @@ const C=[
 ["l","An ACL used in a route map: permit vs deny entries","ACL permit = matched by that sequence · ACL deny = not matched, try the next sequence","The route-map's own permit/deny decides the action. The ACL only selects.","OCG","1.2"],
 ["l","ip prefix-list X permit 10.0.0.0/8 le 24","Matches 10.x prefixes with lengths /8 to /24","ge/le set the length range. Without them the length must match exactly.","OCG · PCG","1.2"],
 ["l","Mark routes during redistribution so you can filter them elsewhere","set tag N in the redistribution route-map","Other boundary routers match tag N and deny it, which stops route feedback.","NETACAD · OCG","1.2"],
-["l","Distance-vector rule: don't advertise a route out the interface it came in on","Split horizon","On by default for EIGRP. It breaks hub-and-spoke on one multipoint interface (DMVPN).","OCG","1.3"],
-["l","DMVPN hub runs EIGRP; spokes don't learn each other's networks","no ip split-horizon eigrp AS on the hub tunnel","Named mode: no split-horizon under af-interface. Phase 2 also needs no next-hop-self.","OCG","1.3"],
+["l","Distance-vector rule: don't advertise a route out the interface it came in on","Split horizon","On by default for EIGRP and RIP. Its partner technique, poison reverse, advertises the route back with an infinite metric instead.","OCG","1.3"],
+["l","Disable EIGRP split horizon in named mode","af-interface Tunnel0 → no split-horizon (under the address family)","Classic mode uses no ip split-horizon eigrp AS on the interface itself.","OCG","1.3"],
 ["l","Advertise a failed route with an infinite metric instead of removing it silently","Route poisoning","RIP advertises it with metric 16; EIGRP sets the delay to infinity. Poison reverse is related: a route is sent back to where it was learned as unreachable.","OCG","1.3"],
 ["l","Stop routes redistributed at one boundary from coming back in at another","Tag on the way out, deny that tag on the way in","Use route-maps with set tag / match tag at every mutual-redistribution point.","OCG · NETACAD","1.3"],
-["l","How does OSPF prevent inter-area loops?","Inter-area traffic always crosses Area 0; ABRs ignore type 3 LSAs heard from non-backbone areas","That's why every area must touch Area 0, or use a virtual link.","OCG","1.3"],
+["l","How does OSPF prevent inter-area loops?","Inter-area traffic always crosses Area 0; ABRs ignore type 3 LSAs heard from non-backbone areas (while they have an Area 0 adjacency)","That's why every area must touch Area 0, or use a virtual link.","OCG","1.3"],
 ["l","Why must iBGP be a full mesh (or use a route reflector)?","iBGP split horizon: routes from an iBGP peer aren't sent to other iBGP peers","eBGP prevents loops with the AS_PATH: a route carrying your own AS is dropped.","OCG","1.3"],
-["l","Redistribute OSPF into EIGRP, but nothing shows up","Missing seed metric: redistribute ospf 1 metric 10000 100 255 1 1500","EIGRP's default seed metric is infinity (except for static, connected and other EIGRP routes).","OCG · NETACAD","1.4"],
+["l","Redistribute OSPF into EIGRP, but nothing shows up","Missing seed metric: redistribute ospf 1 metric 10000 100 255 1 1500","EIGRP's default seed metric is infinity. Connected, static and routes from another EIGRP AS keep a usable metric; everything else needs metric or default-metric. Delay is in tens of µs.","OCG · NETACAD","1.4"],
 ["l","Redistribute into OSPF on older IOS: only classful networks appear","Add the subnets keyword","IOS XE adds subnets automatically. Default seed: 20 (E2), but 1 for BGP routes.","OCG","1.4"],
 ["l","What must be true for a route to be redistributed?","It's in the routing table, learned from the source protocol (or a connected interface in that protocol)","If another source with a lower AD owns the RIB entry, nothing is redistributed.","NETACAD","1.4"],
 ["l","Redistribute iBGP-learned routes into an IGP","bgp redistribute-internal","By default only eBGP routes are redistributed into IGPs.","OCG","1.4"],
-["l","Two-way redistribution at two points causes suboptimal routing or loops","Raise the AD of the re-learned externals, or tag and filter","Classic fix: distance ospf external 171 so EIGRP externals (170) win on the boundary routers.","NETACAD · OCG","1.4"],
+["l","Redistribution at two boundary routers sends traffic over a slow link","Give the boundary routers different seed metrics","Same seed metric on both makes the IGP prefer the faster internal link to the wrong boundary router. Set the metric per router (metric keyword, default-metric or a route map).","NETACAD","1.4"],
 ["l","OSPF E1 vs E2","E2 (default): seed cost only · E1: seed + internal cost","E1 always beats E2. N1/N2 are the NSSA versions.","OCG","1.4"],
 ["l","EIGRP summary on an interface","ip summary-address eigrp AS net mask (classic) · summary-address under af-interface (named)","Creates a Null0 discard route with AD 5 on the summarizing router.","OCG","1.5"],
 ["l","OSPF: summarize inter-area routes","area ID range on the ABR","Only an ABR can summarize type 3 LSAs.","OCG","1.5"],
@@ -1954,7 +2287,7 @@ const C=[
 ["l","Enable BFD on an interface","bfd interval 50 min_rx 50 multiplier 3","Then register clients: ip ospf bfd, bfd all-interfaces (EIGRP), neighbor x fall-over bfd (BGP).","OCG · PCG","1.8"],
 ["l","BFD detection time","Interval × multiplier, e.g. 50 ms × 3 = 150 ms","Each side uses the slower of its own TX and the peer's min_rx.","OCG","1.8"],
 ["l","BFD asynchronous vs echo mode","Async: control packets both ways · echo: packets looped back by the peer's forwarding plane","Echo puts no load on the peer's CPU. Disable it with no bfd echo.","OCG","1.8"],
-["l","BFD session is up but OSPF still waits for the dead timer","OSPF isn't registered as a BFD client","show bfd neighbors details lists the registered protocols.","OCG","1.8"],
+["l","What happens when BFD declares a neighbor down?","Every registered client (OSPF, EIGRP, BGP…) drops that neighbor right away and reconverges","BFD only detects; the routing protocols act, without waiting for their own dead/hold timers.","OCG","1.8"],
 ["l","EIGRP neighbors don't form. What must match?","AS number, K values, subnet, authentication","Hello/hold timers don't have to match. A passive interface or an ACL also blocks hellos.","OCG · CSLG","1.9"],
 ["l","Successor vs feasible successor","Successor = best path (lowest FD) · FS = backup whose RD < the current FD","The feasibility condition guarantees the backup is loop-free.","OCG · PS","1.9"],
 ["l","Route goes Active and the router sends queries","The successor is lost and no feasible successor exists","Queries run until every reply arrives. No reply within 3 minutes = stuck in active (SIA).","CSLG · OCG","1.9"],
@@ -1963,11 +2296,11 @@ const C=[
 ["l","Unequal-cost load balancing","variance N: paths with FD < N × successor FD that are also feasible successors","Paths that fail the feasibility condition are never used, whatever the variance.","CSLG","1.9"],
 ["l","Default EIGRP load balancing","Up to 4 equal-cost paths (maximum-paths)","The classic metric uses K1 = K3 = 1: bandwidth + delay.","OCG","1.9"],
 ["l","Classic EIGRP metric with default K values","256 × (10⁷ / slowest BW in kbps + total delay in tens of µs)","Named mode uses 64-bit wide metrics so fast links stay different.","OCG","1.9"],
-["l","Named vs classic EIGRP configuration","Named: router eigrp NAME → address-family ipv4|ipv6 [vrf X] autonomous-system N → af-interface","One process for IPv4, IPv6 and VRFs. Supports HMAC-SHA-256.","OCG","1.9"],
+["l","Named vs classic EIGRP configuration","Named: router eigrp NAME → address-family ipv4|ipv6 autonomous-system N → af-interface / topology base","One process for IPv4, IPv6 and VRFs. Supports HMAC-SHA-256.","OCG","1.9"],
 ["l","EIGRP authentication options","Classic: MD5 with a key chain · named: MD5 or HMAC-SHA-256","Key ID and key string must match. Check key lifetimes too.","CSLG","1.9"],
 ["l","Classic EIGRP for IPv6 doesn't start","It needs a router ID (no IPv4 address on the box) and ipv6 eigrp AS on each interface","Neighbors talk from link-local addresses to FF02::A.","OCG","1.9"],
 ["l","EIGRP inside a VRF","Named: address-family ipv4 vrf RED autonomous-system 100","Classic: address-family ipv4 vrf RED + autonomous-system 100 under router eigrp.","OCG","1.9"],
-["l","OSPF neighbors stuck in ExStart/Exchange","MTU mismatch","Match the MTU or use ip ospf mtu-ignore.","NETACAD · CSLG","1.10"],
+["l","Which OSPF neighbor state points to which cause?","No neighbor: hello params, area, auth, ACL · Init: one-way hellos · ExStart/Exchange: MTU · 2-Way: normal for DROthers","The state where it stops narrows down the fault before you open any debug.","NETACAD · CSLG","1.10"],
 ["l","OSPF neighbor won't come up. What must match?","Area ID, area type (stub flag), subnet/mask, hello/dead timers, authentication, unique RID (MTU for Full)","Network types must also be compatible (DR vs non-DR).","OCG · NETACAD","1.10"],
 ["l","Neighbors stuck in 2-Way on Ethernet","Normal between two DROthers","Only the DR and BDR go Full with everyone.","OCG","1.10"],
 ["l","Broadcast vs point-to-point network type","Broadcast: DR/BDR elected · point-to-point: no DR · both hello 10, dead 40","Non-broadcast and point-to-multipoint use hello 30, dead 120.","OCG","1.10"],
@@ -1983,14 +2316,14 @@ const C=[
 ["l","eBGP between loopbacks stays Idle","Add ebgp-multihop 2 (or disable-connected-check) + update-source loopback","eBGP packets use TTL 1 by default.","OCG · INE","1.11"],
 ["l","BGP stuck in Active","The TCP session to port 179 never completes","Wrong neighbor IP or AS, an ACL, no route back, or update-source mismatch.","OCG","1.11"],
 ["l","iBGP route is in the BGP table but not best or installed","Next hop unreachable","neighbor x next-hop-self on the edge router, or advertise the link into the IGP.","PCG · OCG","1.11"],
-["l","BGP best-path order","Weight → Local Pref → locally originated → AS-path length → origin (i<e<?) → MED → eBGP over iBGP → IGP metric to next hop → oldest eBGP → lowest RID","Mnemonic: We Love Oranges AS Oranges Mean Pure Refreshment.","OCG","1.11"],
+["l","BGP best-path order","Weight → Local Pref → locally originated → AS-path length → origin (IGP > EGP > incomplete) → MED → eBGP over iBGP → IGP metric to next hop → oldest eBGP → lowest RID","Mnemonic: We Love Oranges AS Oranges Mean Pure Ice-cold Orange Refreshment (Weight, LP, Originated, AS path, Origin, MED, Paths eBGP>iBGP, IGP metric, Oldest, RID).","OCG","1.11"],
 ["l","Prefer one exit for the whole AS","Higher Local Preference (default 100)","Sent to all iBGP peers, never to eBGP peers.","OCG","1.11"],
 ["l","Prefer a path on one router only","Weight (Cisco, default 0, 32768 for local routes)","Never advertised to any peer.","OCG","1.11"],
 ["l","Influence how others enter your AS","AS-path prepend or MED (lower wins)","MED is only compared between paths from the same neighbor AS by default.","OCG","1.11"],
 ["l","Route reflector rules","From a client → all clients + non-clients · from a non-client → clients only · from eBGP → everyone","The RR doesn't change the next hop or attributes.","OCG","1.11"],
 ["l","Route reflector loop prevention","ORIGINATOR_ID and CLUSTER_LIST","A router drops a route carrying its own RID or cluster ID.","OCG","1.11"],
 ["l","Apply a policy change without dropping the session","clear ip bgp x soft in/out (route refresh)","Route refresh capability is negotiated in the OPEN message.","OCG","1.11"],
-["l","Private AS numbers","64512–65534 (2-byte) · 4200000000–4294967294 (4-byte)","neighbor x remove-private-as strips them toward the Internet.","OCG","1.11"],
+["l","Private AS numbers","64512–65534 (2-byte) · 4200000000–4294967294 (4-byte)","neighbor x remove-private-as strips them toward the Internet, but only if the AS_PATH holds nothing but private ASNs. For mixed paths use remove-private-as all [replace-as].","OCG","1.11"],
 ["l","IPv6 prefixes over an IPv4 BGP session","MP-BGP: address-family ipv6 + neighbor x activate","The next hop must be a reachable IPv6 address. no bgp default ipv4-unicast stops automatic IPv4 activation.","OCG","1.11"],
 ["l","Group neighbors that share one policy","peer-group (or peer templates)","Updates are built once per group.","OCG","1.11"],
 ["l","A BGP network statement doesn't advertise the prefix","The exact prefix and mask must be in the RIB","A BGP network statement doesn't match interfaces like an IGP network statement.","OCG","1.11"],
@@ -2025,8 +2358,8 @@ const C=[
 ["v","OSPF over DMVPN Phase 3: which network type?","point-to-multipoint (or broadcast with the hub as DR, spokes priority 0)","Phase 2 needs broadcast/non-broadcast so spoke next hops are kept.","OCG","2.3"],
 ["v","EIGRP over DMVPN Phase 2: spokes see the hub as next hop","no ip next-hop-self eigrp AS on the hub (plus no split horizon)","Phase 3 doesn't need this: shortcuts fix the path.","OCG","2.3"],
 ["s","Enable AAA on a router","aaa new-model","Local authentication applies to VTY lines immediately, so create a local user first.","OCG","3.1"],
-["s","TACACS+ vs RADIUS","TACACS+: TCP 49, encrypts the whole body, separates AuthN/AuthZ/accounting · RADIUS: UDP 1812/1813 (Cisco 1645/1646), encrypts only the password","TACACS+ for device admin, RADIUS for network access.","OCG","3.1"],
-["s","When does 'local' after 'group tacacs+' get used?","Only when the server doesn't answer (error)","A server reject (wrong password) ends authentication. No fallback.","OCG · ITPRO","3.1"],
+["s","TACACS+ vs RADIUS","TACACS+: TCP 49, encrypts the whole body, separates AuthN/AuthZ/accounting · RADIUS: UDP 1812/1813 per RFC, IOS default 1645/1646, encrypts only the password","TACACS+ for device admin, RADIUS for network access.","OCG","3.1"],
+["s","AAA method list: what does each server result do?","PASS → logged in · FAIL (reject) → denied, stop · ERROR (no answer) → try the next method","That's why 'group tacacs+ local' only uses local when the server is unreachable.","OCG · ITPRO","3.1"],
 ["s","A method list exists but VTY logins ignore it","Apply it: line vty 0 4 → login authentication LISTNAME","Without a named list, the default list (if any) applies.","OCG","3.1"],
 ["s","Test the AAA server from the router","test aaa group tacacs+ USER PASS legacy · debug aaa authentication","Also check the shared key and the source interface.","OCG","3.1"],
 ["s","RADIUS server uses 1812/1813, the router doesn't match","Set auth-port 1812 acct-port 1813 on the router","Cisco IOS defaults to 1645/1646.","OCG","3.1"],
@@ -2058,7 +2391,7 @@ const C=[
 ["i","Lines and what they're for","line con 0 = console · aux · line vty 0 4 (or 0 15) = Telnet/SSH","transport input none blocks remote access on that line.","OCG","4.1"],
 ["i","SNMPv2c security","Community string only (plain text), ro or rw","Lock it down with an ACL: snmp-server community X ro 10.","OCG","4.2"],
 ["i","SNMPv3 security levels","noAuthNoPriv · authNoPriv (MD5/SHA) · authPriv (+ DES/3DES/AES)","The level must match between the group and the NMS.","OCG","4.2"],
-["i","SNMPv3 configuration order","snmp-server view → group (v3 priv) → user (auth sha, priv aes)","Users don't show in running-config: use show snmp user.","OCG","4.2"],
+["i","SNMPv3 configuration order","(view, only if the group uses a custom view) → group (v3 priv) → user (auth sha, priv aes)","Users don't show in running-config: use show snmp user.","OCG","4.2"],
 ["i","Ports used by SNMP","Agent UDP 161 (get/set) · traps and informs to the NMS on UDP 162","An inform is an acknowledged trap.","OCG","4.2"],
 ["i","NMS gets timeouts after SNMPv3 is configured","Wrong auth/priv algorithm or password, wrong security level, or an ACL on the group","debug snmp packets · show snmp group.","OCG","4.2"],
 ["i","Syslog severity levels","0 emerg · 1 alert · 2 crit · 3 err · 4 warn · 5 notif · 6 info · 7 debug","logging trap 4 sends levels 0–4 to the server.","OCG","4.3"],
@@ -2107,7 +2440,7 @@ C.push(
 ["l","Symptom: show ip eigrp topology active shows a route with a neighbor flagged 'r'","The router is still waiting for that neighbor's reply","If it lasts 3 minutes → SIA and the neighbor is reset. Limit query scope with stubs and summaries.","CSLG","1.9"],
 ["l","Symptom: show ip ospf neighbor shows EXSTART or EXCHANGE for minutes","MTU mismatch","Match the interface MTU or use ip ospf mtu-ignore.","OCG · NETACAD","1.10"],
 ["l","Symptom: debug ip ospf hello prints 'Mismatched hello parameters … Dead R 40 C 120'","Hello/dead timers differ, often a network-type mismatch","Align the network types or timers on both sides.","OCG","1.10"],
-["l","Symptom: debug ip ospf adj prints 'Mismatched Authentication type'","OSPF authentication differs between neighbors","Use the same auth type (area or interface) and key on both sides.","OCG · NETACAD","1.10"],
+["l","Symptom: debug ip ospf adj prints 'Mismatch Authentication type. Input packet specified type 0, we use type 1'","OSPF authentication differs between neighbors","Use the same auth type (area or interface) and key on both sides.","OCG · NETACAD","1.10"],
 ["l","Symptom: show ip ospf interface brief shows Nbrs F/C '0/1'","One neighbor is seen, but none is Full","Usually MTU; check show ip ospf neighbor for the stuck state.","OCG","1.10"],
 ["l","Symptom: BGP neighbor Idle, 'External BGP neighbor may be up to 2 hops away', no route to the peer","BGP can't start TCP because the peer is unreachable","Add a route to the peer's loopback; keep update-source and multihop.","OCG · INE","1.11"],
 ["l","Symptom: show bgp … prefix shows '(inaccessible)' and 'no best path'","The next hop can't be resolved","neighbor x next-hop-self on the edge router, or advertise the link.","OCG","1.11"],
@@ -2117,7 +2450,7 @@ C.push(
 ["v","Symptom: show mpls forwarding-table shows 'Pop Label' for a loopback","Normal PHP: the next hop is the egress router","The label is removed one hop early (implicit null).","OCG","2.1"],
 ["v","Symptom: PE has the VPNv4 route in show bgp vpnv4, but it's not in show ip route vrf","The VRF doesn't import that route target","Match route-target import to the remote export RT.","OCG","2.2"],
 ["v","Symptom: show dmvpn on a spoke shows state 'NHRP'","Registration with the hub hasn't been acknowledged","Check NHS and NBMA addresses, tunnel key and IPsec.","OCG","2.3"],
-["v","Symptom: show dmvpn shows state 'IPsec' for a peer","IKE is up but no IPsec SA exists","Check the transform set and IPsec profile on both sides.","OCG","2.3"],
+["v","Symptom: show dmvpn shows state IPSEC for a peer","IKE is up but no IPsec SA exists","Check the transform set and IPsec profile on both sides.","OCG","2.3"],
 ["v","Symptom: show crypto isakmp sa shows MM_NO_STATE","IKE phase 1 is failing","Check the PSK, ISAKMP policy and that UDP 500 (and 4500 with NAT) passes.","OCG","2.3"],
 ["v","Symptom: %TUN-5-RECURDOWN: Tunnel100 temporarily disabled due to recursive routing","The tunnel destination is learned through the tunnel","Keep the NBMA/transport networks out of the tunnel's routing protocol.","OCG","2.3"],
 ["v","Symptom: show ip route shows 'H' routes via Tunnel100 on a spoke","Phase 3 NHRP shortcuts are installed (AD 250)","Spoke-to-spoke is working as designed.","OCG","2.3"],
@@ -2142,6 +2475,25 @@ C.push(
 ["i","Symptom: show ip sla configuration says 'Next Scheduled Start Time: Pending trigger'","The operation was never scheduled","ip sla schedule N life forever start-time now.","OCG","4.5"],
 ["i","Symptom: show flow exporter statistics shows 'Successfully sent: 0'","The exporter can't deliver to the collector","Check destination, source interface, routing and the UDP port.","CSLG","4.6"],
 ["i","Symptom: Device 360 shows a health score of 2","Poor (1–3): a critical issue on that device","Open its issues and KPIs (reachability, CPU, memory, interfaces).","CSLG","4.7"]
+);
+
+// IPv6 cards
+C.push(
+["l","Classic EIGRP for IPv6: minimum config","ipv6 unicast-routing · ipv6 router eigrp 100 (+ eigrp router-id if no IPv4) · ipv6 eigrp 100 on each interface","No network statements: interfaces are enabled one by one. Older IOS also needs no shutdown under ipv6 router eigrp.","OCG","1.9"],
+["l","Named EIGRP: how are IPv6 interfaces enabled?","address-family ipv6 enables every IPv6 interface automatically","Use af-interface X → shutdown to exclude one.","OCG","1.9"],
+["l","OSPFv3 process doesn't start on an IPv6-only router","No router ID: configure router-id (32-bit, dotted)","%OSPFv3-4-NORTRID appears; OSPFv3 still uses a 32-bit RID.","OCG","1.10"],
+["l","Enable OSPFv3 on an interface","Traditional: ipv6 ospf 1 area 0 · address families: ospfv3 1 ipv6 area 0 (and ospfv3 1 ipv4 area 0)","OSPFv3 is enabled per interface, never with network statements.","OCG","1.10"],
+["l","OSPFv3 LSAs that replace OSPFv2 type 3 and 4","Type 3 Inter-Area-Prefix · type 4 Inter-Area-Router · plus type 8 Link and type 9 Intra-Area-Prefix","Prefixes moved out of router/network LSAs into types 8 and 9.","OCG","1.10"],
+["l","IPv6 prefixes over an IPv4 BGP session show next hop ::FFFF:10.0.12.2 and aren't used","The IPv4-mapped next hop isn't routable: set an IPv6 next hop","route-map with set ipv6 next-hop (outbound), or peer over IPv6.","OCG","1.11"],
+["l","BGP peering over IPv6 link-local addresses","neighbor FE80::2 remote-as N + neighbor FE80::2 update-source Gi0/1 (newer IOS XE: FE80::2%Gi0/1)","Link-local addresses are only unique per interface, so the interface must be given. Global unicast peering is recommended (OCG).","OCG","1.11"],
+["l","IPv6 redistribution misses the source protocol's connected networks","Add include-connected to redistribute","IPv4 includes them automatically; IPv6 doesn't. IPv6 also has no subnets keyword.","OCG","1.4"],
+["l","Summarize IPv6 routes","EIGRP: ipv6 summary-address eigrp 100 2001:DB8:1::/48 (interface) · OSPFv3: area 1 range 2001:DB8:1::/48 (ABR)","Same rules as IPv4: EIGRP per interface, OSPF only at the ABR/ASBR.","OCG","1.5"],
+["l","Policy-based routing for IPv6","route-map with match ipv6 address + set ipv6 next-hop · ipv6 policy route-map on the ingress interface","Same logic as IPv4 PBR, with the ipv6 keywords.","OCG","1.6"],
+["s","IPv6 ACL rules that differ from IPv4","Named only · sequence numbers · implicit permit nd-na/nd-ns before deny ipv6 any any","Applied with ipv6 traffic-filter; on lines with ipv6 access-class.","OCG","3.2"],
+["s","Restrict IPv6 SSH access to the VTY lines","ipv6 access-class NAME in under line vty","access-class alone only applies IPv4 ACLs.","OCG","3.2"],
+["s","Where is RA Guard attached?","On access ports toward hosts (device-role host)","Router-facing ports need the router role or no policy, or legitimate RAs are dropped.","CSLG · PS","3.4"],
+["i","Where do DHCPv6 clients get their default gateway?","From the router advertisement, never from DHCPv6","DHCPv6 has no default-router option, so RAs must still reach the hosts.","OCG","4.4"],
+["i","Stateful DHCPv6: what must the router set?","ipv6 nd managed-config-flag (M = 1) on the client interface","Hosts then ask DHCPv6 for the address; without M they keep SLAAC. To stop SLAAC addresses too, clear A on the prefix: ipv6 nd prefix PREFIX no-autoconfig.","OCG","4.4"]
 );
 
 const CK=C.map(c=>"c"+hk(c[1]+"|"+c[2]));
@@ -2214,6 +2566,7 @@ function render(){
   </div></div>
   <div class="btns"><button class="again" id="ag">Again</button><button class="know" id="kn">Got it ✓</button></div>
   <p class="why" style="text-align:center;margin-top:8px">${deck.length} in this session · "Again" returns in 3 cards · "Got it" moves it up a level</p>`;
+  const cdEl=document.getElementById("cd"),fitCd=()=>{if(!cdEl.isConnected)return;cdEl.style.height="";const bk=cdEl.querySelector(".back"),lc=bk.lastElementChild,h=Math.max(cdEl.querySelector(".front").scrollHeight,lc.offsetTop+lc.offsetHeight+24);if(h>cdEl.clientHeight)cdEl.style.height=h+"px"};fitCd();requestAnimationFrame(fitCd);document.fonts&&document.fonts.ready.then(fitCd);window.onresize=fitCd;
   document.getElementById("cd").onclick=e=>e.currentTarget.classList.toggle("flip");
   document.getElementById("ag").onclick=()=>{st[CK[i]]={l:0,t:Date.now()};save();deck.shift();deck.splice(Math.min(3,deck.length),0,i);render()};
   document.getElementById("kn").onclick=()=>{st[CK[i]]={l:Math.min(lv(i)+1,4),t:Date.now()};save();deck.shift();render()};
@@ -2234,11 +2587,11 @@ const Q=[
 ["l","ip prefix-list P permit 10.0.0.0/8 ge 16 le 24. Which prefix matches?",["10.0.0.0/8","10.1.0.0/16","10.1.1.128/25","192.168.0.0/16"],1,"It must sit inside 10.0.0.0/8 with a length from /16 to /24. /8 is too short, /25 too long. (OCG)","1.2"],
 ["l","Sequence 10 of a route map permits ACL 10. ACL 10 has 'deny 10.1.1.0 0.0.0.255' and 'permit any'. What happens to 10.1.1.0/24?",["Dropped by sequence 10 (ACL deny wins)", "Not matched; the next sequence is checked", "Permitted by sequence 10 via permit any", "Rejected: an ACL deny isn't allowed here"],1,"An ACL deny inside a route map means 'no match', not 'drop'. The route moves on to the next sequence. (OCG)","1.2"],
 ["l","Routes redistributed from OSPF into EIGRP at R1 must not be redistributed back into OSPF at R2. Best tool?",["Distribute-lists inbound on every EIGRP router in the domain", "Tag at R1, deny that tag in R2's route map", "A lower EIGRP AD on R2 only", "passive-interface toward OSPF on R2"],1,"Tags travel with external routes and are the standard way to stop route feedback. (OCG)","1.2"],
-["l","EIGRP hub with all spokes on one DMVPN tunnel interface. Spokes don't learn each other's LANs.",["Disable split horizon on the hub tunnel", "Configure the spokes as EIGRP stubs", "Enable auto-summary on the hub tunnel", "Raise the hold timer on the hub tunnel"],0,"Split horizon blocks re-advertising out the interface a route arrived on. no ip split-horizon eigrp AS on the hub fixes it. (OCG)","1.3"],
+["l","A router sends a route back out the interface it learned it on, but with an infinite metric. Which technique is this?",["Poison reverse","Split horizon","Route poisoning of a failed route","A hold-down timer"],0,"Poison reverse advertises learned routes back toward their source as unreachable. Split horizon simply doesn't send them back, and route poisoning advertises a route that actually failed. (OCG)","1.3"],
 ["l","Which mechanism advertises a lost route with an infinite metric?",["Split horizon", "Route poisoning", "Hold-down timers", "Route tagging"],1,"Poisoning advertises the route as unreachable (RIP metric 16) so neighbors purge it quickly. (OCG)","1.3"],
 ["l","An eBGP route arrives with your own AS number in its AS_PATH.",["Accepted with lower preference","Dropped as a loop","Accepted only if its MED is lower","Reflected to iBGP peers"],1,"The AS_PATH is eBGP's loop prevention. allowas-in overrides it when you really need to. (OCG)","1.3"],
 ["l","R2 learns a route from iBGP peer R1. Without a route reflector, does R2 pass it to iBGP peer R3?",["Yes, always","No: iBGP split horizon","Only with next-hop-self","Only if R3 is a client"],1,"Routes learned from iBGP aren't advertised to other iBGP peers. Hence full mesh or route reflectors. (OCG)","1.3"],
-["l","An ABR hears a type 3 LSA for 10.8.0.0/16 on a non-backbone interface. Does it use it for inter-area routing?",["Yes, if its cost is the lowest", "No: ABRs only use Area 0 summaries", "Yes, if it's tagged as an E1 route", "Only when the area is an NSSA"],1,"OSPF's inter-area loop prevention: ABRs ignore summaries heard from non-backbone areas. (OCG)","1.3"],
+["l","An ABR with a full adjacency in Area 0 hears a type 3 LSA for 10.8.0.0/16 on a non-backbone interface. Does it use it for inter-area routing?",["Yes, if its cost is the lowest", "No: ABRs only use Area 0 summaries", "Yes, if it's tagged as an E1 route", "Only when the area is an NSSA"],1,"OSPF's inter-area loop prevention: ABRs ignore summaries heard from non-backbone areas. (OCG)","1.3"],
 ["l","redistribute ospf 1 is configured under router eigrp 100, but no OSPF routes appear in EIGRP.",["Missing seed metric","Missing subnets keyword","OSPF's AD is too high","The OSPF process uses only Area 0"],0,"EIGRP's default seed metric for OSPF routes is infinity. Add metric … or default-metric. (OCG)","1.4"],
 ["l","R1 redistributes OSPF into EIGRP. One prefix that R1 knows via OSPF and via a static route isn't redistributed.",["The static (AD 1) owns the RIB entry", "OSPF routes need the subnets keyword", "EIGRP never redistributes static routes", "The seed metric is lower than OSPF's"],0,"Only routes in the RIB learned from the source protocol are redistributed. The static wins the RIB. (NETACAD)","1.4"],
 ["l","iBGP-learned routes don't get redistributed into OSPF on R1.",["Add bgp redistribute-internal", "Add next-hop-self toward the IGP", "Add the subnets keyword to BGP", "Set a weight on the iBGP routes"],0,"By default only eBGP-learned routes are redistributed into an IGP; bgp redistribute-internal adds iBGP routes. next-hop-self and weight only change BGP itself, and subnets is an OSPF keyword. (OCG)","1.4"],
@@ -2265,7 +2618,7 @@ const Q=[
 ["l","A BFD session is up, but BGP doesn't react to failures any faster.",["neighbor x fall-over bfd is missing", "neighbor x ebgp-multihop is missing", "The BGP hold timer is set too low", "BFD echo mode is disabled"],0,"A BFD session alone doesn't help a protocol: it has to register as a client (neighbor x fall-over bfd for BGP). ebgp-multihop is about TTL, not failure detection. (OCG)","1.8"],
 ["l","Which statement about BFD is true?",["It replaces the routing protocol's hellos", "It's a light hello that notifies its clients", "It only works together with OSPF", "It needs MPLS enabled to run"],1,"BFD only detects failures; the routing protocols act on them. (OCG)","1.8"],
 ["l","In BFD echo mode, echo packets are…",["Processed by the peer's route processor (CPU) first", "Looped back by the peer's forwarding plane", "Sent to multicast group 224.0.0.5", "Encapsulated in GRE to the peer"],1,"In echo mode, the peer's forwarding plane loops the packets back without involving its CPU. That's why echo mode puts so little load on the peer. (OCG)","1.8"],
-["l","Which mismatch would NOT stop two EIGRP routers from becoming neighbors?",["Metric K values", "Hello/hold timers", "Autonomous system numbers", "Authentication key strings"],1,"EIGRP timers don't need to match. AS, K values, subnet and authentication do. (OCG)","1.9"],
+["l","Which mismatch would <b>NOT</b> stop two EIGRP routers from becoming neighbors?",["Metric K values", "Hello/hold timers", "Autonomous system numbers", "Authentication key strings"],1,"EIGRP timers don't need to match. AS, K values, subnet and authentication do. (OCG)","1.9"],
 ["l","10.4.4.0/24 is learned via R2 (FD 25, RD 10) and via R3 (FD 30, RD 20). Is R3 a feasible successor?",["Yes: RD 20 < FD 25","No: its FD 30 is higher than 25","No: the RD must be under half the FD","Only with variance"],0,"Feasibility condition: the neighbor's RD must be lower than the current FD. (PS)","1.9"],
 ["l","10.4.4.0/24 again (successor FD 25, FS via R3 with FD 30). variance 2 is configured. Which paths are used?",["Only R2, the successor", "R2 and R3 (30 < 2 × 25, R3 is an FS)", "Only R3, the higher-FD path", "None: variance only works when the RDs are equal"],1,"Variance includes feasible successors whose FD is below N × the successor's FD. (CSLG)","1.9"],
 ["l","An EIGRP neighbor resets with 'stuck in active' messages.",["A query got no reply within 3 minutes", "The MTU differs on the two interfaces", "Both routers use the same router ID", "The K values differ between neighbors"],0,"SIA = a router waited too long for a query reply. Limit query scope with stubs and summaries. (CSLG)","1.9"],
@@ -2276,7 +2629,7 @@ const Q=[
 ["l","Classic EIGRP's default metric uses which components?",["Bandwidth and delay","Bandwidth, delay, load and reliability","Delay only","Hop count"],0,"With default K values (K1 = K3 = 1, K2 = K4 = K5 = 0), only bandwidth and delay count. Load and reliability are only used if you change K2/K4/K5, which also breaks adjacency with routers that don't match. (OCG)","1.9"],
 ["l","EIGRP for IPv6 neighbors form using which addresses?",["Global unicast","Link-local","Loopback","FF02::5"],1,"EIGRP for IPv6 sends hellos to FF02::A from link-local addresses, and neighbors show up by link-local address. FF02::5 is OSPFv3. (OCG)","1.9"],
 ["l","show ip ospf neighbor: R1 is in Exchange and R2 in ExStart for minutes.",["MTU mismatch","Hello timer mismatch","Area mismatch","Authentication mismatch"],0,"Hello, area or auth problems stop OSPF earlier (Init/no neighbor). Stuck in ExStart/Exchange = MTU. (NETACAD)","1.10"],
-["l","One router's interface is broadcast, the peer's is non-broadcast. Result?",["No adjacency: 10/40 vs 30/120 timers", "Full adjacency, DR elected normally", "Stuck in 2-Way because no DR can be elected", "Forms; the higher RID becomes DR"],0,"Broadcast uses hello/dead 10/40, non-broadcast 30/120. Mismatched timers stop the neighbor from forming at all, so the DR question never comes up. (NETACAD)","1.10"],
+["l","One router's interface is broadcast, the peer's is non-broadcast (default timers). Result?",["No adjacency: 10/40 vs 30/120 timers", "Full adjacency, DR elected normally", "Stuck in 2-Way because no DR can be elected", "Forms; the higher RID becomes DR"],0,"Broadcast uses hello/dead 10/40, non-broadcast 30/120. Mismatched timers stop the neighbor from forming at all, so the DR question never comes up. (NETACAD)","1.10"],
 ["l","An area must block type 5 LSAs but contains an ASBR that redistributes a partner's routes.",["Stub","Totally stubby","NSSA","Backbone"],2,"An NSSA blocks type 5 but lets its own ASBR inject type 7, which the ABR translates to 5. Stub and totally stubby areas can't contain an ASBR at all. (OCG)","1.10"],
 ["l","Area 4 connects only to Area 2. Routers in Area 4 have no inter-area routes.",["Virtual link across Area 2 (ABR RIDs)", "Make Area 4 a totally stubby area", "Redistribute Area 0 routes into Area 4", "Make Area 4 an NSSA with a default"],0,"Every area must touch Area 0; a virtual link through the transit area fixes it. (OCG)","1.10"],
 ["l","A virtual link won't come up. The transit Area 2 is configured as a stub.",["A transit area can't be a stub","The cost is wrong","Authentication is required","Use the interface IP, not the RID"],0,"A virtual link needs a normal transit area. Stub and NSSA areas can't be transit areas, so cost, authentication or addressing won't fix it. (OCG)","1.10"],
@@ -2288,15 +2641,15 @@ const Q=[
 ["l","After changing router-id, OSPF still uses the old RID and a duplicate-RID message continues.",["clear ip ospf process","shutdown/no shutdown on one interface","Re-enter the network statements","no auto-cost"],0,"A changed router-id only takes effect after clear ip ospf process (or a reload). Bouncing one interface doesn't restart the process. (NETACAD)","1.10"],
 ["l","eBGP peering between loopbacks over two parallel links stays Idle. Static routes to the loopbacks exist.",["ebgp-multihop 2 + update-source loopback", "next-hop-self on both eBGP peers", "A higher hold timer on both peers", "network statements for both loopbacks in BGP"],0,"eBGP uses TTL 1, and the loopbacks aren't directly connected. (INE · OCG)","1.11"],
 ["l","show bgp summary lists a neighbor in 'Active' all the time.",["The TCP session never completes", "The peer sends no prefixes", "Inbound prefixes are filtered", "It's the normal steady state"],0,"Active means BGP keeps trying to open TCP 179 and fails: wrong neighbor IP or AS, an ACL, or no route back. A peer with no or filtered prefixes would be Established with 0 prefixes. (OCG)","1.11"],
-["l","Order the BGP neighbor states, from start to fully up.",["Idle","Connect","OpenSent","OpenConfirm","Established"],"order","Idle → Connect (TCP) → OpenSent → OpenConfirm → Established. Active appears when TCP fails and retries. (OCG)","1.11"],
-["l","R2 sees 203.0.113.0/24 from iBGP peer R1, but it isn't marked best.",["Next hop unreachable: next-hop-self on R1", "R2's weight for the path is too low", "R1 sends a lower local preference than the other path", "iBGP needs a route reflector here"],0,"iBGP keeps the eBGP next hop. If R2 can't reach it, the route isn't usable. (PCG)","1.11"],
+["l","Order the BGP neighbor states for a session whose first TCP attempt succeeds, from start to fully up.",["Idle","Connect","OpenSent","OpenConfirm","Established"],"order","Idle → Connect (TCP) → OpenSent → OpenConfirm → Established. Active appears when TCP fails and retries. (OCG)","1.11"],
+["l","R2 sees 203.0.113.0/24 from iBGP peer R1, its only path to the prefix, but it isn't marked best.",["Next hop unreachable: next-hop-self on R1", "R2's weight for the path is too low", "R1 sends a lower local preference than the other path", "iBGP needs a route reflector here"],0,"iBGP keeps the eBGP next hop. If R2 can't reach it, the route isn't usable. (PCG)","1.11"],
 ["l","All traffic leaving the AS should prefer ISP A via R1.",["Local preference 200 on ISP A routes", "Weight 200 on R2 for ISP A routes", "AS-path prepend toward ISP A", "A lower MED sent toward ISP A"],0,"Local Pref is shared through iBGP and steers outbound traffic for the whole AS. (OCG)","1.11"],
 ["l","Inbound traffic should arrive through ISP A instead of ISP B.",["Prepend your own AS toward ISP B", "Raise local preference for ISP A", "Set weight 200 on the ISP A router", "Lower the router ID on R1"],0,"Prepending makes the path via ISP B look longer to the outside. Local Pref and weight only affect outbound. (OCG)","1.11"],
 ["l","A route reflector receives a route from a non-client iBGP peer. To whom does it reflect it?",["Clients only","Non-clients only","All iBGP peers","Nobody"],0,"Routes from a non-client go to clients only; routes from a client go to clients and non-clients. Non-clients must stay fully meshed with each other. (OCG)","1.11"],
 ["l","A route policy changed. Apply it without resetting the session.",["clear ip bgp x soft in", "clear ip bgp * (hard reset)", "reload the edge router", "neighbor x shutdown, then no shutdown"],0,"clear ip bgp x soft in asks the peer for its routes again (route refresh) and reapplies the inbound policy without dropping the session. clear ip bgp * resets every session. (OCG)","1.11"],
 ["l","IPv6 prefixes sent over an IPv4 BGP session don't show in show bgp ipv6 unicast.",["Neighbor not activated in AF ipv6", "BGP synchronization is enabled", "The IPv4 session's AS number is wrong", "IPv6 hold timer too low for MP-BGP"],0,"MP-BGP needs neighbor x activate under address-family ipv6 before IPv6 prefixes are exchanged. Synchronization and timers don't block an address family. (OCG)","1.11"],
 ["l","Which attribute does BGP check first in best-path selection?",["Local preference","Weight","AS-path length","MED"],1,"Weight (Cisco-only, local to one router) is checked first, then local preference. AS-path and MED come later. (OCG)","1.11"],
-["l","network 10.10.0.0 mask 255.255.0.0 is configured in BGP, but not advertised. The RIB has 10.10.1.0/24 and 10.10.2.0/24.",["Exact /16 must be in the RIB (Null0 static)", "auto-summary must be enabled under router bgp first", "redistribute connected is required", "next-hop-self is needed for the /16"],0,"A BGP network statement needs an exact prefix and mask match in the RIB. A static to Null0 for the /16 provides one. BGP has no auto-summary that would create it. (OCG)","1.11"],
+["l","network 10.10.0.0 mask 255.255.0.0 is configured in BGP, but not advertised. The RIB has 10.10.1.0/24 and 10.10.2.0/24.",["Exact /16 must be in the RIB (Null0 static)", "auto-summary must be enabled under router bgp first", "redistribute connected is required", "next-hop-self is needed for the /16"],0,"A BGP network statement needs an exact prefix and mask match in the RIB. A static to Null0 for the /16 provides one. BGP auto-summary is off by default and would only create the classful 10.0.0.0/8 anyway. (OCG)","1.11"],
 ["l","Configuring BGP for VRF RED (VRF-Lite) fails with an RD error.",["Add rd under vrf definition RED", "Enable MPLS on the VRF interfaces", "Put the VRF neighbor in a peer group", "Use address-family vpnv4 instead"],0,"IOS requires an RD before a VRF can be used in BGP, even without MPLS. (OCG)","1.11"],
 ["l","Which is the private 2-byte AS range?",["64512–65534","1–64511","65535 only","4200000000–4294967294"],0,"The 2-byte private range is 64512–65534. 4200000000–4294967294 is also private, but it's the 4-byte range, and 65535 is reserved. (OCG)","1.11"],
 ["v","Which device pushes the first label onto a packet?",["Ingress LER", "Transit LSR", "Egress LER", "Customer edge (CE)"],0,"Ingress LER pushes, LSRs swap, the penultimate or egress router pops. (OCG)","2.1"],
@@ -2313,25 +2666,25 @@ const Q=[
 ["v","Which CE–PE routing options are possible?",["Static, RIP, OSPF, EIGRP or eBGP", "Only eBGP, because PEs exchange VPNv4 over BGP", "Only static routes to the PE", "Only OSPF with a sham link"],0,"Static, RIP, OSPF, EIGRP or eBGP can run between CE and PE inside the customer's VRF. MP-BGP is only used PE to PE. (OCG)","2.2"],
 ["v","PE1 uses RD 65000:1 and PE2 RD 65000:2 for the same customer; RTs match. Does it work?",["Yes: RTs drive import, not RDs", "No: RDs must match on both PEs", "Only with a route reflector", "Only with LDP-IGP sync"],0,"The RD only makes prefixes unique and may differ per PE. Import is decided by matching RTs. (OCG)","2.2"],
 ["v","Spoke-to-spoke traffic always goes through the hub, although the hub has ip nhrp redirect.",["Spokes are missing ip nhrp shortcut", "The hub is missing mGRE on Tunnel0", "Spokes need a tunnel destination", "The IPsec profiles don't match"],0,"Phase 3 needs redirect on the hub and shortcut on the spokes. (OCG)","2.3"],
-["v","A spoke can't register: the hub uses tunnel key 100, the spoke tunnel key 10.",["Tunnel key mismatch", "MTU mismatch on the tunnel", "EIGRP AS number mismatch", "Split horizon on the hub"],0,"The tunnel key is carried in the GRE header and must match on every router in the cloud. With mismatched keys, GRE packets are dropped and NHRP registration never completes. (OCG)","2.3"],
+["v","A DHCP spoke got a new transport IP and can't re-register. The spoke logs 'Receive Registration Reply packet with error – unique address registered already'. Fix?",["ip nhrp registration no-unique on the spoke tunnel","A matching tunnel key on hub and spoke","ip nhrp map multicast dynamic on the hub","A longer ip nhrp holdtime on the hub so its old cache entry ages out later"],0,"The hub keeps the old NBMA address flagged unique until the cache entry expires. no-unique lets the spoke register a new NBMA address; it is recommended on DHCP spokes. (OCG)","2.3"],
 ["v","The hub doesn't send EIGRP hellos to the spokes over mGRE.",["ip nhrp map multicast dynamic on the hub", "ip nhrp redirect on the hub tunnel", "no ip split-horizon eigrp on the hub", "A matching tunnel key on the hub"],0,"The hub must replicate multicast to dynamically registered spokes. (OCG)","2.3"],
 ["v","In DMVPN Phase 1, the spoke tunnel is…",["p2p GRE to the hub's NBMA address", "mGRE with ip nhrp shortcut, like Phase 3", "An IPsec VTI without GRE", "VXLAN to the hub's loopback"],0,"In Phase 1, spokes use p2p GRE with a fixed tunnel destination (the hub), so all spoke-to-spoke traffic goes through the hub. mGRE on spokes starts with Phase 2. (OCG)","2.3"],
 ["v","Which command on a spoke registers it with the hub?",["ip nhrp nhs 10.0.0.1 nbma 203.0.113.1 multicast", "ip nhrp map multicast dynamic (on the spoke)", "ip nhrp redirect nhs 10.0.0.1 nbma 203.0.113.1 multicast", "tunnel destination 203.0.113.1 multipoint"],0,"ip nhrp nhs TUNNEL-IP nbma PUBLIC-IP multicast tells the spoke where to register and to send multicast to the hub. map multicast dynamic is the hub-side command. (OCG)","2.3"],
 ["v","The tunnel flaps with '%TUN-5-RECURDOWN'.",["Recursive routing via the tunnel", "MTU too small on the tunnel", "IPsec phase 2 is failing", "NHRP authentication string mismatch on the spoke"],0,"Keep the NBMA network out of the routing protocol that runs over the tunnel. (OCG)","2.3"],
 ["v","show crypto isakmp sa shows MM_NO_STATE.",["Phase 1 failing (PSK, policy, UDP 500)", "Phase 2 transform-set mismatch between the peers", "NHRP registration failed", "Normal steady state for IKE"],0,"MM_NO_STATE means main mode (phase 1) never finished: PSK or ISAKMP policy mismatch, or UDP 500 blocked. A phase 2 problem would show QM_IDLE with no IPsec SAs. (OCG)","2.3"],
 ["v","Large TCP transfers over DMVPN stall while pings work.",["MTU/MSS: ip mtu 1400, adjust-mss 1360", "Split horizon on the hub tunnel", "Missing ip nhrp shortcut on spokes", "Tunnel key mismatch on one spoke"],0,"Pings are small, but full-size TCP segments plus GRE and IPsec headers exceed 1500 bytes and get dropped or fragmented. ip mtu 1400 and adjust-mss 1360 leave room for the headers. (OCG)","2.3"],
-["v","EIGRP over DMVPN Phase 2: spokes see the hub as the next hop for other spokes' LANs.",["no ip next-hop-self eigrp AS on the hub", "no ip split-horizon eigrp AS on the hub alone", "variance 2 on the spokes", "eigrp stub on every spoke"],0,"Phase 2 needs the original spoke next hop to trigger spoke-to-spoke tunnels. (OCG)","2.3"],
+["v","EIGRP over DMVPN Phase 2: split horizon is already off on the hub, but spokes see the hub as the next hop for other spokes' LANs.",["no ip next-hop-self eigrp AS on the hub", "no ip split-horizon eigrp AS on the hub alone", "variance 2 on the spokes", "eigrp stub on every spoke"],0,"Phase 2 needs the original spoke next hop to trigger spoke-to-spoke tunnels. (OCG)","2.3"],
 ["v","Which IPsec mode does DMVPN normally use?",["Transport","Tunnel","Aggressive","None"],0,"GRE already adds the outer IPs, so transport mode saves 20 bytes. (OCG)","2.3"],
 ["v","Which DMVPN phase lets the hub advertise only a summary/default while spokes still build direct tunnels?",["Phase 3","Phase 2","Phase 1","None"],0,"In Phase 3, NHRP shortcuts install more specific routes on the spokes, so the hub can send a summary. Phase 2 needs every spoke prefix with its original next hop, so no summary there. (OCG)","2.3"],
 ["v","Match each DMVPN piece to its job.",[["mGRE","one tunnel interface to many peers"],["NHRP","maps tunnel IP to NBMA IP"],["IPsec","encrypts the GRE traffic"],["ip nhrp redirect","hub tells a spoke a better path exists"]],"match","mGRE gives one multipoint interface, NHRP resolves tunnel → NBMA addresses, IPsec protects the GRE packets, and the hub's redirect starts Phase 3 shortcuts. (OCG)","2.3"],
-["s","aaa authentication login VTY_ACCESS group tacacs+ local is set. The TACACS+ server rejects the password.",["Login fails: a reject doesn't fall back", "The local database is tried next as a fallback", "The enable password is tried next", "Only console logins still work"],0,"The next method is used only when the server errors (no answer). (OCG · ITPRO)","3.1"],
+["s","aaa authorization commands 15 default group tacacs+ is set. While the TACACS+ server is down, admins log in with the local user but every configuration command is rejected. Fix?",["Add local or if-authenticated to the authorization list","Add local to the login authentication list as well, after group tacacs+","Raise the local user to privilege 15","Remove aaa new-model while the server is down"],0,"Authorization has its own method list. With only group tacacs+, an unreachable server means no command is authorized. A fallback method (local or if-authenticated) lets commands run when the server errors. Login already works, so the authentication list isn't the problem. (OCG · CSLG)","3.1"],
 ["s","Same method list, but the TACACS+ server is unreachable.",["The local database is used", "Login fails immediately", "No authentication is applied", "The enable secret is used"],0,"An error (no response) moves AAA to the next method in the list, so the local database is checked. (OCG)","3.1"],
 ["s","Right after aaa new-model, remote admins are locked out.",["No local user (default login uses local)", "The TACACS+ server is down or unreachable", "SSH version 1 is still enabled", "The console line is locked"],0,"aaa new-model immediately makes VTY lines use the local database. With no local user, nobody can log in remotely; the console still works. (OCG)","3.1"],
 ["s","The RADIUS server listens on 1812/1813; the router uses its defaults.",["Router uses 1645/1646: set 1812/1813", "Router uses TCP 49 for RADIUS", "It works: IOS negotiates the RADIUS ports automatically", "RADIUS needs TCP, not UDP"],0,"Cisco IOS defaults to the older RADIUS ports 1645/1646. Set auth-port 1812 acct-port 1813 to match the server. Ports aren't negotiated, and RADIUS is UDP. (OCG)","3.1"],
 ["s","Which protocol encrypts the entire payload and separates authorization from authentication?",["TACACS+","RADIUS","LDAP","Kerberos"],0,"TACACS+ encrypts the whole body and handles authentication, authorization and accounting separately. RADIUS encrypts only the password and combines authentication with authorization. (OCG)","3.1"],
 ["s","Method list VTY_ACCESS exists, but SSH logins use the default list.",["login authentication VTY_ACCESS missing", "aaa new-model is missing", "The TACACS+ shared key doesn't match the server", "ip ssh version 2 is missing"],0,"A named method list does nothing until a line references it with login authentication VTY_ACCESS; otherwise the default list applies. (OCG)","3.1"],
 ["s","An inbound ACL on Gi0/1 permits only TCP 80/443. The OSPF neighbor drops.",["Permit OSPF (protocol 89) in the ACL", "Move the ACL to the outbound direction", "Replace it with a standard ACL", "Change the OSPF area to stub"],0,"Inbound ACLs filter routing protocol packets too, so the ACL must permit OSPF (protocol 89). Moving it outbound would stop filtering the incoming traffic you wanted to control. (NETACAD)","3.2"],
-["s","An outbound ACL denies everything, yet OSPF hellos still leave the router.",["Outbound ACLs skip router-generated packets", "The ACL isn't applied to the interface", "OSPF multicast hellos always bypass interface ACLs", "ACL entries need the log keyword"],0,"Outbound ACLs only filter traffic passing through the router, not packets the router generates itself. (NETACAD)","3.2"],
+["s","An outbound ACL denies everything, yet OSPF hellos still leave the router.",["Outbound interface ACLs don't filter router-generated packets", "The ACL isn't applied to the interface", "OSPF multicast hellos always bypass interface ACLs", "ACL entries need the log keyword"],0,"Outbound ACLs only filter traffic passing through the router, not packets the router generates itself. (NETACAD)","3.2"],
 ["s","An IPv6 ACL ending in an explicit 'deny ipv6 any any log' breaks connectivity on the LAN.",["It blocks ND NS/NA (implicit permits)", "It's applied in the wrong direction", "It needs ip access-group to work", "IPv6 ACLs are stateful by default"],0,"IPv6 ACLs implicitly permit NS/NA before the implicit deny. An explicit 'deny ipv6 any any' comes before those, so it blocks neighbor discovery. Add permit icmp any any nd-na / nd-ns above it. (OCG)","3.2"],
 ["s","How do you apply an IPv6 ACL inbound on an interface?",["ipv6 traffic-filter NAME in","ipv6 access-group NAME in","ip access-group NAME in","access-class NAME in"],0,"IPv6 ACLs are applied with ipv6 traffic-filter; ip access-group is the IPv4 command and access-class is for lines. (OCG)","3.2"],
 ["s","A multihomed edge router with asymmetric routing must drop spoofed sources without dropping legitimate traffic.",["uRPF loose (reachable-via any)", "uRPF strict (reachable-via rx)", "An inbound ACL deny ip any any", "CoPP with a class-default policer"],0,"Loose mode only checks that the source is in the FIB. Strict mode would drop legitimate packets that arrive on a different interface than the return path. (PCG · CSLG)","3.2"],
@@ -2341,7 +2694,7 @@ const Q=[
 ["s","After CoPP, SSH times out; show policy-map control-plane shows class-default exceeding.",["Mgmt ACL misses TCP 22 → class-default", "SSH version 1 is still enabled", "The CPU is too high to accept new SSH sessions", "A VTY access-class blocks it"],0,"Traffic that matches no class lands in class-default, which is usually policed very low. Fix the ACL so TCP 22 matches the mgmt class. (OCG)","3.3"],
 ["s","BGP flaps after CoPP. The ROUTING class permits OSPF and EIGRP only.",["Add TCP 179 to the routing ACL", "Raise the class-default rate", "Add BFD to the routing class", "Apply the policy as output"],0,"BGP runs over TCP 179, unlike OSPF (protocol 89) and EIGRP (88), so it must be listed in the routing ACL explicitly. (OCG)","3.3"],
 ["s","Put the CoPP build steps in order.",["ACL to identify the traffic","class-map matching the ACL","policy-map with police actions","service-policy input under control-plane"],"order","Identify with an ACL, classify with a class-map, set actions in a policy-map, then apply it to the control plane. (CSLG)","3.3"],
-["s","Policy map 'copp-policy' is applied as 'COPP-POLICY' and doesn't work.",["Policy-map names are case sensitive", "CoPP must be applied as output", "The policy has too many classes", "CoPP needs a reload to apply"],0,"IOS treats policy-map names as case sensitive, so the service-policy refers to a policy that doesn't exist. (OCG)","3.3"],
+["s","After CoPP is applied, pings to R1's own interfaces mostly fail, but pings through R1 to other hosts work. Why?",["ICMP to R1 falls into a class-default policed very low","CoPP polices transit ICMP on every interface","An inbound interface ACL now blocks all ICMP","uRPF drops ICMP that is sent to the router's own interface addresses"],0,"CoPP only sees traffic punted to the route processor, such as pings to R1 itself. With no ICMP class, it falls into class-default and is dropped above a low rate. Transit pings bypass CoPP, and an interface ACL or uRPF would hit transit traffic too. (OCG)","3.3"],
 ["s","Hosts get a wrong default gateway from a rogue IPv6 router.",["RA Guard","DHCPv6 Guard","Source Guard","Destination Guard"],0,"RA Guard only allows router advertisements on router-role ports, so a host can't announce itself as the gateway. (CSLG)","3.4"],
 ["s","A rogue DHCPv6 server hands out addresses.",["DHCPv6 Guard","RA Guard","ND inspection","uRPF"],0,"DHCPv6 Guard drops Advertise/Reply messages unless they come from a server-role port. (CSLG)","3.4"],
 ["s","What builds the IPv6 first hop security binding table?",["IPv6 snooping (ND + DHCPv6 gleaning)", "Dynamic ARP inspection", "SNMP polling of the neighbor tables on every switch", "CDP neighbor discovery"],0,"IPv6 snooping (device tracking) gleans ND and DHCPv6 messages into the binding table that other FHS features use. (CSLG)","3.4"],
@@ -2397,7 +2750,7 @@ R1# show ip protocols | include Routing Protocol|Distance
 Routing Protocol is "eigrp 100"
   Distance: internal 90 external 170
 Routing Protocol is "ospf 1"
-  Distance: (default is 110)  External: 171`],
+  Distance: intra area 110 inter area 110 external 171`],
 ["l","Refer to the exhibit. No EIGRP routes are redistributed into OSPF. Why?",["Prefix list LAN never matches","Sequence 10 denies everything because it has no set clause","The route map is missing a match tag line in sequence 20","OSPF needs metric-type type-2 instead of type-1"],0,"The hit count of 0 on LAN shows sequence 20 never matches, and there's no catch-all permit sequence, so the implicit deny drops the rest. (OCG)","1.2",
 `R1# show route-map EIGRP-TO-OSPF
 route-map EIGRP-TO-OSPF, deny, sequence 10
@@ -2414,11 +2767,12 @@ ip prefix-list LAN:
 R1# show ip eigrp topology | include 10.1.
 P 10.1.1.0/24, 1 successors, FD is 2816
 P 10.1.2.0/24, 1 successors, FD is 2816`],
-["l","Refer to the exhibit. Why doesn't prefix-list LAN match 10.1.1.0/24 and 10.1.2.0/24?",["Without ge/le it only matches exactly 10.1.0.0/16","Prefix lists can't be used inside route maps","The sequence number 5 is reserved for deny entries","The list must also permit 0.0.0.0/0 le 32"],0,"With no ge/le, the length must equal /16. Add le 24 to include the /24s. (OCG)","1.2",
-`ip prefix-list LAN seq 5 permit 10.1.0.0/16
-R1# show ip eigrp topology | include 10.1.
-P 10.1.1.0/24, 1 successors, FD is 2816
-P 10.1.2.0/24, 1 successors, FD is 2816`],
+["l","Refer to the exhibit. Which of these routes does prefix list BRANCH permit?",["10.1.5.0/24 only","10.1.5.0/24 and 10.1.0.0/16","10.1.5.0/24 and 10.1.5.128/25","All three: every route inside 10.1.0.0/16"],0,"The prefix must fall inside 10.1.0.0/16 and its length must be exactly /24 (ge 24 le 24). The /16 is too short and the /25 too long. (OCG)","1.2",
+`ip prefix-list BRANCH seq 5 permit 10.1.0.0/16 ge 24 le 24
+R1# show ip route | include 10.1.
+O     10.1.0.0/16 [110/20] via 10.0.12.2, 00:03:10, Gi0/1
+O     10.1.5.0/24 [110/20] via 10.0.12.2, 00:03:10, Gi0/1
+O     10.1.5.128/25 [110/20] via 10.0.12.2, 00:03:10, Gi0/1`],
 ["l","Route map RM sets values during redistribution. Which TWO statements about route maps are true? (Choose two.)",["Separate match lines in one sequence must all match","An ACL deny entry inside the route map drops the route immediately","A sequence with no match statement matches everything","Routes that match no sequence at all are permitted by default","set commands run even when the sequence is a deny"],[0,2],"Separate match lines are ANDed and an empty match matches all routes. An ACL deny just means 'no match', and the route map ends with an implicit deny. (OCG)","1.2"],
 ["l","Refer to the exhibit from the DMVPN hub. Spokes still can't reach each other's LANs over EIGRP. What's the cause?",["Split horizon is still enabled on Tunnel0","The hello interval is too short for DMVPN","The hub has no EIGRP peers on Tunnel0","The hold time must be three times longer"],0,"Split horizon stops the hub from advertising spoke 1's route back out Tunnel0 to spoke 2. Use no ip split-horizon eigrp 100 on Tunnel0. (OCG)","1.3",
 `Hub# show ip eigrp interfaces detail Tunnel0
@@ -2497,7 +2851,7 @@ R1# show ip route vrf RED 10.20.0.0
 Routing Table: RED
 Routing entry for 10.20.0.0/16
   Known via "ospf 2", distance 110, metric 2, type intra area`],
-["l","Refer to the exhibit. BGP to 203.0.113.1 still takes 180 s to detect a failure on this link. Why?",["BGP isn't a registered BFD client","The BFD session to 10.0.12.2 is down","BFD can't be used with eBGP sessions","Echo mode prevents BGP from using BFD"],0,"Only OSPF and CEF are registered. Add neighbor 203.0.113.1 fall-over bfd so BGP reacts to BFD. (OCG)","1.8",
+["l","Refer to the exhibit. R1 also peers with eBGP neighbor 10.0.12.2 over Gi0/1, but BGP still takes 180 s to detect a failure. Why?",["BGP isn't a registered BFD client","The BFD session to 10.0.12.2 is down","BFD can't be used with eBGP sessions","Echo mode prevents BGP from using BFD"],0,"Only OSPF and CEF are registered for the session to 10.0.12.2. Add neighbor 10.0.12.2 fall-over bfd so BGP reacts to BFD. (OCG)","1.8",
 `R1# show bfd neighbors details
 IPv4 Sessions
 NeighAddr        LD/RD   RH/RS   State   Int
@@ -2586,7 +2940,7 @@ Paths: (1 available, best #1, table default)
       Origin IGP, metric 0, localpref 100, valid, internal, best
       Originator: 3.3.3.3, Cluster list: 1.1.1.1`],
 ["l","eBGP peering must run between loopbacks on two directly connected routers. Which TWO commands are needed on each side? (Choose two.)",["neighbor x update-source Loopback0","neighbor x ebgp-multihop 2 (or disable-connected-check)","neighbor x next-hop-self on both loopback peers","neighbor x route-reflector-client toward the eBGP peer","neighbor x remove-private-as in the outbound direction"],[0,1],"update-source sources TCP from the loopback, and multihop/disable-connected-check lifts the TTL-1 directly-connected rule. (OCG · INE)","1.11"],
-["v","Refer to the exhibit. What happens to a packet R1 sends to 2.2.2.2?",["R1 pops the label (PHP) and sends it unlabeled","R1 pushes label 16 and forwards it to 10.0.12.2","R1 swaps label 16 for 18","R1 drops it because no outgoing label exists"],0,"'Pop Label' means the next hop advertised implicit null, so R1 is the penultimate hop and sends the packet unlabeled. (OCG)","2.1",
+["v","Refer to the exhibit. R1 receives a labeled packet with top label 16. What does it do with it?",["R1 pops the label (PHP) and sends it unlabeled to 10.0.12.2","R1 pushes label 16 and forwards it to 10.0.12.2","R1 swaps label 16 for 18","R1 drops it because no outgoing label exists"],0,"'Pop Label' means the next hop advertised implicit null, so R1 is the penultimate hop and sends the packet unlabeled. (OCG)","2.1",
 `R1# show mpls forwarding-table
 Local  Outgoing   Prefix          Bytes Label   Outgoing   Next Hop
 Label  Label      or Tunnel Id    Switched      interface
@@ -2745,7 +3099,7 @@ Target address/Source address: 10.20.0.1/0.0.0.0
    Schedule:
     Operation frequency (seconds): 60
     Next Scheduled Start Time: Pending trigger`],
-["i","Which TWO IP SLA operations need ip sla responder on the target device? (Choose two.)",["udp-jitter","udp-echo to a Cisco router","icmp-echo to any IP host","dns lookups to a name server","http GET to a web server"],[0,1],"UDP operations to a Cisco device use the responder for timestamps and control messages; ICMP, DNS and HTTP use the normal service. (OCG · PS)","4.5"],
+["i","Which TWO IP SLA operations need ip sla responder on the target device? (Choose two.)",["udp-jitter","udp-echo to a Cisco router's responder port","icmp-echo to any IP host","dns lookups to a name server","http GET to a web server"],[0,1],"UDP operations to a Cisco device use the responder for timestamps and control messages; ICMP, DNS and HTTP use the normal service. (OCG · PS)","4.5"],
 ["i","Refer to the exhibit. The collector receives no flows. What's the cause?",["The exporter has no route to the collector","The flow record has no collect fields","The monitor isn't applied to any interface","The cache is empty because no traffic flows"],0,"Records are added to the exporter but the send fails with 'No FIB'. Fix routing to 10.99.0.70 or the source interface. (CSLG)","4.6",
 `R1# show flow exporter EXP-COLL statistics
 Flow Exporter EXP-COLL:
@@ -2808,13 +3162,13 @@ Success rate is 100 percent (5/5)`],
 ["v","Where is the customer VRF configured in an MPLS L3VPN?",["On the PE interfaces facing the customer","On every P router along the path","On the CE router facing the provider","Only on the route reflector"],0,"VRFs live on the PEs, on the customer-facing interfaces. P routers have no VRFs, and the CE usually runs plain routing. (OCG)","2.2"],
 ["v","Which label does the egress PE use to choose the customer VRF?",["The inner VPN label learned via MP-BGP","The outer transport label learned via LDP","The MPLS TTL field of the top label","The route target carried in the packet"],0,"The outer label gets the packet to the PE (and is often popped one hop earlier). The inner VPN label tells the PE which VRF/prefix to use. RTs are only in BGP updates, never in packets. (OCG)","2.2"],
 ["v","Two customers use overlapping 10.0.0.0/8 over one provider. Which TWO things keep their routes apart? (Choose two.)",["A separate VRF per customer on each PE","An RD per VRF, making VPNv4 prefixes unique","The same RT for both customers on every PE","One OSPF area per customer inside the core","A GRE tunnel per customer between the PEs"],[0,1],"VRFs separate the tables on the PE and RDs keep the prefixes unique in MP-BGP. Sharing one RT would leak routes between the customers. (OCG)","2.2"],
-["v","Refer to the exhibit from the hub. Why isn't spoke 31 fully up?",["IKE is up, but no IPsec SA exists yet","Spoke 31 hasn't sent an NHRP registration yet","The tunnel key on spoke 31 doesn't match","Spoke 31 is behind NAT, which DMVPN can't use"],0,"In show dmvpn, state 'IPsec' means IKE completed but the IPsec SA didn't: check the transform set and IPsec profile. 'NHRP' would mean registration is missing. DMVPN supports NAT-T. (OCG)","2.3",
+["v","Refer to the exhibit from the hub. Why isn't spoke 31 fully up?",["IKE is up, but no IPsec SA exists yet","Spoke 31 hasn't sent an NHRP registration yet","The tunnel key on spoke 31 doesn't match","Spoke 31 is behind NAT, which DMVPN can't use"],0,"In show dmvpn, state IPSEC means IKE completed but the IPsec SA didn't: check the transform set and IPsec profile. 'NHRP' would mean registration is missing. DMVPN supports NAT-T. (OCG)","2.3",
 `Hub# show dmvpn
 Type:Hub, NHRP Peers:2,
  # Ent  Peer NBMA Addr  Peer Tunnel Add  State  UpDn Tm  Attrb
  ----- --------------- ---------------- ----- -------- -----
      1 172.16.21.1     192.168.100.21      UP 00:12:01     D
-     1 172.16.31.1     192.168.100.31   IPsec 00:00:41     D`],
+     1 172.16.31.1     192.168.100.31   IPSEC 00:00:41     D`],
 ["v","Refer to the exhibit. Spoke 21 is registered, but no EIGRP neighbor forms over the tunnel. What's missing on the hub?",["ip nhrp map multicast dynamic","ip nhrp shortcut","no ip split-horizon eigrp 100","tunnel protection ipsec profile"],0,"EIGRP hellos are multicast. Without ip nhrp map multicast dynamic, the hub doesn't replicate multicast to registered spokes, so no neighbor forms. Split horizon affects routes, not adjacencies. (OCG)","2.3",
 `Hub# show run interface Tunnel100
 interface Tunnel100
@@ -2829,7 +3183,7 @@ Hub# show dmvpn | include UP
 Hub# show ip eigrp neighbors
 EIGRP-IPv4 Neighbors for AS(100)
 Hub#`],
-["v","Refer to the exhibit. Why doesn't the spoke's registration succeed?",["The tunnel keys differ (100 vs 101)","The NHRP network IDs must differ between hub and spoke","The NHS address must be the hub's NBMA address","The spoke needs tunnel mode gre ip instead"],0,"Tunnel keys must match, or the GRE packets are dropped. The NHRP network-id is only locally significant, and the NHS address is the hub's tunnel IP with the NBMA given separately. (OCG)","2.3",
+["v","Refer to the exhibit. Why doesn't the spoke's registration succeed?",["The tunnel keys differ (100 vs 101)","The NHRP network IDs must differ between hub and spoke","The NHS address must be the hub's NBMA address","The spoke needs tunnel mode gre ip instead"],0,"Tunnel keys must match, or the GRE packets are dropped. The NHRP network-id is only locally significant (matching it is recommended), and the NHS address is the hub's tunnel IP with the NBMA given separately. (OCG)","2.3",
 `Hub:   interface Tunnel100 ... tunnel key 100
 Spoke: interface Tunnel100
  ip nhrp network-id 100
@@ -2850,7 +3204,7 @@ Spoke31# traceroute 10.4.4.1 source 10.3.3.1
   1 192.168.100.41 1 msec`],
 ["v","In DMVPN, what is the NBMA address of a spoke?",["Its public/transport IP address","Its tunnel interface IP address","The NHRP network ID it uses","The loopback used as router ID"],0,"NBMA = the transport (underlay) address, such as the internet-facing IP. The tunnel IP is the overlay address that NHRP maps to it. (OCG)","2.3"],
 ["v","A spoke behind a NAT firewall registers, but IPsec never comes up. UDP 500 is allowed. What else must pass?",["UDP 4500 (NAT traversal)","TCP 179 for the routing protocol","IP protocol 47 only, never ESP","UDP 646 for NHRP"],0,"Behind NAT, IKE moves to UDP 4500 and ESP is encapsulated in UDP 4500 (NAT-T). TCP 179 is BGP and UDP 646 is LDP; NHRP rides inside GRE. (OCG)","2.3"],
-["v","Which TWO settings must match on every router in one DMVPN cloud? (Choose two.)",["tunnel key","The IPsec transform set (with tunnel protection)","ip nhrp network-id value","tunnel source interface name","ip mtu value on the tunnel"],[0,1],"The tunnel key travels in the GRE header and IPsec proposals must match for SAs to form. The NHRP network-id is only locally significant, and interface names and MTU can differ. (OCG)","2.3"],
+["v","Which TWO settings must match on every router in one DMVPN cloud that uses tunnel keys and IPsec? (Choose two.)",["tunnel key","The IPsec transform set (with tunnel protection)","ip nhrp network-id value","tunnel source interface name","ip mtu value on the tunnel"],[0,1],"The tunnel key travels in the GRE header and IPsec proposals must match for SAs to form. The NHRP network-id is only locally significant (matching it is recommended), and interface names and MTU can differ. (OCG)","2.3"],
 ["v","Why can a Phase 3 hub advertise only a summary to the spokes?",["NHRP redirect/shortcut gives specific next hops","Phase 3 spokes run BGP instead of EIGRP","Summaries are carried inside NHRP registrations","Phase 3 uses static NHRP maps on every spoke"],0,"NHRP installs more specific shortcut routes on demand, so the routing protocol only needs a summary. Phase 2 relies on each spoke prefix with its original next hop. (OCG)","2.3"],
 ["v","Put the MPLS L3VPN route propagation steps in order.",["CE advertises the prefix to PE1","PE1 places it in the VRF and adds the RD and export RT","PE1 sends it to PE2 over MP-iBGP (VPNv4)","PE2 imports it into the customer VRF by RT","PE2 advertises it to the remote CE"],"order","The route goes CE → VRF on PE1 → VPNv4 over MP-iBGP → import by RT on PE2 → remote CE. P routers never see it. (OCG)","2.2"],
 ["v","Put the DMVPN Phase 3 spoke-to-spoke steps in order.",["Spoke 1 sends traffic to the hub","The hub forwards it and sends an NHRP redirect","Spoke 1 sends an NHRP resolution request","Spoke 2 replies with its NBMA address","Spoke 1 installs the shortcut and sends directly"],"order","Hairpin, redirect, resolution, reply, shortcut. The shortcut appears as an H route on the spoke. (OCG)","2.3"],
@@ -2896,7 +3250,7 @@ IPv6 access list V6-IN
 R1# show ip interface Gi0/1 | include verify
   IP verify source reachable-via RX`],
 ["s","Which ACL type can't match on destination addresses?",["Standard IPv4 ACL","Extended IPv4 ACL","IPv6 access list","Time-based extended ACL"],0,"Standard ACLs match the source address only, which is why they go near the destination. Extended and IPv6 ACLs match source, destination and ports. (OCG)","3.2"],
-["s","Refer to the exhibit. CM-ROUTING never matches any packets. Why?",["match-all needs both ACLs; use match-any","OSPF and BGP can't be policed by CoPP","The class needs a police action before it can match","class-default is evaluated before CM-ROUTING"],0,"With match-all, a packet must match every match statement. No packet is both OSPF and BGP, so nothing matches and everything falls to class-default. (OCG · CSLG)","3.3",
+["s","Refer to the exhibit. CM-ROUTING never matches any packets. Why?",["match-all needs both ACLs; use match-any","OSPF and BGP can't be policed by CoPP","The class needs a police action before it can match","class-default is evaluated before CM-ROUTING"],0,"With match-all, a packet must match every match statement. A packet has one IP protocol value: OSPF is protocol 89 and BGP rides TCP (6) port 179, so no packet matches both ACLs. Nothing matches and everything falls to class-default. (OCG · CSLG)","3.3",
 `class-map match-all CM-ROUTING
  match access-group name COPP-OSPF
  match access-group name COPP-BGP
@@ -2922,7 +3276,7 @@ R1          Gig 1/0/1   150   R B S I  ISR4331   Gig 0/0/0`],
 ["s","Which ICMPv6 message does RA Guard inspect?",["Router Advertisement (type 134)","Neighbor Solicitation (type 135)","Echo Request (type 128)","Redirect (type 137)"],0,"RA Guard filters Router Advertisements (134). NS/NA (135/136) are checked by ND inspection. (CSLG · PS)","3.4"],
 ["s","Match each IPv6 ICMP type to its message.",[["133","Router Solicitation"],["134","Router Advertisement"],["135","Neighbor Solicitation"],["136","Neighbor Advertisement"]],"match","133 RS, 134 RA, 135 NS, 136 NA (137 is Redirect). (CSLG)","3.4"],
 ["s","Match each uRPF option to its meaning.",[["reachable-via rx","best path back must use the arrival interface"],["reachable-via any","any route to the source is enough"],["allow-default","a default route counts as a match"]],"match","rx = strict, any = loose, allow-default lets the default route satisfy the check. (PCG · CSLG)","3.2"],
-["s","Match each AAA source to its property.",[["TACACS+","TCP 49, encrypts the whole body"],["RADIUS","UDP 1812/1813, encrypts only the password"],["local","usernames stored on the router itself"]],"match","TACACS+ for device admin, RADIUS for network access, local as the fallback. (OCG)","3.1"],
+["s","Match each AAA source to its property.",[["TACACS+","TCP 49, encrypts the whole body"],["RADIUS","UDP 1812/1813 (IOS default 1645/1646), encrypts only the password"],["local","usernames stored on the router itself"]],"match","TACACS+ for device admin, RADIUS for network access, local as the fallback. (OCG)","3.1"],
 ["l","Put the OSPF neighbor states in order.",["Down","Init","2-Way","ExStart","Exchange","Loading","Full"],"order","Down → Init (hello seen) → 2-Way (own RID in neighbor's hello) → ExStart → Exchange (DBDs) → Loading (LSR/LSU) → Full. (OCG)","1.10"],
 ["l","Match each OSPF LSA type to its description.",[["Type 1","router LSA, inside one area"],["Type 3","summary from an ABR"],["Type 5","external route from an ASBR"],["Type 7","NSSA external, translated to 5"]],"match","1 router, 2 network (DR), 3 summary, 4 ASBR summary, 5 external, 7 NSSA external. (OCG)","1.10"],
 ["l","Match each BGP attribute to its category.",[["AS_PATH","well-known mandatory"],["LOCAL_PREF","well-known discretionary"],["COMMUNITY","optional transitive"],["MED","optional non-transitive"]],"match","AS_PATH, NEXT_HOP and ORIGIN are mandatory; LOCAL_PREF stays inside the AS; COMMUNITY passes through; MED doesn't go beyond the neighbor AS. (OCG)","1.11"],
@@ -2931,7 +3285,82 @@ R1          Gig 1/0/1   150   R B S I  ISR4331   Gig 0/0/0`],
 ["i","Put the DHCPv6 stateful exchange in order.",["SOLICIT","ADVERTISE","REQUEST","REPLY"],"order","SOLICIT → ADVERTISE → REQUEST → REPLY, the DHCPv6 counterpart of DORA. (OCG)","4.4"]
 );
 
+// IPv6 questions
+Q.push(
+["l","Classic EIGRP for IPv6 is configured with ipv6 router eigrp 100, but no IPv6 neighbors form and no interface takes part. What's missing?",["ipv6 eigrp 100 on each participating interface","A network statement for each IPv6 prefix","The ipv6 eigrp passive-interface default command","A key chain shared by both routers"],0,"Classic EIGRP for IPv6 has no network statements: each interface joins with ipv6 eigrp 100. Without it, no hellos are sent. (Older IOS also needs no shutdown under the process.) (OCG)","1.9"],
+["l","Named EIGRP: one IPv6 interface must NOT run EIGRP. How?",["af-interface Gi0/3 → shutdown under address-family ipv6","no network 2001:DB8:3::/64 under address-family ipv6","no ipv6 eigrp 100 on interface Gi0/3","passive-interface default under router eigrp NAME, then no passive for the rest"],0,"Named mode's IPv6 address family enables every IPv6 interface automatically, so you exclude one with af-interface X → shutdown. Named mode has no ipv6 eigrp interface command. (OCG)","1.9"],
+["l","Refer to the exhibit. Why is the EIGRP for IPv6 neighbor listed by this address?",["EIGRP for IPv6 forms neighbors over link-local addresses","The neighbor has no global address configured","Link-local is only shown when EIGRP authentication is enabled on that link","The router ID is shown in IPv6 format"],0,"EIGRP for IPv6 sends hellos from link-local addresses to FF02::A, so neighbors appear by link-local address. Next hops in the RIB are link-local too. (OCG)","1.9",
+`R1# show eigrp address-family ipv6 neighbors
+EIGRP-IPv6 VR(CORP) Address-Family Neighbors for AS(100)
+H   Address                 Interface   Hold Uptime    SRTT  RTO  Q  Seq
+0   Link-local address:     Gi0/1         12 00:41:03     2  100  0  21
+    FE80::C802:AFF:FE88:1C`],
+["l","Refer to the exhibit. OSPFv3 doesn't start on this IPv6-only router. What's the fix?",["Configure a 32-bit router-id under the OSPFv3 process","Configure an IPv6 router ID with the router-id command","Enable OSPFv3 with a network statement instead","Add an IPv6 address to the loopback interface"],0,"OSPFv3 still needs a 32-bit router ID, normally taken from an IPv4 address. With no IPv4 address on the router, configure router-id x.x.x.x manually. (OCG)","1.10",
+`%OSPFv3-4-NORTRID: OSPFv3 process 1 could not pick a router-id,
+please configure manually
+R1# show ip interface brief | exclude unassigned
+Interface              IP-Address      OK? Method Status   Protocol
+R1#`],
+["l","Which command enables OSPFv3 (traditional configuration) for IPv6 on an interface?",["ipv6 ospf 1 area 0 on the interface","network 2001:DB8:1::/64 area 0 under the process","ipv6 router ospf 1 area 0 on the interface","ospf ipv6 enable area 0 under the process"],0,"Traditional OSPFv3 is enabled per interface with ipv6 ospf PID area N. With address families, it's ospfv3 PID ipv6 area N. OSPFv3 has no network statements. (OCG)","1.10"],
+["l","Refer to the exhibit. What does the OSPFv3 route table show?",["OE2: external route, seed metric 20, link-local next hop","The route is an inter-area route from an ABR","The next hop is wrong: OSPFv3 must always install global unicast next hops in the RIB","The metric 20 is the OSPFv3 cost to the ASBR"],0,"OE2 = OSPF external type 2, [110/20] = AD 110, metric 20 (the seed). OSPFv3 next hops are the neighbor's link-local address. (OCG)","1.10",
+`R2# show ipv6 route ospf | begin 2001
+OE2 2001:DB8:9::/48 [110/20]
+     via FE80::C801:5FF:FE44:8, GigabitEthernet0/1
+OI  2001:DB8:3::/64 [110/2]
+     via FE80::C801:5FF:FE44:8, GigabitEthernet0/1`],
+["l","Which OSPFv3 LSA type carries IPv6 prefixes between areas (the counterpart of the OSPFv2 type 3)?",["Inter-Area-Prefix LSA (type 3)","Link LSA (type 8)","Intra-Area-Prefix LSA (type 9), flooded by the ABR","Inter-Area-Router LSA (type 4)"],0,"Type 3 in OSPFv3 is the Inter-Area-Prefix LSA. Type 4 describes ASBRs, type 8 is link-local information, and type 9 carries prefixes inside an area. (OCG)","1.10"],
+["l","How is OSPFv3 authentication traditionally provided for IPv6?",["IPsec (AH or ESP) configured on the interface or area","An MD5 key carried in the OSPFv3 packet header, as in OSPFv2","A key chain shared with EIGRP","The RA Guard policy on the link"],0,"Traditional OSPFv3 relies on IPsec, e.g. ipv6 ospf authentication ipsec spi 256 sha1 KEY. OSPFv2's MD5 key in the header isn't used by OSPFv3. (OCG)","1.10"],
+["l","Refer to the exhibit. IPv6 prefixes learned over the IPv4 eBGP session aren't installed. Why?",["The next hop is an IPv4-mapped address that IPv6 can't route","The IPv6 address family isn't activated for the neighbor under the BGP process","The prefixes have no valid origin code","Local preference 100 is too low for IPv6 routes"],0,"Over an IPv4 session, IPv6 routes carry ::FFFF:10.0.12.2 as next hop, which isn't reachable. Set an IPv6 next hop with a route map (set ipv6 next-hop) or peer over IPv6. Prefixes arrive, so the AF is activated. (OCG)","1.11",
+`R1# show bgp ipv6 unicast | begin Network
+     Network          Next Hop            Metric LocPrf Weight Path
+ *   2001:DB8:20::/48 ::FFFF:10.0.12.2         0             0 65200 i
+ *   2001:DB8:21::/48 ::FFFF:10.0.12.2         0             0 65200 i`],
+["l","BGP must peer with FE80::2 on Gi0/1. What else does the neighbor statement need?",["The outgoing interface: update-source Gi0/1 (newer IOS XE: FE80::2%Gi0/1)","ebgp-multihop 2, because link-local isn't routable","A /128 static route to FE80::2","next-hop-self, because a link-local address can never be used as a BGP next hop"],0,"Link-local addresses are only unique per link, so BGP must know the interface. Without it, the session can't be sourced or reached. Global unicast peering is recommended because link-local addresses change when hardware is swapped. (OCG)","1.11"],
+["l","network 2001:DB8:10::/48 is configured under address-family ipv6 but isn't advertised. The RIB has 2001:DB8:10:1::/64 and 2001:DB8:10:2::/64. Fix?",["Add ipv6 route 2001:DB8:10::/48 Null0 so the exact /48 exists","Add aggregate-address 2001:DB8:10::/48 under address-family ipv4","Activate the neighbor under address-family ipv4 too","Use the network command with the mask keyword"],0,"As with IPv4, a BGP network statement needs an exact match in the RIB. A Null0 static for the /48 creates it. IPv6 network statements use prefix/length, not mask. (OCG)","1.11"],
+["l","Which TWO statements about MP-BGP for IPv6 are true? (Choose two.)",["A neighbor must be activated under address-family ipv6","IPv6 prefixes can be carried over an IPv4 TCP session","IPv6 prefixes always need a separate BGP process","IPv6 neighbors must use link-local addresses only","show ip bgp lists IPv6 prefixes by default"],[0,1],"MP-BGP carries any address family over one session once activated. One BGP process handles all AFs, global addresses work fine, and IPv6 routes appear in show bgp ipv6 unicast. (OCG)","1.11"],
+["l","OSPFv3 redistributes EIGRP for IPv6, but EIGRP's directly connected IPv6 networks are missing in OSPFv3. Why?",["IPv6 redistribution needs include-connected for those networks","IPv6 redistribution needs the subnets keyword","OSPFv3 can't redistribute EIGRP routes","The EIGRP seed metric must be set on the OSPFv3 redistribute command first"],0,"In IPv6, connected networks of the source protocol are only included with include-connected. IPv4 includes them automatically, and IPv6 has no subnets keyword. (OCG)","1.4"],
+["l","Redistributing OSPFv3 into EIGRP for IPv6, nothing appears in EIGRP. Most likely cause?",["No seed metric on the redistribute command","Missing include-connected keyword","OSPFv3 routes are always link-local","EIGRP for IPv6 can't redistribute"],0,"Same as IPv4: EIGRP's default seed metric is infinity, so redistributed routes need metric BW DLY REL LOAD MTU. include-connected only affects connected networks. (OCG)","1.4"],
+["l","Which command summarizes IPv6 routes on an OSPFv3 ABR?",["area 1 range 2001:DB8:1::/48 under the OSPFv3 process","ipv6 summary-address ospf 2001:DB8:1::/48 on the interface","summary-prefix 2001:DB8:1::/48 on any router in area 1","aggregate-address 2001:DB8:1::/48 under OSPFv3"],0,"Like OSPFv2, inter-area summarization is area X range on the ABR. External IPv6 routes are summarized with summary-prefix on the ASBR. (OCG)","1.5"],
+["l","IPv6 traffic from 2001:DB8:1::/64 must use next hop 2001:DB8:FF::2. Which pair of commands is needed?",["set ipv6 next-hop + ipv6 policy route-map on the ingress interface","set ip next-hop in the route map + ip policy route-map on the ingress interface","ipv6 route with a tag + redistribute static","set ipv6 next-hop in the route map + ipv6 local policy route-map on the egress interface"],0,"IPv6 PBR uses match ipv6 address and set ipv6 next-hop, applied inbound with ipv6 policy route-map. ip policy only handles IPv4. (OCG)","1.6"],
+["l","An existing VRF was created with ip vrf CUST. IPv6 must now run in that VRF. What's needed?",["Recreate it with vrf definition CUST and address-family ipv6","Add ipv6 unicast-routing inside ip vrf CUST","Use ipv6 vrf forwarding CUST on the interface and keep ip vrf as it is","Nothing: ip vrf supports IPv6 automatically"],0,"ip vrf is IPv4-only. vrf definition supports address families (ipv4 and ipv6), and interfaces then use vrf forwarding. (OCG)","1.7"],
+["s","Which IPv6 ACL statement is true?",["IPv6 ACLs are named only and use sequence numbers","IPv6 ACLs can be numbered 100–199 like IPv4","IPv6 ACLs end with an implicit permit any","IPv6 ACLs are applied to interfaces with the ip access-group command"],0,"IPv6 ACLs are always named, have sequence numbers, end with implicit permit nd-na/nd-ns then deny ipv6 any any, and are applied with ipv6 traffic-filter. (OCG)","3.2"],
+["s","IPv6 SSH logins must only come from 2001:DB8:99::/64. Which command applies the ACL?",["ipv6 access-class MGMT6 in under line vty","access-class MGMT6 in under line vty","ipv6 traffic-filter MGMT6 in on every interface","ip access-group MGMT6 in under line vty"],0,"Lines use ipv6 access-class for IPv6 ACLs; plain access-class applies IPv4 ACLs. traffic-filter would also block transit traffic. (OCG)","3.2"],
+["s","Refer to the exhibit. Hosts can ping each other but can't reach the router's IPv6 address. Which entry is the problem?",["Sequence 30 blocks the hosts' NS/NA to the router","Sequence 10 must use host addresses","Sequence 20 needs the established keyword","IPv6 ACLs can't filter ICMPv6"],0,"The explicit deny comes before the implicit nd-na/nd-ns permits, so neighbor discovery to the router is dropped. Add permit icmp any any nd-na / nd-ns above it. (OCG)","3.2",
+`R1# show ipv6 access-list LAN-IN
+IPv6 access list LAN-IN
+    permit tcp 2001:DB8:10::/64 any eq 443 (210 matches) sequence 10
+    permit tcp 2001:DB8:10::/64 any eq 22 established sequence 20
+    deny ipv6 any any log (57 matches) sequence 30
+R1# show run interface Gi0/0 | include traffic
+ ipv6 traffic-filter LAN-IN in`],
+["s","Where should an RA Guard policy with device-role host be attached?",["On access ports that connect end hosts","On the uplink port toward the router","On the router's LAN interface","On every trunk between switches, so RAs are checked at each hop"],0,"Host-role ports drop RAs. On the router-facing port they would block legitimate RAs, so that port gets a router role or no policy. (CSLG · PS)","3.4"],
+["s","A host sends traffic with a forged IPv6 source address that isn't in the binding table. Which TWO features are involved in stopping it? (Choose two.)",["IPv6 snooping, which builds the binding table","IPv6 Source Guard, which checks data packets against it","RA Guard, which checks router advertisements","DHCPv6 Guard, which checks server replies","uRPF on the switch access port"],[0,1],"Source Guard drops data packets whose source isn't in the binding table built by IPv6 snooping. RA Guard and DHCPv6 Guard filter control messages. (CSLG)","3.4"],
+["i","Stateful DHCPv6 is configured, but hosts keep SLAAC addresses. What's missing on the router?",["ipv6 nd managed-config-flag on the client interface","ipv6 nd other-config-flag on the client interface","ipv6 dhcp relay destination on the server","ip helper-address for the DHCPv6 server"],0,"Hosts only request an address from DHCPv6 when the RA has M = 1 (managed-config-flag). The O flag is for other information only. (OCG)","4.4"],
+["i","Hosts get addresses from a DHCPv6 server but have no default gateway. Why?",["RAs are blocked; DHCPv6 has no gateway option","The DHCPv6 pool has no default-router option","The relay is missing the giaddr field","The DNS server option is missing from the pool"],0,"IPv6 hosts learn their default gateway only from router advertisements. DHCPv6 has no default-router option, so RAs must still reach the hosts. (OCG)","4.4"],
+["i","Refer to the exhibit. How is DHCPv6 handled on each subinterface?",["Gi0/0.40 relays to 2001:DB8:99::67; Gi0/0.30 is a server","Both interfaces relay to the server","Gi0/0.30 is a DHCPv6 client","Relaying also requires ip helper-address on Gi0/0.40, which is missing here"],0,"'server mode' with a pool means the router answers locally; 'relay mode' lists the destination it forwards to. (OCG)","4.4",
+`R1# show ipv6 dhcp interface
+GigabitEthernet0/0.30 is in server mode
+ Using pool: V6-STATELESS
+GigabitEthernet0/0.40 is in relay mode
+ Relay destinations:
+  2001:DB8:99::67`]
+);
+
 const QK=Q.map(q=>"q"+hk(q[1]));
+function mrev(q,p){const t=qtype(q);
+ if(!p)return '<div class="rvo w" style="margin-bottom:6px"><b>Not answered.</b> Correct: '+qanswer(q)+'</div>';
+ if(t=="single"||t=="multi"){const ok=j=>t=="single"?j==q[3]:q[3].includes(j);
+  return '<div class="rv">'+q[2].map((o,j)=>{const s=p.includes(j),c=ok(j);return `<div class="rvo ${c?"r":s?"w":""}"><b>${c?"✓":s?"✗":"·"}</b> ${o}${s?' <i>(your pick)</i>':""}</div>`}).join("")+'</div>'}
+ if(t=="order")return `<div class="rv"><div class="rvo w"><b>✗ Your order:</b><br>${p.map((j,n)=>(n+1)+". "+q[2][j]).join("<br>")}</div><div class="rvo r"><b>✓ Correct order:</b><br>${q[2].map((o,n)=>(n+1)+". "+o).join("<br>")}</div></div>`;
+ return '<div class="rv">'+p.map(([o,v])=>{const c=(q[2].find(x=>x[0]==o)||[])[1];return `<div class="rvo ${v==c?"r":"w"}"><b>${v==c?"✓":"✗"}</b> ${o} → ${v}${v==c?"":` · <b>correct: ${c}</b>`}</div>`}).join("")+'</div>'}
+const MRK="enarsi-mockrun";
+function msave(){if(!mock)return;const m=o=>Object.fromEntries(Object.entries(o).map(([i,v])=>[QK[i],v]));
+ try{localStorage.setItem(MRK,JSON.stringify({o:qorder.map(i=>QK[i]),qi,start:mock.start,end:mock.end,ans:m(mock.ans),pick:m(mock.pick)}))}catch(e){}}
+function mload(){try{const s=JSON.parse(localStorage.getItem(MRK)||"null");if(!s)return null;
+ const ix=k=>QK.indexOf(k),o=s.o.map(ix);if(o.some(i=>i<0)){mclear();return null}
+ const m=x=>Object.fromEntries(Object.entries(x).map(([k,v])=>[ix(k),v]).filter(([i])=>i>=0));
+ return {o,qi:Math.min(s.qi,o.length),start:s.start,end:s.end,ans:m(s.ans),pick:m(s.pick)}}catch(e){return null}}
+function mclear(){try{localStorage.removeItem(MRK)}catch(e){}}
 function wOrder(ids){const pools={};Object.keys(D).forEach(k=>pools[k]=shuf(ids.filter(i=>Q[i][0]==k)));const out=[];for(;;){const ks=Object.keys(pools).filter(k=>pools[k].length);if(!ks.length)break;let r=Math.random()*ks.reduce((s,k)=>s+D[k].w,0),pick=ks[ks.length-1];for(const k of ks){r-=D[k].w;if(r<=0){pick=k;break}}out.push(pools[pick].pop())}return out}
 let qt={};try{qt=JSON.parse(localStorage.getItem("enarsi-qt")||"{}")}catch(e){}
 let qh={};try{qh=JSON.parse(localStorage.getItem("enarsi-qh")||"{}")}catch(e){}
@@ -2965,7 +3394,7 @@ function qStart(){
     qorder=shuf(pool.filter(i=>!(QK[i] in qh)||ql[QK[i]]===0)).concat(shuf(pool.filter(i=>(QK[i] in qh)&&ql[QK[i]]!==0)));hint=w.length?"Sub-objectives under 85 %: "+w.join(", "):"No weak sub-objectives yet. Answer some questions first."}
   else{const per={};Object.entries(D).forEach(([k,d])=>per[k]=Math.round(60*d.w/100));
     qorder=shuf([].concat(...Object.keys(per).map(k=>shuf(all.filter(i=>Q[i][0]==k)).slice(0,per[k]))));
-    mock={start:Date.now(),end:Date.now()+90*60e3,ans:{}};hint="60 questions weighted like the exam · 90 minutes · no feedback until the end · no going back";
+    const sv=mload();if(sv){qorder=sv.o;qi=sv.qi;mock={start:sv.start,end:sv.end,ans:sv.ans,pick:sv.pick};hint="Resumed your unfinished mock exam (saved after every answer)"}else{mock={start:Date.now(),end:Date.now()+90*60e3,ans:{},pick:{}};hint="60 questions weighted like the exam · 90 minutes · no feedback until the end · no going back · progress is saved if you reload"}msave();
     mtimer=setInterval(()=>{const el=document.getElementById("qtime");if(!el)return;const s=Math.max(0,Math.round((mock.end-Date.now())/1e3));
       el.textContent=Math.floor(s/60)+":"+String(s%60).padStart(2,"0");el.style.color=s<600?"var(--bad)":"var(--c1)";if(s<=0){qi=qorder.length;quiz()}},1000)}
   document.getElementById("qhint").textContent=hint;upd();quiz();
@@ -2985,29 +3414,29 @@ function quiz(){
   if(t=="order"){opts=shuf(q[2].map((o,j)=>({o,j})));body=`<div id="ordsel" class="mn" style="min-height:24px;margin-bottom:10px;font-family:Inter">Your order: <span style="color:var(--mute)">tap below</span></div>`+opts.map((o,k)=>`<button class="opt" data-k="${k}">${o.o}</button>`).join("")+`<button class="reset" id="undo" style="margin-bottom:8px">Undo</button>`}
   else if(t=="match"){opts=shuf(q[2].map((p,j)=>({o:p[0],c:p[1]})));const cats=shuf([...new Set(q[2].map(p=>p[1]))]);
     body=opts.map((o,k)=>`<div class="mt"><span>${o.o}</span><select data-k="${k}"><option value="">choose…</option>${cats.map(c=>`<option>${c}</option>`).join("")}</select></div>`).join("")}
-  else{opts=shuf(q[2].map((o,j)=>({o,ok:t=="single"?j==q[3]:q[3].includes(j)})));body=opts.map((o,k)=>`<button class="opt" data-k="${k}">${t=="multi"?"☐ ":""}${o.o}</button>`).join("")}
+  else{opts=shuf(q[2].map((o,j)=>({o,j,ok:t=="single"?j==q[3]:q[3].includes(j)})));body=opts.map((o,k)=>`<button class="opt" data-k="${k}">${t=="multi"?"☐ ":""}${o.o}</button>`).join("")}
   box.innerHTML=head+`<div class="scen">${q[1]}</div>${exh(q)}${dq}${tag}${body}${t!="single"?`<button class="next" id="chk" style="display:${t=="multi"?"block":"none"}">Check answer</button>`:""}<div id="qx" class="why" style="display:none;background:var(--panel2);border-radius:12px;padding:12px;margin:4px 0 6px"></div><button class="next" id="nx">${mock&&qi==qorder.length-1?"Finish exam":"Next →"}</button>`;
   const btns=[...box.querySelectorAll(".opt")];let done=false,sel=[];
-  const finish=ok=>{done=true;if(mock){mock.ans[id]=ok;record(id,ok);document.getElementById("nx").style.display="block";const c=document.getElementById("chk");if(c)c.style.display="none";btns.forEach(b=>b.disabled=true);return}
+  const finish=ok=>{done=true;if(mock){mock.ans[id]=ok;record(id,ok);msave();document.getElementById("nx").style.display="block";const c=document.getElementById("chk");if(c)c.style.display="none";btns.forEach(b=>b.disabled=true);return}
     qn++;if(ok)qr++;record(id,ok);upd();
     const x=document.getElementById("qx");x.innerHTML=`<b style="color:${ok?"var(--ok)":"var(--bad)"}">${ok?"Correct.":"Not quite."}</b> ${t!="single"?`<div style="margin:6px 0"><b>Answer:</b> ${qanswer(q)}</div>`:""}${q[4]}${(qDiag(q)||[])[0]=="e"?`<div style="margin-top:10px">${drawDG(qDiag(q)[1])}</div>`:""}`;x.style.display="block";
     const c=document.getElementById("chk");if(c)c.style.display="none";document.getElementById("nx").style.display="block"};
-  if(t=="single")btns.forEach((b,k)=>b.onclick=()=>{if(done)return;const ok=opts[k].ok;if(mock){b.classList.add("sel")}else{if(!ok)b.classList.add("w");btns[opts.findIndex(o=>o.ok)].classList.add("r")}finish(ok)});
+  if(t=="single")btns.forEach((b,k)=>b.onclick=()=>{if(done)return;const ok=opts[k].ok;if(mock){b.classList.add("sel");mock.pick[id]=[opts[k].j]}else{if(!ok)b.classList.add("w");btns[opts.findIndex(o=>o.ok)].classList.add("r")}finish(ok)});
   if(t=="multi"){btns.forEach((b,k)=>b.onclick=()=>{if(done)return;if(sel.includes(k)){sel=sel.filter(x=>x!=k);b.classList.remove("sel");b.textContent="☐ "+opts[k].o}else if(sel.length<q[3].length){sel.push(k);b.classList.add("sel");b.textContent="☑ "+opts[k].o}});
-    document.getElementById("chk").onclick=()=>{if(done||sel.length!=q[3].length)return;const ok=sel.every(k=>opts[k].ok);
+    document.getElementById("chk").onclick=()=>{if(done||sel.length!=q[3].length)return;const ok=sel.every(k=>opts[k].ok);if(mock)mock.pick[id]=sel.map(k=>opts[k].j);
       if(!mock)btns.forEach((b,k)=>{if(opts[k].ok)b.classList.add("r");else if(sel.includes(k))b.classList.add("w")});finish(ok)}}
   if(t=="order"){const show=()=>{document.getElementById("ordsel").innerHTML="Your order: "+(sel.length?sel.map((k,n)=>`<b>${n+1}.</b> ${opts[k].o}`).join(" → "):'<span style="color:var(--mute)">tap below</span>');
       btns.forEach((b,k)=>b.style.opacity=sel.includes(k)?.35:1);document.getElementById("chk").style.display=sel.length==q[2].length&&!done?"block":"none"};
     btns.forEach((b,k)=>b.onclick=()=>{if(done||sel.includes(k))return;sel.push(k);show()});
     document.getElementById("undo").onclick=()=>{if(done)return;sel.pop();show()};
-    document.getElementById("chk").onclick=()=>{if(done)return;const ok=sel.every((k,n)=>opts[k].j==n);finish(ok);document.getElementById("undo").style.display="none"}}
+    document.getElementById("chk").onclick=()=>{if(done)return;const ok=sel.every((k,n)=>opts[k].j==n);if(mock)mock.pick[id]=sel.map(k=>opts[k].j);finish(ok);document.getElementById("undo").style.display="none"}}
   if(t=="match"){const ss=[...box.querySelectorAll(".mt select")];const chk=document.getElementById("chk");
     ss.forEach(s=>s.onchange=()=>{chk.style.display=ss.every(x=>x.value)&&!done?"block":"none"});
-    chk.onclick=()=>{if(done||!ss.every(x=>x.value))return;const ok=ss.every(s=>s.value==opts[+s.dataset.k].c);
+    chk.onclick=()=>{if(done||!ss.every(x=>x.value))return;const ok=ss.every(s=>s.value==opts[+s.dataset.k].c);if(mock)mock.pick[id]=ss.map(s=>[opts[+s.dataset.k].o,s.value]);
       if(!mock)ss.forEach(s=>s.parentNode.classList.add(s.value==opts[+s.dataset.k].c?"r":"w"));ss.forEach(s=>s.disabled=true);finish(ok)}}
-  document.getElementById("nx").onclick=()=>{qi++;quiz();document.getElementById("v-quiz").scrollIntoView()};
+  document.getElementById("nx").onclick=()=>{qi++;if(mock)msave();quiz();document.getElementById("v-quiz").scrollIntoView()};
 }
-function finishMock(box){
+function finishMock(box){mclear();
   const ids=qorder,ans=mock.ans,score=ids.filter(i=>ans[i]).length,pct=Math.round(score/ids.length*100);
   const mins=Math.round((Math.min(Date.now(),mock.end)-mock.start)/6e4);
   mh.unshift({d:new Date().toLocaleDateString(),p:pct,m:mins,ts:Date.now()});mh=mh.slice(0,5);qsave();
@@ -3017,8 +3446,8 @@ function finishMock(box){
   box.innerHTML=`<div class="done" style="padding:10px 0"><b style="color:${pct>=85?"var(--ok)":pct>=70?"var(--c3)":"var(--bad)"}">${pct}% · ${score} of ${ids.length}</b>${mins} min used · unanswered counts as wrong<br>${pct>=85?"On target. Keep it there.":"Below the 85 % practice target. Review the misses below."}</div>
    <table class="mx"><tr><th style="text-align:left">Domain</th><th>Right</th><th>Score</th></tr>${rows}</table>
    ${mh.length>1?`<p class="why" style="margin-top:8px">Recent mocks: ${mh.map(m=>m.p+"%").join(" · ")}</p>`:""}
-   <h3 style="font:700 15px 'Space Grotesk';margin:14px 0 6px">Review your ${wrong.length} misses</h3>
-   ${wrong.map(i=>{const q=Q[i];return `<div class="sec" style="margin-bottom:8px"><div class="lbl" style="color:${D[q[0]].c}">${D[q[0]].n} · ${q[5]}</div><div style="font-weight:600;margin-bottom:6px">${q[1]}</div>${exh(q)}<div class="why"><b style="color:var(--ok)">Answer:</b> ${qanswer(q)}<br>${q[4]}</div>${qDiag(q)?drawDG(qDiag(q)[1]):""}</div>`}).join("")}
+   <h3 style="font:700 15px 'Space Grotesk';margin:14px 0 6px">Review your ${wrong.length} misses</h3><p class="why" style="margin:0 0 8px"><span style="color:var(--bad)">✗ red</span> = what you picked · <span style="color:var(--ok)">✓ green</span> = correct answer</p>
+   ${wrong.map(i=>{const q=Q[i];return `<div class="sec" style="margin-bottom:8px"><div class="lbl" style="color:${D[q[0]].c}">${D[q[0]].n} · ${q[5]}</div><div style="font-weight:600;margin-bottom:6px">${q[1]}</div>${exh(q)}${mrev(q,mock.pick[i])}<div class="why">${q[4]}</div>${qDiag(q)?drawDG(qDiag(q)[1]):""}</div>`}).join("")}
    <button class="reset" id="qrs">New mock exam</button>`;
   document.getElementById("qrs").onclick=()=>qStart();mock=null;qFilters();upd();
 }
