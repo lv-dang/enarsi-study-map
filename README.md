@@ -3,6 +3,7 @@
 A single-page, mobile-first study tool for the Cisco **CCNP ENARSI 300-410** exam, aligned to the official **exam topics v1.1** (4 domains, 25 sub-objectives).
 
 Open `index.html` in a browser. It's fully self-contained (one HTML file, no build step needed to use it). Progress is saved in your browser's localStorage.
+Live page: https://lv-dang.github.io/enarsi-study-map/
 
 ## What's inside
 
@@ -28,26 +29,6 @@ v1.1 added VRF/global context to EIGRP, unicast/VRF-Lite to BGP, telemetry to lo
 Facts are tagged with their source on the page: ENARSI Official Cert Guide (OCG), ENARSI course student guide (CSLG), CCNP/CCIE Enterprise Portable Command Guide (PCG), NetAcad ENARSI slides, INE exam review, Pluralsight, ITProTV. Where sources disagree (e.g. RADIUS 1645/1646 vs 1812/1813, NetFlow default export port), both values are shown.
 
 All quiz questions are original. Sample CLI outputs follow the formats in the books but are trimmed and use invented addresses; the Catalyst Center view and the telemetry output are marked as illustrative.
-
-## Editing and rebuilding
-
-The page is generated from the files in `src/`:
-
-| File | Content |
-|---|---|
-| `cards.js`, `cards2.js` | Flip cards: `[domain, front, answer, why, source, sub-objective]` |
-| `quiz.js`, `quiz2.js`, `quiz3.js` | Questions: `[domain, scenario, options, correct, explanation, sub-objective, exhibit?]` |
-| `dg.js`, `dg2.js` | Diagram specs for the built-in SVG renderer, plus card/question → diagram mappings |
-| `cfg_data.py` | Config / sample output / troubleshooting blocks |
-| `overview.html`, `rest.html` | Overview panels, Numbers, Exam day and the other tab markup |
-| `template.html` | Base layout, styles and the quiz/card/readiness engine |
-
-```sh
-cd src
-python3 gen_cfg.py     # inserts the config blocks into the overview
-python3 build.py       # writes ../index.html
-node validate.js       # checks orphans, domain/tag mismatches, coverage minimums, diagram mappings
-```
 
 Progress is keyed by a hash of each item's text, so editing a question's scenario or a card's front resets progress for that item only.
 
