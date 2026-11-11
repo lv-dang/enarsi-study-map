@@ -113,14 +113,20 @@ nav .in{flex-wrap:nowrap}
 .mt{display:flex;flex-direction:column;align-items:stretch;gap:6px;background:var(--panel2);border:1px solid transparent;border-radius:12px;padding:9px 10px;margin-bottom:8px;font-size:14px}.mt span{flex:1}.mt select{width:100%;background:#1f2840;color:var(--ink);border:1px solid #4a5a80;border-radius:8px;padding:7px 6px;font:500 13px Inter}.mt.r{border-color:var(--ok)}.mt.w{border-color:var(--bad)}
 .rv{margin:4px 0 8px}.rvo{padding:7px 10px;border-radius:8px;margin-bottom:4px;border:1px solid var(--line);font-size:13px;line-height:1.45}.rvo.r{border-color:var(--ok);background:rgba(72,187,120,.12)}.rvo.r b{color:var(--ok)}.rvo.w{border-color:var(--bad);background:rgba(245,101,101,.12)}.rvo.w b,.rvo.w i{color:var(--bad)}.rvo i{font-style:normal;font-weight:600}
 .ver{font:500 11px "JetBrains Mono";color:var(--mute);margin-top:6px}.ver summary{cursor:pointer;list-style:none}.ver summary::-webkit-details-marker{display:none}.ver ul{margin:6px 0 0;padding-left:18px;font:400 12px/1.5 Inter;color:#c3cbe0}.ver li b{font-family:"JetBrains Mono";color:var(--c1)}.ver li span{color:var(--mute)}
-</style>
+
+html{scrollbar-gutter:stable}@supports not (scrollbar-gutter:stable){html{overflow-y:scroll}}
+
+.qtools{display:flex;justify-content:flex-end;align-items:center;gap:8px;font-size:12px;color:var(--mute);margin:-2px 0 10px}
+.score{white-space:nowrap;flex:none}
+@media(max-width:700px){.filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.filters::-webkit-scrollbar{display:none}.filters .chip{flex:none;white-space:nowrap}}
+.lnk{background:none;border:0;padding:0;color:var(--mute);font:inherit;text-decoration:underline;cursor:pointer}.lnk.arm,.chip.arm{color:var(--bad)!important}</style>
 <style>.ek{grid-template-columns:1fr!important;row-gap:3px}.ek b{font:600 13px Inter!important;color:var(--ink)!important;margin-top:9px}.ek b:first-child{margin-top:0}.ek b code{font:600 12px 'JetBrains Mono';color:var(--mute);margin-right:6px}.ek span{color:#c3cbe0}details.cfg{margin-top:12px;border:1px solid var(--line);border-radius:10px;background:#121826;min-width:0}details.cfg summary{cursor:pointer;padding:9px 12px;font:600 13px Inter;color:var(--c1);list-style:none;display:flex;gap:8px;align-items:center}details.cfg summary::-webkit-details-marker{display:none}details.cfg summary::after{content:'+';margin-left:6px;color:var(--mute)}details.cfg[open] summary::after{content:'–'}details.cfg[open] summary{border-bottom:1px solid var(--line)}.cfgb{padding:4px 10px 10px}.cl{font:600 10px 'JetBrains Mono';letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:10px 0 4px}pre.cf{margin:0;background:#0b0f18;border-radius:8px;padding:8px 10px;font:500 11px/1.5 'JetBrains Mono',monospace;color:#cfe3ff;overflow-x:auto;white-space:pre;max-width:100%}pre.out{color:#c3cbe0}pre.cf .cm{color:#6b7896}pre.cf .hl{background:#4a3c10;color:#ffe9a8}table.tc td{font-size:12px;vertical-align:top;padding:5px 4px}table.tc td:first-child{width:46%}#v-nums td.n{white-space:normal;word-break:break-word;max-width:55%}#v-nums .mx td{word-break:break-word}table.tc code{font:500 11px 'JetBrains Mono',monospace;color:var(--c1);word-break:break-word}</style>
 </head>
 <body>
 <header>
   <h1>ENARSI <span>300-410</span> · Last Minute</h1>
   <div class="sub">Troubleshoot like the exam: symptom → cause → fix · blueprint v1.1</div>
-  <details class="ver"><summary>v1.16 · updated 2026-11-11 · what's new ▾</summary><ul><li><b>v1.16</b> <span>2026-11-11</span> · Fixes from a full line-by-line audit: clearer stems (default timers, only path, tunnel keys), consistent IPSEC and RADIUS port wording, real debug and show strings, link-local BGP syntax; three repeated or trivia questions replaced (poison reverse, command authorization fallback, CoPP and pings to the router).</li><li><b>v1.15</b> <span>2026-11-11</span> · Fixes from two external audits: BFD, MPLS, virtual-link, DMVPN, CoPP, BGP and IPv6 items corrected or clarified; two near-duplicate questions replaced. Mock exams survive a page reload.</li><li><b>v1.14</b> <span>2026-11-11</span> · Mock exam review marks your wrong picks next to the right answer. Version number and change log added.</li><li><b>v1.13</b> <span>2026-11-07</span> · Flash cards grow to fit their content, so there&#x27;s no inner scrollbar.</li><li><b>v1.12</b> <span>2026-11-07</span> · 25 IPv6 questions and 15 IPv6 cards. Near-duplicate cards reworded. Each diagram has its own screen-reader label.</li><li><b>v1.11</b> · Missing configurations, sample outputs and troubleshooting commands filled in (38 config blocks).</li><li><b>v1.10</b> · More diagrams: DMVPN topology, eBGP loopbacks, MPLS core, asymmetric uRPF, DMVPN behind NAT, NetFlow direction.</li><li><b>v1.9</b> · Full fact-check with fixes. Gaps on the Overview, Numbers and Exam day pages filled.</li><li><b>v1.8</b> · VPN and security questions, domain-weighted practice, symptom cards, order and match items, longer explanations, stricter readiness rule.</li><li><b>v1.7</b> · Diagrams for topics that had none.</li><li><b>v1.6</b> · Option lengths rebalanced; exhibit and choose-two questions; sample outputs checked.</li><li><b>v1.5</b> · Numbers page covers every sub-objective.</li><li><b>v1.4</b> · Configuration, sample output and troubleshooting blocks on the Overview.</li><li><b>v1.3</b> · Exam day page names the topic behind each number; coverage gaps filled.</li><li><b>v1.0</b> · First version: overview, trigger cards, scenario quiz, numbers, exam day, search.</li></ul></details>
+  <details class="ver"><summary>v1.19 · updated 2026-11-11 · what's new ▾</summary><ul><li><b>v1.19</b> <span>2026-11-11</span> · Phone layout: mode and topic buttons scroll sideways in one row each, reset links moved under the score, score no longer wraps.</li><li><b>v1.18</b> <span>2026-11-11</span> · Page no longer shifts sideways on desktop when switching between short and long tabs.</li><li><b>v1.17</b> <span>2026-11-11</span> · Fixed flash cards collapsing to a thin strip after a resize while another tab was open. Added a reset cards link, a Clear wrong list button and a full Reset quiz button (quiz tab and Overview). Health score table aligned.</li><li><b>v1.16</b> <span>2026-11-11</span> · Fixes from a full line-by-line audit: clearer stems (default timers, only path, tunnel keys), consistent IPSEC and RADIUS port wording, real debug and show strings, link-local BGP syntax; three repeated or trivia questions replaced (poison reverse, command authorization fallback, CoPP and pings to the router).</li><li><b>v1.15</b> <span>2026-11-11</span> · Fixes from two external audits: BFD, MPLS, virtual-link, DMVPN, CoPP, BGP and IPv6 items corrected or clarified; two near-duplicate questions replaced. Mock exams survive a page reload.</li><li><b>v1.14</b> <span>2026-11-11</span> · Mock exam review marks your wrong picks next to the right answer. Version number and change log added.</li><li><b>v1.13</b> <span>2026-11-07</span> · Flash cards grow to fit their content, so there&#x27;s no inner scrollbar.</li><li><b>v1.12</b> <span>2026-11-07</span> · 25 IPv6 questions and 15 IPv6 cards. Near-duplicate cards reworded. Each diagram has its own screen-reader label.</li><li><b>v1.11</b> · Missing configurations, sample outputs and troubleshooting commands filled in (38 config blocks).</li><li><b>v1.10</b> · More diagrams: DMVPN topology, eBGP loopbacks, MPLS core, asymmetric uRPF, DMVPN behind NAT, NetFlow direction.</li><li><b>v1.9</b> · Full fact-check with fixes. Gaps on the Overview, Numbers and Exam day pages filled.</li><li><b>v1.8</b> · VPN and security questions, domain-weighted practice, symptom cards, order and match items, longer explanations, stricter readiness rule.</li><li><b>v1.7</b> · Diagrams for topics that had none.</li><li><b>v1.6</b> · Option lengths rebalanced; exhibit and choose-two questions; sample outputs checked.</li><li><b>v1.5</b> · Numbers page covers every sub-objective.</li><li><b>v1.4</b> · Configuration, sample output and troubleshooting blocks on the Overview.</li><li><b>v1.3</b> · Exam day page names the topic behind each number; coverage gaps filled.</li><li><b>v1.0</b> · First version: overview, trigger cards, scenario quiz, numbers, exam day, search.</li></ul></details>
 </header>
 <nav><div class="in">
   <button data-v="map" class="on">🗺️ Overview</button>
@@ -1639,7 +1645,7 @@ Path Trace 10.1.20.11 → 10.99.0.80 tcp/443
 <!-- CARDS -->
 <section class="view" id="v-cards">
   <div class="filters" id="filters"></div>
-  <div class="prog"><span id="pinfo"></span><span id="pstat"></span></div>
+  <div class="prog"><span id="pinfo"></span><span><span id="pstat"></span> · <button class="lnk" id="crs">reset cards</button></span></div>
   <div id="deck"></div>
 </section>
 
@@ -1648,6 +1654,7 @@ Path Trace 10.1.20.11 → 10.99.0.80 tcp/443
   <div class="filters" id="qmodes"></div>
   <div class="filters" id="qfilters"></div>
   <div class="prog"><span id="qhint"></span><span class="score" id="qscore">0 / 0</span></div>
+  <div class="qtools" id="qtools"></div>
   <div class="sec" id="qbox"></div>
 </section>
 
@@ -1936,7 +1943,7 @@ Path Trace 10.1.20.11 → 10.99.0.80 tcp/443
 
   <div class="sec"><h3>4.7 Catalyst Center health score <span class="src">CSLG</span></h3>
     <table class="mx"><tr><th>0</th><th>1–3</th><th>4–7</th><th>8–10</th></tr>
-      <tr><td style="color:var(--mute)">no data</td><td class="x">poor</td><td class="d">fair</td><td class="y">good</td></tr></table></div>
+      <tr><td style="color:var(--mute);text-align:center">no data</td><td class="x">poor</td><td class="d">fair</td><td class="y">good</td></tr></table></div>
 </section>
 
 <!-- SEARCH -->
@@ -2566,7 +2573,7 @@ function render(){
   </div></div>
   <div class="btns"><button class="again" id="ag">Again</button><button class="know" id="kn">Got it ✓</button></div>
   <p class="why" style="text-align:center;margin-top:8px">${deck.length} in this session · "Again" returns in 3 cards · "Got it" moves it up a level</p>`;
-  const cdEl=document.getElementById("cd"),fitCd=()=>{if(!cdEl.isConnected)return;cdEl.style.height="";const bk=cdEl.querySelector(".back"),lc=bk.lastElementChild,h=Math.max(cdEl.querySelector(".front").scrollHeight,lc.offsetTop+lc.offsetHeight+24);if(h>cdEl.clientHeight)cdEl.style.height=h+"px"};fitCd();requestAnimationFrame(fitCd);document.fonts&&document.fonts.ready.then(fitCd);window.onresize=fitCd;
+  const cdEl=document.getElementById("cd"),fitCd=()=>{if(!cdEl.isConnected||!cdEl.offsetParent)return;cdEl.style.height="";if(!cdEl.clientHeight)return;const bk=cdEl.querySelector(".back"),lc=bk.lastElementChild,h=Math.max(cdEl.querySelector(".front").scrollHeight,lc.offsetTop+lc.offsetHeight+24);if(h>cdEl.clientHeight)cdEl.style.height=h+"px"};fitCd();requestAnimationFrame(fitCd);document.fonts&&document.fonts.ready.then(fitCd);window.onresize=fitCd;armReset(document.getElementById("crs"),"tap again to reset all cards",()=>{st={};save();build()});window._fitCd=fitCd;if(!window._fitNav){window._fitNav=1;document.querySelectorAll("nav button").forEach(x=>x.addEventListener("click",()=>setTimeout(()=>window._fitCd&&window._fitCd(),0)))}
   document.getElementById("cd").onclick=e=>e.currentTarget.classList.toggle("flip");
   document.getElementById("ag").onclick=()=>{st[CK[i]]={l:0,t:Date.now()};save();deck.shift();deck.splice(Math.min(3,deck.length),0,i);render()};
   document.getElementById("kn").onclick=()=>{st[CK[i]]={l:Math.min(lv(i)+1,4),t:Date.now()};save();deck.shift();render()};
@@ -3361,6 +3368,8 @@ function mload(){try{const s=JSON.parse(localStorage.getItem(MRK)||"null");if(!s
  const m=x=>Object.fromEntries(Object.entries(x).map(([k,v])=>[ix(k),v]).filter(([i])=>i>=0));
  return {o,qi:Math.min(s.qi,o.length),start:s.start,end:s.end,ans:m(s.ans),pick:m(s.pick)}}catch(e){return null}}
 function mclear(){try{localStorage.removeItem(MRK)}catch(e){}}
+function armReset(b,msg,fn,off){if(!b)return;if(off){b.disabled=true;return}const t0=b.textContent;let tm;b.onclick=()=>{if(b.classList.contains("arm")){clearTimeout(tm);b.classList.remove("arm");b.textContent=t0;fn();return}b.classList.add("arm");b.textContent=msg;tm=setTimeout(()=>{b.classList.remove("arm");b.textContent=t0},4000)}}
+function qresetAll(){qh={};qt={};ql={};mh=[];mclear();mock=null;if(typeof mtimer!=="undefined"&&mtimer)clearInterval(mtimer);qsave();qmode="practice";qFilters();qStart();try{readiness();coverage()}catch(e){}}
 function wOrder(ids){const pools={};Object.keys(D).forEach(k=>pools[k]=shuf(ids.filter(i=>Q[i][0]==k)));const out=[];for(;;){const ks=Object.keys(pools).filter(k=>pools[k].length);if(!ks.length)break;let r=Math.random()*ks.reduce((s,k)=>s+D[k].w,0),pick=ks[ks.length-1];for(const k of ks){r-=D[k].w;if(r<=0){pick=k;break}}out.push(pools[pick].pop())}return out}
 let qt={};try{qt=JSON.parse(localStorage.getItem("enarsi-qt")||"{}")}catch(e){}
 let qh={};try{qh=JSON.parse(localStorage.getItem("enarsi-qh")||"{}")}catch(e){}
@@ -3378,7 +3387,7 @@ function qFilters(){
   const m=document.getElementById("qmodes");
   const nw=Q.filter((q,i)=>ql[QK[i]]===0).length,wk=weakObjs().length;
   m.innerHTML=Object.entries(MODES).map(([k,n])=>`<button class="chip ${qmode==k?"on":""}" data-m="${k}" style="${qmode==k?"color:var(--c1)":""}">${n}${k=="wrong"?` (${nw})`:k=="weak"?` (${wk})`:k=="mock"?" ⏱":""}</button>`).join("");
-  m.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{qmode=b.dataset.m;qFilters();qStart()});
+  document.getElementById("qtools").innerHTML=(nw?`<button class="lnk" id="qwc">clear wrong list</button><span>·</span>`:"")+`<button class="lnk" id="qall">reset quiz</button>`;armReset(document.getElementById("qall"),"Tap again: erase all quiz progress",()=>{qresetAll()});m.querySelectorAll(".chip[data-m]").forEach(b=>b.onclick=()=>{qmode=b.dataset.m;qFilters();qStart()});armReset(document.getElementById("qwc"),"Tap again to clear "+nw+" wrong",()=>{Object.keys(ql).forEach(k=>{if(ql[k]===0)delete ql[k]});qsave();if(qmode=="wrong")qmode="practice";qFilters();qStart()},!nw);
   const f=document.getElementById("qfilters");f.style.display=qmode=="mock"?"none":"flex";
   f.innerHTML=`<button class="chip ${qf=="all"?"on":""}" data-k="all">All</button>`+
    Object.entries(D).map(([k,d])=>`<button class="chip ${qf==k?"on":""}" data-k="${k}" style="color:${qf==k?d.c:"var(--ink)"}">${(d.s||d.n.split(" ")[0])}</button>`).join("");
@@ -3487,14 +3496,14 @@ function readiness(){
     <div class="why" style="margin-top:4px">Per domain: ≥80 % of questions seen, ≥85 % right on the first try, and ≥20 % of its questions practiced in the last 14 days. Plus a mock exam ≥85 % taken in the last 14 days.</div><div class="why" style="margin-top:4px">Latest mock: <b>${lm&&lm.ts?lm.p+" % ("+Math.floor((Date.now()-lm.ts)/864e5)+" d ago)":"none yet"}</b></div></div>
   <div class="rg" style="grid-template-columns:62px 1fr 1fr 1fr 1fr 20px"><span class="h">Domain</span><span class="h">Seen ≥80%</span><span class="h">Right ≥85%</span><span class="h">14 d ≥20%</span><span class="h">Cards</span><span class="h"></span>${rows}</div>
   <p class="why" style="margin:8px 0 0">Red = far from target, orange = close, green = met. Start with the red domains.</p>
-  <button class="reset" id="qhr" style="margin-top:8px">Reset my quiz score</button>
+  <button class="reset" id="qhr" style="margin-top:8px">Reset quiz (scores, wrong list, mocks)</button>
   <details style="margin-top:14px"><summary style="font:600 13px Inter;color:var(--mute);cursor:pointer">Content check: does this page cover enough? (not your progress)</summary>
     <div id="content" style="margin-top:8px"></div></details>`;
   let ch=`<div class="rg"><span class="h">Domain</span><span class="h">Cards</span><span class="h">Quiz</span><span class="h">Visuals</span><span class="h"></span>`;
   Object.entries(D).forEach(([k,d])=>{const nc=C.filter(c=>c[0]==k).length,nq=Q.filter(q=>q[0]==k).length,nv=document.querySelectorAll(`details[data-d="${k}"]`).length;
     ch+=`<span class="n" style="color:${d.c}">${(d.s||d.n.split(" ")[0])}</span>${bar(nc,TGT.cards[k],d.c)}${bar(nq,TGT.quiz[k],d.c)}${bar(nv,TGT.vis[k],d.c)}<span></span>`});
   document.getElementById("content").innerHTML=ch+`</div><p class="why" style="margin:6px 0 0">Targets for the page itself: enough cards, questions and diagrams per domain. Met means the material is complete, not that you are ready.</p>`;
-  document.getElementById("qhr").onclick=()=>{qh={};qt={};qsave();readiness();coverage()};
+  armReset(document.getElementById("qhr"),"Tap again: erase all quiz progress",()=>{qresetAll()});
 }
 document.querySelectorAll("[data-dg]").forEach(e=>e.innerHTML=drawDG(e.dataset.dg));
 // ---- search ----
