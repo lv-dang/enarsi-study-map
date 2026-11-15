@@ -121,6 +121,14 @@ html{scrollbar-gutter:stable}@supports not (scrollbar-gutter:stable){html{overfl
 @media(max-width:700px){.filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.filters::-webkit-scrollbar{display:none}.filters .chip{flex:none;white-space:nowrap}}
 
 .lsa a,.hint a{color:var(--c1);text-decoration:underline;text-underline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.rd{margin-top:12px;padding-top:10px;border-top:1px solid rgba(141,152,179,.3)}
+.rd h4{margin:0 0 6px;font-size:.85rem;color:var(--ink);font-weight:700}
+.rd ul{margin:0;padding-left:1.2em}
+.rd li{margin:4px 0;line-height:1.4}
+.rd a{color:var(--c1);text-decoration:underline;text-underline-offset:2px;display:inline-block;padding:3px 0;min-height:24px;overflow-wrap:anywhere}
+.rd a:hover{color:var(--ink)}
+.rd a:focus-visible{outline:2px solid var(--c1);outline-offset:2px;border-radius:3px}
 .lnk{background:none;border:0;padding:0;color:var(--mute);font:inherit;text-decoration:underline;cursor:pointer}.lnk.arm,.chip.arm{color:var(--bad)!important}</style>
 <style>.ek{grid-template-columns:1fr!important;row-gap:3px}.ek b{font:600 13px Inter!important;color:var(--ink)!important;margin-top:9px}.ek b:first-child{margin-top:0}.ek b code{font:600 12px 'JetBrains Mono';color:var(--mute);margin-right:6px}.ek span{color:#c3cbe0}details.cfg{margin-top:12px;border:1px solid var(--line);border-radius:10px;background:#121826;min-width:0}details.cfg summary{cursor:pointer;padding:9px 12px;font:600 13px Inter;color:var(--c1);list-style:none;display:flex;gap:8px;align-items:center}details.cfg summary::-webkit-details-marker{display:none}details.cfg summary::after{content:'+';margin-left:6px;color:var(--mute)}details.cfg[open] summary::after{content:'–'}details.cfg[open] summary{border-bottom:1px solid var(--line)}.cfgb{padding:4px 10px 10px}.cl{font:600 10px 'JetBrains Mono';letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:10px 0 4px}pre.cf{margin:0;background:#0b0f18;border-radius:8px;padding:8px 10px;font:500 11px/1.5 'JetBrains Mono',monospace;color:#cfe3ff;overflow-x:auto;white-space:pre;max-width:100%}pre.out{color:#c3cbe0}pre.cf .cm{color:#6b7896}pre.cf .hl{background:#4a3c10;color:#ffe9a8}table.tc td{font-size:12px;vertical-align:top;padding:5px 4px}table.tc td:first-child{width:46%}#v-nums td.n{white-space:normal;word-break:break-word;max-width:55%}#v-nums .mx td{word-break:break-word}table.tc code{font:500 11px 'JetBrains Mono',monospace;color:var(--c1);word-break:break-word}</style>
 </head>
@@ -128,7 +136,7 @@ html{scrollbar-gutter:stable}@supports not (scrollbar-gutter:stable){html{overfl
 <header>
   <h1>ENARSI <span>300-410</span> · Last Minute</h1>
   <div class="sub">Troubleshoot like the exam: symptom → cause → fix · blueprint v1.1</div>
-  <details class="ver"><summary>v1.22 · updated 2026-11-12 · what's new ▾</summary><ul><li><b>v1.22</b> <span>2026-11-12</span> · Quiz: mock exam answers can be changed until you press Next. Practice: one-answer questions are graded on tap; multi-answer, order and match questions use Check answer.</li><li><b>v1.21</b> <span>2026-11-12</span> · Labs section trimmed to the essentials.</li><li><b>v1.20</b> <span>2026-11-12</span> · Exam day: new Labs &amp; question types section with what Cisco officially says about lab items, tutorial link and lab tactics.</li><li><b>v1.19</b> <span>2026-11-11</span> · Phone layout: mode and topic buttons scroll sideways in one row each, reset links moved under the score, score no longer wraps.</li><li><b>v1.18</b> <span>2026-11-11</span> · Page no longer shifts sideways on desktop when switching between short and long tabs.</li><li><b>v1.17</b> <span>2026-11-11</span> · Fixed flash cards collapsing to a thin strip after a resize while another tab was open. Added a reset cards link, a Clear wrong list button and a full Reset quiz button (quiz tab and Overview). Health score table aligned.</li><li><b>v1.16</b> <span>2026-11-11</span> · Fixes from a full line-by-line audit: clearer stems (default timers, only path, tunnel keys), consistent IPSEC and RADIUS port wording, real debug and show strings, link-local BGP syntax; three repeated or trivia questions replaced (poison reverse, command authorization fallback, CoPP and pings to the router).</li><li><b>v1.15</b> <span>2026-11-11</span> · Fixes from two external audits: BFD, MPLS, virtual-link, DMVPN, CoPP, BGP and IPv6 items corrected or clarified; two near-duplicate questions replaced. Mock exams survive a page reload.</li><li><b>v1.14</b> <span>2026-11-11</span> · Mock exam review marks your wrong picks next to the right answer. Version number and change log added.</li><li><b>v1.13</b> <span>2026-11-07</span> · Flash cards grow to fit their content, so there&#x27;s no inner scrollbar.</li><li><b>v1.12</b> <span>2026-11-07</span> · 25 IPv6 questions and 15 IPv6 cards. Near-duplicate cards reworded. Each diagram has its own screen-reader label.</li><li><b>v1.11</b> · Missing configurations, sample outputs and troubleshooting commands filled in (38 config blocks).</li><li><b>v1.10</b> · More diagrams: DMVPN topology, eBGP loopbacks, MPLS core, asymmetric uRPF, DMVPN behind NAT, NetFlow direction.</li><li><b>v1.9</b> · Full fact-check with fixes. Gaps on the Overview, Numbers and Exam day pages filled.</li><li><b>v1.8</b> · VPN and security questions, domain-weighted practice, symptom cards, order and match items, longer explanations, stricter readiness rule.</li><li><b>v1.7</b> · Diagrams for topics that had none.</li><li><b>v1.6</b> · Option lengths rebalanced; exhibit and choose-two questions; sample outputs checked.</li><li><b>v1.5</b> · Numbers page covers every sub-objective.</li><li><b>v1.4</b> · Configuration, sample output and troubleshooting blocks on the Overview.</li><li><b>v1.3</b> · Exam day page names the topic behind each number; coverage gaps filled.</li><li><b>v1.0</b> · First version: overview, trigger cards, scenario quiz, numbers, exam day, search.</li></ul></details>
+  <details class="ver"><summary>v1.23 · updated 2026-11-15 · what's new ▾</summary><ul><li><b>v1.23</b> <span>2026-11-15</span> · Quiz: each question now shows 2-3 Further reading links to official Cisco guides and tech notes after you answer, and in the mock exam review.</li><li><b>v1.22</b> <span>2026-11-12</span> · Quiz: mock exam answers can be changed until you press Next. Practice: one-answer questions are graded on tap; multi-answer, order and match questions use Check answer.</li><li><b>v1.21</b> <span>2026-11-12</span> · Labs section trimmed to the essentials.</li><li><b>v1.20</b> <span>2026-11-12</span> · Exam day: new Labs &amp; question types section with what Cisco officially says about lab items, tutorial link and lab tactics.</li><li><b>v1.19</b> <span>2026-11-11</span> · Phone layout: mode and topic buttons scroll sideways in one row each, reset links moved under the score, score no longer wraps.</li><li><b>v1.18</b> <span>2026-11-11</span> · Page no longer shifts sideways on desktop when switching between short and long tabs.</li><li><b>v1.17</b> <span>2026-11-11</span> · Fixed flash cards collapsing to a thin strip after a resize while another tab was open. Added a reset cards link, a Clear wrong list button and a full Reset quiz button (quiz tab and Overview). Health score table aligned.</li><li><b>v1.16</b> <span>2026-11-11</span> · Fixes from a full line-by-line audit: clearer stems (default timers, only path, tunnel keys), consistent IPSEC and RADIUS port wording, real debug and show strings, link-local BGP syntax; three repeated or trivia questions replaced (poison reverse, command authorization fallback, CoPP and pings to the router).</li><li><b>v1.15</b> <span>2026-11-11</span> · Fixes from two external audits: BFD, MPLS, virtual-link, DMVPN, CoPP, BGP and IPv6 items corrected or clarified; two near-duplicate questions replaced. Mock exams survive a page reload.</li><li><b>v1.14</b> <span>2026-11-11</span> · Mock exam review marks your wrong picks next to the right answer. Version number and change log added.</li><li><b>v1.13</b> <span>2026-11-07</span> · Flash cards grow to fit their content, so there&#x27;s no inner scrollbar.</li><li><b>v1.12</b> <span>2026-11-07</span> · 25 IPv6 questions and 15 IPv6 cards. Near-duplicate cards reworded. Each diagram has its own screen-reader label.</li><li><b>v1.11</b> · Missing configurations, sample outputs and troubleshooting commands filled in (38 config blocks).</li><li><b>v1.10</b> · More diagrams: DMVPN topology, eBGP loopbacks, MPLS core, asymmetric uRPF, DMVPN behind NAT, NetFlow direction.</li><li><b>v1.9</b> · Full fact-check with fixes. Gaps on the Overview, Numbers and Exam day pages filled.</li><li><b>v1.8</b> · VPN and security questions, domain-weighted practice, symptom cards, order and match items, longer explanations, stricter readiness rule.</li><li><b>v1.7</b> · Diagrams for topics that had none.</li><li><b>v1.6</b> · Option lengths rebalanced; exhibit and choose-two questions; sample outputs checked.</li><li><b>v1.5</b> · Numbers page covers every sub-objective.</li><li><b>v1.4</b> · Configuration, sample output and troubleshooting blocks on the Overview.</li><li><b>v1.3</b> · Exam day page names the topic behind each number; coverage gaps filled.</li><li><b>v1.0</b> · First version: overview, trigger cards, scenario quiz, numbers, exam day, search.</li></ul></details>
 </header>
 <nav><div class="in">
   <button data-v="map" class="on">🗺️ Overview</button>
@@ -3365,6 +3373,63 @@ GigabitEthernet0/0.40 is in relay mode
 );
 
 const QK=Q.map(q=>"q"+hk(q[1]));
+const RDL={
+ ad:["Understand Administrative Distance","https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/15986-admin-distance.html"],
+ redist:["Configure Routing Protocol Redistribution","https://www.cisco.com/c/en/us/support/docs/ip/enhanced-interior-gateway-routing-protocol-eigrp/8606-redist.html"],
+ rmap:["Configure Route Maps Applied with Redistribution","https://www.cisco.com/en/US/tech/tk365/technologies_tech_note09186a008047915d.shtml"],
+ iprt:["IP Routing Configuration Guide, Cisco IOS XE 17","https://www.cisco.com/c/en/us/td/docs/routers/ios-xe/ip-routing/b-ip-routing.html"],
+ pi:["IP Routing: Protocol-Independent Configuration Guide (PBR, Multi-VRF)","https://www.cisco.com/en/US/docs/ios-xml/ios/iproute_pi/configuration/xe-3s/iri-xe-3s-book.html"],
+ bfdts:["Troubleshoot BFD in Cisco IOS XE","https://www.cisco.com/c/en/us/support/docs/ip/ip-routing/220364-troubleshoot-bidirectional-forwarding-de.pdf",1],
+ bfd:["Bidirectional Forwarding Detection configuration guide","https://www.cisco.com/en/US/docs/ios-xml/ios/iproute_bfd/configuration/15-1s/irb-bi-fwd-det.html"],
+ eigrpn:["Configure EIGRP Named Mode","https://www.cisco.com/c/en/us/support/docs/ip/enhanced-interior-gateway-routing-protocol-eigrp/200156-Configure-EIGRP-Named-Mode.html"],
+ ospf:["Configuring OSPF (IOS XE configuration guide)","https://www.cisco.com/en/US/docs/ios/ios_xe/iproute_ospf/configuration/guide/iro_cfg_xe.html"],
+ ospfnb:["Troubleshoot OSPF Neighbor Problems","https://www.cisco.com/en/US/tech/tk365/technologies_tech_note09186a0080094050.shtml"],
+ ospfmtu:["Troubleshoot OSPF Neighbors Stuck in Exstart/Exchange","https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/13684-12.html"],
+ ospf3:["IPv6 Routing: OSPFv3","https://www.cisco.com/en/US/docs/ios-xml/ios/ipv6/configuration/xe-3s/ip6-ospf.html"],
+ bgpbp:["Select BGP Best-Path Algorithm","https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/13753-25.html"],
+ v6:["IPv6 Configuration Guide, Cisco IOS XE 3S","https://www.cisco.com/en/US/docs/ios-xml/ios/ipv6/configuration/xe-3s/ipv6-xe-3s-book.html"],
+ ldp:["MPLS Label Distribution Protocol overview","https://www.cisco.com/en/US/docs/ios-xml/ios/mp_ldp/configuration/15-2s/mp-ldp-overview.html"],
+ l3vpn:["MPLS Layer 3 VPNs Configuration Guide","https://www.cisco.com/en/US/docs/ios-xml/ios/mp_l3_vpns/configuration/xe-3s/mp-l3-vpns-xe-3s-book.html"],
+ dmvpn:["Dynamic Multipoint VPN, Cisco IOS XE 17","https://www.cisco.com/en/US/docs/ios-xml/ios/sec_conn_dmvpn/configuration/15-sy/sec-conn-dmvpn-15-sy-book.html"],
+ dmvpn3:["Configure DMVPN Phase 3 Using IKEv2","https://www.cisco.com/c/en/us/support/docs/security/dynamic-multipoint-vpn-dmvpn/224281-configure-dmvpn-phase-3-using-ikev2.html"],
+ aaa:["AAA Configuration Guide, Cisco IOS XE","https://www.cisco.com/en/US/docs/ios-xml/ios/sec_usr_aaa/configuration/xe-3e/sec-usr-aaa-xe-3e-book.html"],
+ authn:["Configuring Authentication (AAA)","https://www.cisco.com/en/US/docs/ios-xml/ios/sec_usr_aaa/configuration/15-2s/sec-cfg-authentifcn.html"],
+ acl:["Security Configuration Guide: Access Control Lists","https://www.cisco.com/en/US/docs/ios-xml/ios/sec_data_acl/configuration/15-sy/sec-data-acl-15-sy-book.html"],
+ urpf:["Configuring Unicast Reverse Path Forwarding","https://www.cisco.com/en/US/docs/ios-xml/ios/sec_data_urpf/configuration/15-1s/cfg-unicast-rpf.html"],
+ urpfl:["Unicast RPF Loose Mode","https://cisco.com/en/US/docs/ios-xml/ios/sec_data_urpf/configuration/xe-3s/sec-unicast-rpf-loose-mode.html"],
+ copp:["Control Plane Policing (QoS configuration guide)","https://www.cisco.com/en/US/docs/ios-xml/ios/qos_plcshp/configuration/xe-3s/qos-plcshp-ctrl-pln-plc.html"],
+ harden:["Harden Cisco IOS Devices","https://cisco.com/c/en/us/support/docs/ip/access-lists/13608-21.html"],
+ fhs:["IPv6 First-Hop Security Configuration Guide","https://www.cisco.com/en/US/docs/ios-xml/ios/ipv6_fhsec/configuration/xe-3s/ip6f-xe-3s-book.html"],
+ ssh:["Configure SSH on Routers","https://cisco.com/c/en/us/support/docs/security-vpn/secure-shell-ssh/4145-ssh.html"],
+ webacl:["Filter Traffic to the IOS XE WebUI with an ACL","https://www.cisco.com/c/en/us/support/docs/ios-nx-os-software/ios-xe-17/221107-filter-traffic-destined-to-cisco-ios-xe.html"],
+ snmp:["SNMP Configuration Guide, Cisco IOS XE","https://www.cisco.com/en/US/docs/ios-xml/ios/snmp/configuration/xe-3e/snmp-xe-3e-book.html"],
+ snmpsec:["Secure Simple Network Management Protocol","https://www.cisco.com/c/en/us/support/docs/ip/simple-network-management-protocol-snmp/20370-snmpsecurity-20370.html"],
+ debug:["Important Information on Debug Commands","https://www.cisco.com/c/en/us/support/docs/dial-access/integrated-services-digital-networks-isdn-channel-associated-signaling-cas/10374-debug.html"],
+ mdt:["Configure Model-Driven Telemetry on IOS XE","https://www.cisco.com/c/en/us/support/docs/ios-nx-os-software/ios-xe-17/217427-configure-model-driven-telemetry-on-cisc.html"],
+ progwp:["Catalyst Programmability and Automation (white paper)","https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9300-series-switches/catalyst-programmability-automation-wp.html"],
+ dhcp:["IP Addressing: DHCP Configuration Guide","https://www.cisco.com/en/US/docs/ios-xml/ios/ipaddr_dhcp/configuration/xe-3s/dhcp-xe-3s-book.html"],
+ dhcp6:["Implementing DHCP for IPv6","https://www.cisco.com/en/US/docs/ios-xml/ios/ipv6/configuration/15-0sy/ip6-dhcp.html"],
+ sla:["Configuring IP SLAs UDP Jitter Operations","https://www.cisco.com/en/US/docs/ios-xml/ios/ipsla/configuration/15-2s/sla_udp_jitter.html"],
+ nf:["Troubleshoot NetFlow on IOS XE","https://www.cisco.com/c/en/us/support/docs/quality-of-service-qos/netflow/226065-troubleshoot-netflow-on-ios-xe.html"],
+ fnf:["Flexible NetFlow Configuration Guide","https://www.cisco.com/en/US/docs/ios-xml/ios/fnetflow/configuration/15-s/fnf-15-s-book.html"],
+ ccds:["Cisco Catalyst Center 3.1.6 Data Sheet (Assurance features)","https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/dna-center/catalyst-center-3-1-6-ds.html"],
+ assure:["Cisco Catalyst Assurance User Guide, Release 3.1.x","https://www.cisco.com/c/en/us/td/docs/cloud-systems-management/network-automation-and-management/catalyst-center-assurance/3-1-x/b_cisco_catalyst_assurance_3_1_x_ug.html"]
+};
+const RDO={"1.1":["ad","redist"],"1.2":["rmap","bgpbp"],"1.3":["redist","rmap"],"1.4":["redist","rmap"],"1.5":["iprt","ospf"],
+ "1.6":["pi","iprt"],"1.7":["pi","iprt"],"1.8":["bfdts","bfd"],"1.9":["eigrpn","iprt"],"1.10":["ospf","ospfnb"],"1.11":["bgpbp","iprt"],
+ "2.1":["ldp","l3vpn"],"2.2":["l3vpn","ldp"],"2.3":["dmvpn","dmvpn3"],
+ "3.1":["aaa","authn"],"3.2":["acl","urpf"],"3.3":["copp","harden"],"3.4":["fhs","v6"],
+ "4.1":["ssh","harden"],"4.2":["snmp","snmpsec"],"4.3":["debug","mdt"],"4.4":["dhcp","dhcp6"],"4.5":["sla","iprt"],"4.6":["fnf","nf"],"4.7":["assure","ccds"]};
+const RDK=[[/exstart|exchange state|\bmtu\b/i,"ospfmtu"],[/ospfv3|ipv6 ospf/i,"ospf3"],[/eigrpv6|ipv6 eigrp|address-family ipv6|mp-bgp|ipv6 traffic-filter|ipv6 access-list|slaac|ipv6 nd/i,"v6"],
+ [/dhcpv6|ipv6 dhcp|dhcp6/i,"dhcp6"],[/phase 3|nhrp redirect|nhrp shortcut/i,"dmvpn3"],[/loose mode|reachable-via any|rx any/i,"urpfl"],
+ [/telemetry|yang|netconf|restconf|grpc/i,"progwp"],[/ip http|webui|https server/i,"webacl"],[/\bvrf\b/i,"pi"],[/\bbfd\b/i,"bfd"],[/\bbest.?path|local.?pref|\bmed\b|weight/i,"bgpbp"],
+ [/administrative distance|\bAD\b/,"ad"],[/redistribut/i,"redist"]];
+function rdHTML(q){const s=(q[1]+" "+q[4]).replace(/<[^>]*>/g," "),ks=[];
+ RDK.forEach(([r,k])=>{if(ks.length<2&&r.test(s)&&!ks.includes(k))ks.push(k)});
+ (RDO[q[5]]||[]).forEach(k=>{if(!ks.includes(k))ks.push(k)});
+ const li=ks.slice(0,3).map(k=>{const[t,u,pdf]=RDL[k];return `<li><a href="${u}" target="_blank" rel="noopener noreferrer">${t}${pdf?" (PDF)":""}<span class="sr-only"> (Cisco, opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></li>`}).join("");
+ return li?`<section class="rd" aria-label="Further reading on cisco.com"><h4>📚 Further reading (Cisco)</h4><ul>${li}</ul></section>`:""}
+
 function mrev(q,p){const t=qtype(q);
  if(!p)return '<div class="rvo w" style="margin-bottom:6px"><b>Not answered.</b> Correct: '+qanswer(q)+'</div>';
  if(t=="single"||t=="multi"){const ok=j=>t=="single"?j==q[3]:q[3].includes(j);
@@ -3439,7 +3504,7 @@ function quiz(){
   const btns=[...box.querySelectorAll(".opt")];let done=false,sel=[];
   const finish=ok=>{done=true;if(mock){mock.ans[id]=ok;record(id,ok);msave();document.getElementById("nx").style.display="block";const c=document.getElementById("chk");if(c)c.style.display="none";btns.forEach(b=>b.disabled=true);return}
     qn++;if(ok)qr++;record(id,ok);upd();
-    const x=document.getElementById("qx");x.innerHTML=`<b style="color:${ok?"var(--ok)":"var(--bad)"}">${ok?"Correct.":"Not quite."}</b> ${t!="single"?`<div style="margin:6px 0"><b>Answer:</b> ${qanswer(q)}</div>`:""}${q[4]}${(qDiag(q)||[])[0]=="e"?`<div style="margin-top:10px">${drawDG(qDiag(q)[1])}</div>`:""}`;x.style.display="block";
+    const x=document.getElementById("qx");x.innerHTML=`<b style="color:${ok?"var(--ok)":"var(--bad)"}">${ok?"Correct.":"Not quite."}</b> ${t!="single"?`<div style="margin:6px 0"><b>Answer:</b> ${qanswer(q)}</div>`:""}${q[4]}${(qDiag(q)||[])[0]=="e"?`<div style="margin-top:10px">${drawDG(qDiag(q)[1])}</div>`:""}${rdHTML(q)}`;x.style.display="block";
     const c=document.getElementById("chk");if(c)c.style.display="none";document.getElementById("nx").style.display="block"};
   const chkB=document.getElementById("chk");
   const pickNow=()=>{
@@ -3476,7 +3541,7 @@ function finishMock(box){mclear();
    <table class="mx"><tr><th style="text-align:left">Domain</th><th>Right</th><th>Score</th></tr>${rows}</table>
    ${mh.length>1?`<p class="why" style="margin-top:8px">Recent mocks: ${mh.map(m=>m.p+"%").join(" · ")}</p>`:""}
    <h3 style="font:700 15px 'Space Grotesk';margin:14px 0 6px">Review your ${wrong.length} misses</h3><p class="why" style="margin:0 0 8px"><span style="color:var(--bad)">✗ red</span> = what you picked · <span style="color:var(--ok)">✓ green</span> = correct answer</p>
-   ${wrong.map(i=>{const q=Q[i];return `<div class="sec" style="margin-bottom:8px"><div class="lbl" style="color:${D[q[0]].c}">${D[q[0]].n} · ${q[5]}</div><div style="font-weight:600;margin-bottom:6px">${q[1]}</div>${exh(q)}${mrev(q,mock.pick[i])}<div class="why">${q[4]}</div>${qDiag(q)?drawDG(qDiag(q)[1]):""}</div>`}).join("")}
+   ${wrong.map(i=>{const q=Q[i];return `<div class="sec" style="margin-bottom:8px"><div class="lbl" style="color:${D[q[0]].c}">${D[q[0]].n} · ${q[5]}</div><div style="font-weight:600;margin-bottom:6px">${q[1]}</div>${exh(q)}${mrev(q,mock.pick[i])}<div class="why">${q[4]}</div>${qDiag(q)?drawDG(qDiag(q)[1]):""}${rdHTML(q)}</div>`}).join("")}
    <button class="reset" id="qrs">New mock exam</button>`;
   document.getElementById("qrs").onclick=()=>qStart();mock=null;qFilters();upd();
 }
